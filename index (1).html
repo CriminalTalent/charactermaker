@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OC 캐릭터 키워드 시트</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Noto+Serif+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FFF9F0;--bg2:#F7EDD8;--bg3:#EDD9B4;--bg4:#DEC596;
+  --ink:#26160A;--ink2:#4A2E18;--ink3:#7A5230;--ink4:#A07848;
+  --acc:#B87333;--acc2:#D4A45C;
+  --bdr:#D6BC96;--bdr2:#E8D8B8;--wh:#FFFDF8;
+  --g-r:#7A0000;--g-g:#C9A84C;--s-g:#163828;--s-s:#8E9FAA;
+  --r-n:#0D1B3E;--r-b:#8B6914;--h-a:#C49010;--h-d:#1E1E1E;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Noto Serif KR',serif;background:var(--bg);color:var(--ink);min-height:100vh;font-size:14px}
+header{background:var(--ink);color:var(--bg);padding:13px 28px;display:flex;align-items:center;justify-content:space-between;border-bottom:3px solid var(--acc);position:sticky;top:0;z-index:50}
+.h-logo{display:flex;align-items:center;gap:12px}
+.h-logo h1{font-family:'Playfair Display',serif;font-style:italic;font-size:1.2rem;color:var(--acc2)}
+.h-logo span{font-size:.7rem;color:var(--ink4);letter-spacing:.08em;text-transform:uppercase;border-left:1px solid var(--ink2);padding-left:12px}
+.h-acts{display:flex;gap:8px}
+nav{background:var(--bg2);border-bottom:2px solid var(--bdr);display:flex;overflow-x:auto;padding:0 28px;scrollbar-width:none}
+nav::-webkit-scrollbar{display:none}
+.nbtn{padding:11px 17px;border:none;background:none;font-family:'Noto Serif KR',serif;font-size:.8rem;color:var(--ink3);cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap;transition:color .2s,border-color .2s;margin-bottom:-2px}
+.nbtn:hover{color:var(--ink)}.nbtn.on{color:var(--ink);border-bottom-color:var(--acc);font-weight:600}
+.nbtn.dim{opacity:.35;pointer-events:none}
+main{max-width:1360px;margin:0 auto;padding:28px}
+.tab-pane{display:none}.tab-pane.on{display:block}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:20px}
+.sec-title{font-family:'Playfair Display',serif;font-size:1.5rem}
+.sec-sub{font-size:.72rem;color:var(--ink4);margin-top:3px}
+
+/* RANDOM BANNER */
+.rand-banner{background:var(--ink);border-radius:8px;padding:22px 26px;margin-bottom:22px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.rand-banner h2{font-family:'Playfair Display',serif;font-style:italic;color:var(--acc2);font-size:1.2rem;margin-bottom:4px}
+.rand-banner p{font-size:.76rem;color:var(--ink4);line-height:1.6}
+.rand-acts{display:flex;gap:10px;flex-shrink:0}
+.btn-rand{background:var(--acc);color:var(--wh);border:none;padding:10px 24px;border-radius:4px;font-family:'Noto Serif KR',serif;font-size:.86rem;font-weight:600;cursor:pointer;letter-spacing:.03em;transition:background .2s;white-space:nowrap}
+.btn-rand:hover{background:var(--acc2);color:var(--ink)}
+
+/* QUICK SET */
+.qset{background:var(--wh);border:1px solid var(--bdr);border-radius:6px;padding:18px 20px;margin-bottom:20px}
+.qset-title{font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--ink4);margin-bottom:14px}
+.qset-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(165px,1fr));gap:10px}
+
+/* NAME STYLE TOGGLE */
+.name-style-row{display:flex;gap:6px;margin-bottom:10px}
+.nsbtn{padding:5px 13px;border:1px solid var(--bdr);border-radius:3px;background:var(--wh);font-family:'Noto Serif KR',serif;font-size:.73rem;color:var(--ink3);cursor:pointer;transition:all .15s}
+.nsbtn:hover{border-color:var(--acc)}.nsbtn.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+
+/* FILTER */
+.filter-bar{display:flex;flex-wrap:wrap;gap:7px;align-items:center;margin-bottom:16px}
+.fpill{padding:4px 13px;border-radius:20px;border:1px solid var(--bdr);background:var(--wh);font-family:'Noto Serif KR',serif;font-size:.72rem;color:var(--ink3);cursor:pointer;transition:all .18s}
+.fpill:hover{border-color:var(--acc);color:var(--ink)}.fpill.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.fpill.hg.on{background:var(--g-r);border-color:var(--g-r)}.fpill.hs.on{background:var(--s-g);border-color:var(--s-g)}
+.fpill.hr.on{background:var(--r-n);border-color:var(--r-n)}.fpill.hh.on{background:var(--h-a);border-color:var(--h-a);color:var(--h-d)}
+.sbox{margin-left:auto;padding:5px 14px;border:1px solid var(--bdr);border-radius:20px;background:var(--wh);font-family:'Noto Serif KR',serif;font-size:.72rem;color:var(--ink);min-width:185px}
+.sbox:focus{outline:none;border-color:var(--acc)}
+
+/* RAND RESULT */
+.rr-panel{background:var(--wh);border:1px solid var(--bdr);border-radius:6px;overflow:hidden;margin-bottom:22px;display:none}
+.rr-panel.on{display:block}
+.rr-sec{padding:16px 20px;border-bottom:1px solid var(--bdr2)}
+.rr-sec:last-of-type{border-bottom:none}
+.rr-sec-title{font-size:.64rem;font-weight:600;text-transform:uppercase;letter-spacing:.09em;color:var(--ink4);margin-bottom:11px}
+.rr-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:8px}
+.rr-item .rl{font-size:.63rem;color:var(--ink4);margin-bottom:2px}
+.rr-item .rv{font-size:.84rem;color:var(--ink);font-weight:500;font-family:'Playfair Display',serif}
+.rr-kws{display:flex;flex-wrap:wrap;gap:6px}
+.rr-kw{background:var(--bg2);border:1px solid var(--bdr2);padding:3px 9px;border-radius:3px;font-size:.76rem;color:var(--ink2);font-family:'Playfair Display',serif;font-style:italic}
+.rr-kw.core{background:var(--ink);color:var(--acc2);border-color:var(--ink)}
+.rr-secret{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.rr-si .rl{font-size:.63rem;color:var(--ink4);margin-bottom:3px}
+.rr-si .rv{font-size:.78rem;color:var(--ink2);line-height:1.5;font-style:italic}
+.rr-acts{display:flex;gap:8px;padding:13px 20px;background:var(--bg2);border-top:1px solid var(--bdr);flex-wrap:wrap}
+
+/* TWITTER BTN */
+.btn-tw{background:#000;color:#fff;border:none;padding:8px 16px;border-radius:4px;font-family:'Noto Serif KR',serif;font-size:.78rem;cursor:pointer;transition:background .2s;white-space:nowrap}
+.btn-tw:hover{background:#333}
+
+/* CHAR GRID */
+.ccount{font-size:.71rem;color:var(--ink4);margin-bottom:13px}
+.cgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(282px,1fr));gap:15px}
+.ccard{background:var(--wh);border:1px solid var(--bdr2);border-radius:6px;padding:16px 16px 12px;cursor:pointer;transition:box-shadow .2s,transform .2s;position:relative;overflow:hidden}
+.ccard::after{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--bg3);border-radius:6px 6px 0 0}
+.ccard:hover{box-shadow:0 6px 20px rgba(38,22,10,.1);transform:translateY(-2px)}
+.ccard.hg::after{background:linear-gradient(90deg,var(--g-r),var(--g-g))}
+.ccard.hs::after{background:linear-gradient(90deg,var(--s-g),var(--s-s))}
+.ccard.hr::after{background:linear-gradient(90deg,var(--r-n),var(--r-b))}
+.ccard.hh::after{background:linear-gradient(90deg,var(--h-a),#5A4800)}
+.ctop{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:8px}
+.cname{font-family:'Playfair Display',serif;font-size:1.05rem}
+.cmeta{font-size:.66rem;color:var(--ink4);margin-top:2px}
+.hchip{font-size:.66rem;padding:2px 8px;border-radius:12px;font-weight:600;white-space:nowrap}
+.hcg{background:var(--g-r);color:var(--g-g)}.hcs{background:var(--s-g);color:var(--s-s)}
+.hcr{background:var(--r-n);color:#B8A060}.hch{background:var(--h-a);color:var(--h-d)}
+.hcn{background:var(--bg3);color:var(--ink4)}
+.cconc{font-size:.77rem;font-style:italic;color:var(--ink3);margin-bottom:8px;line-height:1.5}
+.ktags{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:9px}
+.ktag{background:var(--bg2);border:1px solid var(--bdr2);padding:2px 6px;border-radius:3px;font-size:.66rem;color:var(--ink2)}
+.pb-wrap{margin-bottom:8px}
+.pb-lbl{display:flex;justify-content:space-between;font-size:.64rem;color:var(--ink4);margin-bottom:3px}
+.pb-track{height:3px;background:var(--bg3);border-radius:2px;overflow:hidden}
+.pb-fill{height:100%;background:var(--acc2);border-radius:2px;transition:width .4s}
+.cfoot{display:flex;justify-content:space-between;align-items:center;padding-top:8px;border-top:1px solid var(--bdr2)}
+.confchip{font-size:.64rem;padding:2px 7px;border-radius:3px}
+.cy{background:#EEF7EE;color:#2E7D32}.cn{background:#FFF7ED;color:#9C5A00}
+.cacts{display:flex;gap:5px}
+.ibtn{width:24px;height:24px;border:1px solid var(--bdr2);border-radius:3px;background:none;cursor:pointer;font-size:.72rem;display:flex;align-items:center;justify-content:center;color:var(--ink3);transition:background .15s}
+.ibtn:hover{background:var(--bg2)}.ibtn.del:hover{background:#FEE;color:#c0392b;border-color:#c0392b}
+.empty{grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--ink4)}
+.empty h3{font-family:'Playfair Display',serif;font-size:1.1rem;margin-bottom:6px;color:var(--ink3)}
+.empty p{font-size:.78rem;line-height:1.7}
+.cs{text-align:center;padding:90px 20px;color:var(--ink4)}
+.cs h2{font-family:'Playfair Display',serif;font-size:1.3rem;margin-bottom:6px;color:var(--ink3)}
+.cs p{font-size:.78rem}
+
+/* OVERLAY & MODAL */
+.overlay{display:none;position:fixed;inset:0;background:rgba(38,22,10,.55);z-index:200;align-items:flex-start;justify-content:center;padding:20px;overflow-y:auto}
+.overlay.on{display:flex}
+.modal{background:var(--bg);width:100%;max-width:800px;border-radius:8px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 24px 72px rgba(38,22,10,.35);margin:auto}
+.mhead{background:var(--ink);color:var(--bg);padding:15px 22px;display:flex;justify-content:space-between;align-items:center}
+.mhead h2{font-family:'Playfair Display',serif;font-style:italic;font-size:1.1rem;color:var(--acc2)}
+.xbtn{background:none;border:none;color:var(--bg);font-size:.95rem;cursor:pointer;opacity:.6;transition:opacity .2s}
+.xbtn:hover{opacity:1}
+.mtabs{display:flex;background:var(--bg2);border-bottom:1px solid var(--bdr);overflow-x:auto;scrollbar-width:none}
+.mtabs::-webkit-scrollbar{display:none}
+.mtab{padding:9px 14px;border:none;background:none;font-family:'Noto Serif KR',serif;font-size:.73rem;color:var(--ink3);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;margin-bottom:-1px;transition:color .18s,border-color .18s}
+.mtab:hover{color:var(--ink)}.mtab.on{color:var(--ink);border-bottom-color:var(--acc);font-weight:600}
+.mbody{padding:20px 22px;overflow-y:auto;flex:1;max-height:66vh}
+.msec{display:none}.msec.on{display:block}
+.fg{display:flex;flex-direction:column;gap:4px}
+.fg label{font-size:.67rem;font-weight:600;color:var(--ink4);text-transform:uppercase;letter-spacing:.05em}
+.fg input,.fg select,.fg textarea{background:var(--wh);border:1px solid var(--bdr);border-radius:3px;padding:6px 10px;font-family:'Noto Serif KR',serif;font-size:.8rem;color:var(--ink);transition:border-color .18s;width:100%}
+.fg input:focus,.fg select:focus,.fg textarea:focus{outline:none;border-color:var(--acc)}
+.fg textarea{resize:vertical;min-height:66px}
+.fgrid{display:grid;gap:12px}
+.g2{grid-template-columns:1fr 1fr}.g3{grid-template-columns:1fr 1fr 1fr}.g4{grid-template-columns:1fr 1fr 1fr 1fr}
+.full{grid-column:1/-1}
+.fdiv{grid-column:1/-1;font-family:'Playfair Display',serif;font-size:.82rem;font-style:italic;color:var(--ink4);padding-bottom:4px;border-bottom:1px solid var(--bdr2);margin-top:4px}
+.hpanel{background:var(--wh);border:1px solid var(--bdr);border-radius:6px;padding:15px;margin-top:13px}
+.hresult{display:flex;gap:13px;margin-bottom:12px}
+.hhero{flex-shrink:0;width:114px;border-radius:6px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:14px 10px;text-align:center}
+.hhero .hn{font-family:'Playfair Display',serif;font-size:.88rem;font-weight:700;margin-bottom:4px}
+.hhero .hp{font-size:1.35rem;font-weight:700}
+.hg2{background:var(--g-r);color:var(--g-g)}.hs2{background:var(--s-g);color:var(--s-s)}
+.hr2{background:var(--r-n);color:#C0A870}.hh2{background:var(--h-a);color:var(--h-d)}
+.hbars{flex:1;display:flex;flex-direction:column;gap:8px;justify-content:center}
+.hbrow{display:flex;align-items:center;gap:7px}
+.hblbl{font-size:.69rem;width:70px;flex-shrink:0;color:var(--ink3)}
+.hbtrack{flex:1;height:6px;background:var(--bg3);border-radius:3px;overflow:hidden}
+.hbfill{height:100%;border-radius:3px;transition:width .5s ease}
+.bfg{background:var(--g-r)}.bfs{background:var(--s-g)}.bfr{background:var(--r-n)}.bfh{background:var(--h-a)}
+.hbpct{font-size:.67rem;width:27px;text-align:right;color:var(--ink4)}
+.hdesc{font-size:.74rem;color:var(--ink3);line-height:1.6;padding-top:8px;border-top:1px solid var(--bdr2)}
+.btn-rec{width:100%;padding:10px;background:var(--ink);color:var(--bg);border:none;border-radius:4px;font-family:'Noto Serif KR',serif;font-size:.83rem;cursor:pointer;transition:background .2s;letter-spacing:.03em}
+.btn-rec:hover{background:var(--ink2)}
+.mfoot{padding:11px 22px;border-top:1px solid var(--bdr);display:flex;justify-content:space-between;align-items:center;background:var(--bg2)}
+.fnav{display:flex;gap:7px}
+.btn-p{background:var(--ink);color:var(--bg);border:none;padding:7px 16px;font-family:'Noto Serif KR',serif;font-size:.79rem;cursor:pointer;border-radius:3px;transition:background .2s}
+.btn-p:hover{background:var(--ink2)}
+.btn-s{background:none;border:1px solid var(--bdr);padding:6px 14px;font-family:'Noto Serif KR',serif;font-size:.79rem;color:var(--ink3);cursor:pointer;border-radius:3px;transition:all .18s}
+.btn-s:hover{background:var(--bg3);border-color:var(--acc);color:var(--ink)}.btn-s:disabled{opacity:.35;pointer-events:none}
+.btn-xs{padding:5px 10px;border:1px solid var(--bdr);background:var(--bg2);font-family:'Noto Serif KR',serif;font-size:.7rem;cursor:pointer;border-radius:3px;color:var(--ink3);transition:all .15s}
+.btn-xs:hover{background:var(--bg3)}
+@media(max-width:640px){
+  main{padding:13px}.fgrid.g2,.fgrid.g3,.fgrid.g4{grid-template-columns:1fr 1fr}
+  .rand-banner{flex-direction:column;gap:12px}.hresult{flex-direction:column}
+  .hhero{width:100%;padding:12px}.rr-secret{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="h-logo">
+    <h1>OC 캐릭터 키워드 시트</h1>
+    <span>HP 기반 OC 작업툴</span>
+  </div>
+  <div class="h-acts">
+    <button class="btn-xs" onclick="exportData()">내보내기</button>
+    <button class="btn-xs" onclick="document.getElementById('impFile').click()">불러오기</button>
+    <input type="file" id="impFile" accept=".json" style="display:none" onchange="importData(event)">
+  </div>
+</header>
+<nav>
+  <button class="nbtn on" onclick="switchTab('t1',this)">① 캐릭터 입력폼</button>
+  <button class="nbtn dim">② 키워드 사전</button>
+  <button class="nbtn dim">③ 조합 규칙표</button>
+  <button class="nbtn dim">④ 심리/서사 축</button>
+  <button class="nbtn dim">⑤ 관계/운용</button>
+  <button class="nbtn dim">⑥ 최종 요약 카드</button>
+</nav>
+<main>
+<div id="t1" class="tab-pane on">
+  <div class="sec-head">
+    <div><div class="sec-title">캐릭터 입력폼</div><div class="sec-sub">카드를 클릭하면 수정할 수 있어요</div></div>
+    <button class="btn-p" onclick="openModal(null)">+ 직접 입력</button>
+  </div>
+  <div class="rand-banner">
+    <div>
+      <h2>올랜덤 생성</h2>
+      <p>버튼 하나로 외형부터 비밀 설정까지 즉시 생성해요.<br>이름 스타일과 일부 항목을 미리 고정할 수 있어요.</p>
+    </div>
+    <div class="rand-acts">
+      <button class="btn-s" onclick="toggleQSet()" style="color:var(--bg);border-color:rgba(255,255,255,.25);background:rgba(255,255,255,.08)">일부 고정</button>
+      <button class="btn-rand" onclick="runRandom()">올랜덤 생성</button>
+    </div>
+  </div>
+
+  <div id="qSet" class="qset" style="display:none">
+    <div class="qset-title">고정할 항목을 입력하세요 — 비워두면 랜덤으로 채워집니다</div>
+    <div style="margin-bottom:12px">
+      <div style="font-size:.7rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--ink4);margin-bottom:8px">이름 스타일</div>
+      <div class="name-style-row">
+        <button class="nsbtn on" onclick="setNameStyle('ko',this)">한국식</button>
+        <button class="nsbtn" onclick="setNameStyle('jp',this)">일본식</button>
+        <button class="nsbtn" onclick="setNameStyle('en',this)">서양식</button>
+        <button class="nsbtn" onclick="setNameStyle('rand',this)">랜덤</button>
+      </div>
+    </div>
+    <div class="qset-grid">
+      <div class="fg"><label>이름 (고정)</label><input id="q_name" type="text" placeholder="비우면 랜덤"></div>
+      <div class="fg"><label>역할군</label>
+        <select id="q_role"><option value="">랜덤</option><option>주인공</option><option>조연</option><option>악역</option><option>중간자</option><option>관찰자</option><option>서포터</option><option>라이벌</option><option>멘토</option><option>히든 카드</option></select>
+      </div>
+      <div class="fg"><label>성별</label>
+        <select id="q_gender"><option value="">랜덤</option><option>여성</option><option>남성</option><option>논바이너리</option></select>
+      </div>
+      <div class="fg"><label>기숙사</label>
+        <select id="q_house"><option value="">랜덤</option><option value="g">그리핀도르</option><option value="s">슬리데린</option><option value="r">래번클로</option><option value="h">후플푸프</option></select>
+      </div>
+      <div class="fg"><label>시대</label>
+        <select id="q_era"><option value="">랜덤</option><option>1970년대</option><option>1991–1998</option><option>2010년대~</option></select>
+      </div>
+      <div class="fg"><label>혈통</label>
+        <select id="q_blood"><option value="">랜덤</option><option>순수혈통</option><option>혼혈</option><option>머글태생</option></select>
+      </div>
+    </div>
+    <div style="margin-top:16px;padding-top:14px;border-top:1px solid var(--bdr2);display:flex;justify-content:flex-end">
+      <button class="btn-rand" onclick="runRandom()">고정값 적용해서 생성</button>
+    </div>
+  </div>
+
+  <!-- RANDOM RESULT -->
+  <div id="rrPanel" class="rr-panel">
+    <div class="rr-sec"><div class="rr-sec-title">외형</div><div class="rr-grid" id="rrApp"></div></div>
+    <div class="rr-sec"><div class="rr-sec-title">캐릭터 설정</div><div class="rr-grid" id="rrSet"></div></div>
+    <div class="rr-sec"><div class="rr-sec-title">성격 키워드</div><div class="rr-kws" id="rrKw"></div></div>
+    <div class="rr-sec"><div class="rr-sec-title">비밀 설정</div><div class="rr-secret" id="rrSec"></div></div>
+    <div class="rr-acts">
+      <button class="btn-rand" style="padding:8px 18px;font-size:.8rem" onclick="runRandom()">다시 굴리기</button>
+      <button class="btn-p" onclick="saveRandResult()">저장</button>
+      <button class="btn-tw" id="twBtn" onclick="shareTwitter()">X (트위터) 공유</button>
+      <button class="btn-s" onclick="document.getElementById('rrPanel').classList.remove('on')">닫기</button>
+    </div>
+  </div>
+
+  <div class="filter-bar">
+    <button class="fpill on" onclick="setFilter('all',this)">전체</button>
+    <button class="fpill hg" onclick="setFilter('g',this)">그리핀도르</button>
+    <button class="fpill hs" onclick="setFilter('s',this)">슬리데린</button>
+    <button class="fpill hr" onclick="setFilter('r',this)">래번클로</button>
+    <button class="fpill hh" onclick="setFilter('h',this)">후플푸프</button>
+    <button class="fpill" onclick="setFilter('confirmed',this)">확정됨</button>
+    <input type="text" class="sbox" placeholder="이름 · 키워드 검색..." oninput="doSearch(this.value)">
+  </div>
+  <div class="ccount" id="charCount"></div>
+  <div class="cgrid" id="charGrid"></div>
+</div>
+<div id="t2" class="tab-pane"><div class="cs"><h2>키워드 사전</h2><p>다음 버전에서 만나요.</p></div></div>
+<div id="t3" class="tab-pane"><div class="cs"><h2>조합 규칙표</h2><p>다음 버전에서 만나요.</p></div></div>
+<div id="t4" class="tab-pane"><div class="cs"><h2>심리 / 서사 축</h2><p>다음 버전에서 만나요.</p></div></div>
+<div id="t5" class="tab-pane"><div class="cs"><h2>관계 / 운용</h2><p>다음 버전에서 만나요.</p></div></div>
+<div id="t6" class="tab-pane"><div class="cs"><h2>최종 요약 카드</h2><p>다음 버전에서 만나요.</p></div></div>
+</main>
+
+<!-- MODAL -->
+<div class="overlay" id="overlay" onclick="overlayClose(event)">
+<div class="modal">
+  <div class="mhead">
+    <h2 id="mTitle">새 캐릭터 만들기</h2>
+    <button class="xbtn" onclick="closeModal()">X</button>
+  </div>
+  <div class="mtabs">
+    <button class="mtab on" onclick="goMTab(0,this)">외형</button>
+    <button class="mtab" onclick="goMTab(1,this)">기본 설정</button>
+    <button class="mtab" onclick="goMTab(2,this)">마법 설정</button>
+    <button class="mtab" onclick="goMTab(3,this)">성격 키워드</button>
+    <button class="mtab" onclick="goMTab(4,this)">기숙사</button>
+    <button class="mtab" onclick="goMTab(5,this)">비밀 설정</button>
+  </div>
+  <div class="mbody">
+    <!-- 0 외형 -->
+    <div class="msec on" id="ms0">
+      <div class="fgrid g3">
+        <div class="fg"><label>눈 색깔</label>
+          <select id="f_eye"><option value="">선택...</option>
+            <option>검정</option><option>짙은 갈색</option><option>밝은 갈색</option><option>황금빛 갈색</option>
+            <option>올리브</option><option>녹색</option><option>청록색</option><option>파랑</option>
+            <option>연한 파랑</option><option>회색</option><option>은빛</option><option>보라</option><option>붉은빛</option>
+          </select>
+        </div>
+        <div class="fg"><label>머리 색깔</label>
+          <select id="f_hair_color"><option value="">선택...</option>
+            <option>검정</option><option>짙은 갈색</option><option>밝은 갈색</option><option>금발</option>
+            <option>밝은 금발</option><option>적갈색</option><option>붉은색</option><option>은발</option>
+            <option>백발</option><option>회색</option>
+          </select>
+        </div>
+        <div class="fg"><label>머리 스타일</label>
+          <select id="f_hair_style"><option value="">선택...</option>
+            <option>짧은 단발</option><option>귀밑 단발</option><option>턱선 보브</option>
+            <option>어깨 생머리</option><option>긴 생머리</option><option>웨이브 미디엄</option>
+            <option>곱슬 숏</option><option>곱슬 롱</option><option>묶은 머리</option>
+            <option>반묶음</option><option>투블럭</option><option>올림머리</option>
+          </select>
+        </div>
+        <div class="fg"><label>피부 톤</label>
+          <select id="f_skin"><option value="">선택...</option>
+            <option>매우 창백</option><option>창백한 편</option><option>밝은 편</option>
+            <option>보통</option><option>밀색</option><option>어두운 편</option><option>짙음</option>
+          </select>
+        </div>
+        <div class="fg"><label>체형 / 키</label>
+          <select id="f_body"><option value="">선택...</option>
+            <option>작고 마른 편</option><option>작고 단단한 편</option><option>평균, 보통</option>
+            <option>평균, 마른 편</option><option>큰 편, 마른 편</option><option>큰 편, 단단한 편</option>
+          </select>
+        </div>
+        <div class="fg"><label>첫인상</label>
+          <select id="f_impression"><option value="">선택...</option>
+            <option>날카롭고 차가운</option><option>온화하고 부드러운</option><option>무표정하고 읽기 어려운</option>
+            <option>눈에 잘 안 띄는</option><option>자신감 있고 존재감 강한</option><option>어딘가 애틋해 보이는</option>
+            <option>친근하고 밝은</option><option>피곤해 보이는</option><option>기묘하고 신비로운</option><option>단정하고 정돈된</option>
+          </select>
+        </div>
+        <div class="fg full"><label>외형 메모</label><textarea id="f_look" placeholder="예: 눈 밑에 늘 그늘이 짐."></textarea></div>
+      </div>
+    </div>
+    <!-- 1 기본 설정 -->
+    <div class="msec" id="ms1">
+      <div class="fgrid g2">
+        <div class="fg"><label>이름</label><input id="f_name" type="text" placeholder="캐릭터 이름"></div>
+        <div class="fg"><label>역할군</label>
+          <select id="f_role"><option value="">선택...</option>
+            <option>주인공</option><option>조연</option><option>악역</option><option>중간자</option>
+            <option>관찰자</option><option>서포터</option><option>라이벌</option><option>멘토</option><option>히든 카드</option>
+          </select>
+        </div>
+        <div class="fg"><label>성별</label>
+          <select id="f_gender"><option value="">선택...</option>
+            <option>여성</option><option>남성</option><option>논바이너리</option><option>미정</option>
+          </select>
+        </div>
+        <div class="fg"><label>연령대</label>
+          <select id="f_age"><option value="">선택...</option>
+            <option>1학년 (11-12세)</option><option>2학년</option><option>3학년</option><option>4학년</option>
+            <option>5학년</option><option>6학년</option><option>7학년 (17-18세)</option>
+            <option>졸업 후 성인</option><option>교수/교직원</option>
+          </select>
+        </div>
+        <div class="fg"><label>혈통</label>
+          <select id="f_blood"><option value="">선택...</option>
+            <option>순수혈통</option><option>혼혈</option><option>머글태생</option><option>스쿼브</option>
+          </select>
+        </div>
+        <div class="fg"><label>시대</label>
+          <select id="f_era"><option value="">선택...</option>
+            <option>1970년대</option><option>1991–1998</option><option>2010년대~</option><option>자유 설정</option>
+          </select>
+        </div>
+        <div class="fg full"><label>한줄 컨셉</label><input id="f_concept" type="text" placeholder="예: 다정하지만 기억에서 자꾸 사람을 놓치는 아이"></div>
+      </div>
+    </div>
+    <!-- 2 마법 설정 -->
+    <div class="msec" id="ms2">
+      <div class="fgrid g2">
+        <div class="fg"><label>마법 특기</label>
+          <select id="f_magic"><option value="">선택...</option>
+            <option>변환술</option><option>마법약</option><option>방어마법</option><option>점술</option>
+            <option>어둠의 마법</option><option>애니마구스</option><option>오러 계열</option><option>치유마법</option>
+            <option>마법생물 돌봄</option><option>룬 문자</option><option>레질리먼시 / 오클루먼시</option><option>파셀텅그</option>
+          </select>
+        </div>
+        <div class="fg"><label>퀴디치 포지션</label>
+          <select id="f_quidditch"><option value="">비참가 / 미정</option>
+            <option>시커</option><option>체이서</option><option>비터</option><option>키퍼</option>
+          </select>
+        </div>
+        <div class="fdiv">지팡이</div>
+        <div class="fg"><label>나무</label>
+          <select id="f_wood"><option value="">선택...</option>
+            <option>호랑가시나무</option><option>물푸레나무</option><option>오리나무</option><option>사과나무</option>
+            <option>블랙손</option><option>벚나무</option><option>버드나무</option><option>주목나무</option>
+            <option>참나무</option><option>느릅나무</option><option>호두나무</option><option>편백나무</option>
+          </select>
+        </div>
+        <div class="fg"><label>코어</label>
+          <select id="f_core"><option value="">선택...</option>
+            <option>불사조 깃털</option><option>용의 심줄</option><option>유니콘 털</option>
+          </select>
+        </div>
+        <div class="fg"><label>길이</label>
+          <select id="f_wlen"><option value="">선택...</option>
+            <option>짧음 (~10인치)</option><option>평균 (10-12인치)</option><option>길음 (12인치~)</option>
+          </select>
+        </div>
+        <div class="fg"><label>탄성</label>
+          <select id="f_wflex"><option value="">선택...</option>
+            <option>단단함</option><option>약간 유연</option><option>유연함</option><option>매우 유연</option>
+          </select>
+        </div>
+        <div class="fg"><label>패트로누스</label><input id="f_patronus" type="text" placeholder="예: 은빛 수달"></div>
+        <div class="fg"><label>특이 능력</label><input id="f_special" type="text" placeholder="예: 애니마구스 — 흑여우"></div>
+      </div>
+    </div>
+    <!-- 3 성격 키워드 -->
+    <div class="msec" id="ms3">
+      <div class="fgrid g2">
+        <div class="fg full"><label>만들고 싶은 분위기</label><textarea id="f_vibe" placeholder="예: 유약해 보이지만 실제론 냉정함"></textarea></div>
+        <div class="fg full"><label>피하고 싶은 요소</label><textarea id="f_avoid" placeholder="예: 너무 흔한 병약계"></textarea></div>
+        <div class="fdiv">키워드</div>
+        <div class="fg"><label>핵심 키워드 1</label><input id="f_kw1" type="text"></div>
+        <div class="fg"><label>핵심 키워드 2</label><input id="f_kw2" type="text"></div>
+        <div class="fg"><label>핵심 키워드 3</label><input id="f_kw3" type="text"></div>
+        <div class="fg"><label>서브 키워드 1</label><input id="f_sk1" type="text"></div>
+        <div class="fg"><label>서브 키워드 2</label><input id="f_sk2" type="text"></div>
+        <div class="fdiv">인상</div>
+        <div class="fg full"><label>성격 인상</label><textarea id="f_personality"></textarea></div>
+        <div class="fg full"><label>관계 인상</label><textarea id="f_relation"></textarea></div>
+      </div>
+    </div>
+    <!-- 4 기숙사 -->
+    <div class="msec" id="ms4">
+      <p style="font-size:.77rem;color:var(--ink3);line-height:1.65;margin-bottom:13px">성격·키워드·분위기를 바탕으로 어울리는 기숙사를 추천해요.</p>
+      <button class="btn-rec" onclick="runHouseRec()">기숙사 분석 시작</button>
+      <div class="hpanel" id="housePanel" style="display:none">
+        <div class="hresult">
+          <div class="hhero" id="hHero"><div class="hn" id="hHN">-</div><div class="hp" id="hHP">-</div></div>
+          <div class="hbars">
+            <div class="hbrow"><span class="hblbl">그리핀도르</span><div class="hbtrack"><div class="hbfill bfg" id="hbG" style="width:0%"></div></div><span class="hbpct" id="hpG">0%</span></div>
+            <div class="hbrow"><span class="hblbl">슬리데린</span><div class="hbtrack"><div class="hbfill bfs" id="hbS" style="width:0%"></div></div><span class="hbpct" id="hpS">0%</span></div>
+            <div class="hbrow"><span class="hblbl">래번클로</span><div class="hbtrack"><div class="hbfill bfr" id="hbR" style="width:0%"></div></div><span class="hbpct" id="hpR">0%</span></div>
+            <div class="hbrow"><span class="hblbl">후플푸프</span><div class="hbtrack"><div class="hbfill bfh" id="hbH" style="width:0%"></div></div><span class="hbpct" id="hpH">0%</span></div>
+          </div>
+        </div>
+        <div class="hdesc" id="hDesc"></div>
+      </div>
+      <div style="margin-top:16px">
+        <div class="fdiv" style="margin-top:0;margin-bottom:11px">직접 확정</div>
+        <div class="fgrid g2">
+          <div class="fg"><label>확정 기숙사</label>
+            <select id="f_house"><option value="">추천 결과 그대로</option>
+              <option value="g">그리핀도르</option><option value="s">슬리데린</option>
+              <option value="r">래번클로</option><option value="h">후플푸프</option>
+            </select>
+          </div>
+          <div class="fg"><label>배분 메모</label><input id="f_house_note" type="text" placeholder="예: 배분모자가 7분 고민"></div>
+        </div>
+      </div>
+    </div>
+    <!-- 5 비밀 설정 -->
+    <div class="msec" id="ms5">
+      <div class="fgrid g2">
+        <div class="fg full"><label>핵심 모순</label><input id="f_paradox" type="text"></div>
+        <div class="fg full"><label>가장 아픈 질문</label><input id="f_painful_q" type="text"></div>
+        <div class="fg"><label>욕망</label><input id="f_desire" type="text"></div>
+        <div class="fg"><label>결핍</label><input id="f_lack" type="text"></div>
+        <div class="fg"><label>두려움</label><input id="f_fear" type="text"></div>
+        <div class="fg"><label>방어기제</label><input id="f_defense" type="text"></div>
+        <div class="fdiv">서사 방향</div>
+        <div class="fg"><label>성장 방향</label><input id="f_grow" type="text"></div>
+        <div class="fg"><label>파멸 방향</label><input id="f_fall" type="text"></div>
+        <div class="fg full"><label>서사 메모</label><textarea id="f_narrative"></textarea></div>
+        <div class="fdiv">최종</div>
+        <div class="fg"><label>상징물 / 상징색</label><input id="f_symbol" type="text"></div>
+        <div class="fg"><label>확정 여부</label>
+          <select id="f_confirmed"><option value="no">작업 중</option><option value="yes">확정됨</option></select>
+        </div>
+        <div class="fg full"><label>자유 메모</label><textarea id="f_summary"></textarea></div>
+      </div>
+    </div>
+  </div>
+  <div class="mfoot">
+    <div class="fnav">
+      <button class="btn-s" id="mPrev" onclick="mPrev()" disabled>이전</button>
+      <button class="btn-s" id="mNext" onclick="mNext()">다음</button>
+    </div>
+    <div style="display:flex;gap:8px">
+      <button class="btn-s" onclick="closeModal()">취소</button>
+      <button class="btn-p" onclick="saveChar()">저장</button>
+    </div>
+  </div>
+</div>
+</div>
+
+<script>
+// ── STATE ──────────────────────────────────────────────────
+let chars=JSON.parse(localStorage.getItem('oc_chars3')||'[]');
+let editId=null,mCur=0,filterMode='all',searchQ='',recHouse='',lastRand=null,nameStyle='ko';
+const MTABS=6;
+
+// ── NAME POOLS ─────────────────────────────────────────────
+// each entry: [한글표기, 영문표기]
+const NAMES = {
+  ko: {
+    last:[['김','Kim'],['이','Lee'],['박','Park'],['최','Choi'],['정','Jung'],['강','Kang'],['윤','Yoon'],['장','Jang'],['임','Lim'],['한','Han'],['오','Oh'],['서','Seo'],['신','Shin'],['권','Kwon'],['황','Hwang'],['안','Ahn'],['송','Song'],['류','Ryu'],['전','Jeon'],['홍','Hong']],
+    f_first:[['서아','Seoa'],['다은','Daeeun'],['지안','Jian'],['유나','Yuna'],['채린','Chaerin'],['하은','Haeun'],['소이','Soi'],['민지','Minji'],['세아','Seah'],['도연','Doyeon'],['아린','Arin'],['나연','Nayeon'],['예린','Yerin'],['수빈','Subin'],['가은','Gaeun'],['시은','Sieun'],['해린','Haerin'],['유진','Yujin'],['보아','Boa'],['리아','Ria'],['수아','Sua'],['채아','Chaea'],['하린','Harin'],['세린','Serin'],['이안','Ian']],
+    m_first:[['준서','Junseo'],['도현','Dohyeon'],['재혁','Jaehyeok'],['시온','Sion'],['민준','Minjun'],['강현','Kanghyeon'],['준영','Junyeong'],['서준','Seojun'],['현우','Hyeonwoo'],['재원','Jaewon'],['시후','Sihu'],['주원','Juwon'],['도윤','Doyun'],['준혁','Junhyeok'],['지호','Jiho'],['태양','Taeyang'],['민혁','Minhyeok'],['서진','Seojin'],['하준','Hajun'],['도진','Dojin'],['승원','Seungwon'],['재준','Jaejun'],['찬민','Chanmin'],['현준','Hyeonjun'],['이준','Ijun']],
+    n_first:[['하온','Haon'],['세인','Sein'],['이루','Iru'],['도아','Doa'],['유온','Yuon'],['나온','Naon'],['아연','Ayeon'],['서온','Seon'],['지유','Jiyu'],['이안','Ian']],
+  },
+  jp: {
+    last:[['사쿠라이','Sakurai'],['타나카','Tanaka'],['야마모토','Yamamoto'],['와타나베','Watanabe'],['이토','Ito'],['나카무라','Nakamura'],['코바야시','Kobayashi'],['카토','Kato'],['요시다','Yoshida'],['야마다','Yamada'],['하야시','Hayashi'],['사사키','Sasaki'],['마츠모토','Matsumoto'],['이노우에','Inoue'],['키무라','Kimura'],['시미즈','Shimizu'],['야마구치','Yamaguchi'],['아베','Abe'],['오가와','Ogawa'],['미야모토','Miyamoto']],
+    f_first:[['아오이','Aoi'],['하루카','Haruka'],['미즈키','Mizuki'],['사유리','Sayuri'],['유키','Yuki'],['리코','Riko'],['나나세','Nanase'],['치하야','Chihaya'],['소라','Sora'],['아카리','Akari'],['미오','Mio'],['후유코','Fuyuko'],['히나타','Hinata'],['코코로','Kokoro'],['사키','Saki'],['노조미','Nozomi'],['이츠키','Itsuki'],['카에데','Kaede'],['모모카','Momoka'],['시오리','Shiori'],['유이','Yui'],['레이카','Reika'],['나츠키','Natsuki'],['치아키','Chiaki'],['세이라','Seira']],
+    m_first:[['하루토','Haruto'],['유우토','Yuto'],['카이토','Kaito'],['소우타','Sota'],['렌','Ren'],['하야토','Hayato'],['타이가','Taiga'],['코우키','Koki'],['료','Ryo'],['신','Shin'],['아키라','Akira'],['류세이','Ryusei'],['이사무','Isamu'],['카즈마','Kazuma'],['켄토','Kento'],['다이키','Daiki'],['유키토','Yukito'],['마사토','Masato'],['토모야','Tomoya'],['타케루','Takeru'],['히로키','Hiroki'],['나오키','Naoki'],['료세이','Ryosei'],['소우마','Soma'],['켄지','Kenji']],
+    n_first:[['미나토','Minato'],['유우','Yu'],['아오','Ao'],['카나타','Kanata'],['히카리','Hikari'],['나기','Nagi'],['하루','Haru'],['이치카','Ichika'],['레이','Rei'],['아사히','Asahi']],
+  },
+  en: {
+    last:[['블랙우드','Blackwood'],['애쉬포드','Ashford'],['휘트모어','Whitmore'],['손','Thorne'],['싱클레어','Sinclair'],['할로우','Harlow'],['펨버튼','Pemberton'],['밴스','Vance'],['스털링','Sterling'],['나이팅게일','Nightingale'],['콜드웰','Caldwell'],['레이븐우드','Ravenwood'],['홀트','Holt'],['페어팩스','Fairfax'],['웨스턴','Weston'],['대번포트','Davenport'],['랭글리','Langley'],['서튼','Sutton'],['윈터스','Winters'],['모로우','Morrow']],
+    f_first:[['엘라라','Elara'],['세라핀','Seraphine'],['이졸데','Isolde'],['라이라','Lyra'],['코린나','Corinna'],['베스퍼','Vesper'],['아라민타','Araminta'],['셀레스트','Celeste'],['로웨나','Rowena'],['테살리','Thessaly'],['이모겐','Imogen'],['칼리스타','Calista'],['니아브','Niamh'],['엘로웬','Elowen'],['오렐리아','Aurelia'],['시어샤','Saoirse'],['카시엘','Cassiel'],['베라','Vera'],['인디라','Indira'],['미레이','Mireille'],['오필리아','Ophelia'],['비비엔','Vivienne'],['실비','Sylvie'],['로잘린드','Rosalind'],['클레멘타인','Clementine']],
+    m_first:[['케일럼','Caelum'],['도리안','Dorian'],['엠리스','Emrys'],['라이샌더','Lysander'],['오리온','Orion'],['테론','Theron'],['캐스피언','Caspian'],['리앤더','Leander'],['에반더','Evander'],['라파엘','Raffael'],['바스티안','Bastian'],['트리스탄','Tristan'],['올드릭','Aldric'],['코빈','Corvin'],['퍼시발','Percival'],['로완','Rowan'],['실반','Sylvan'],['칼럼','Callum'],['앨리스테어','Alistair'],['매그너스','Magnus'],['패비언','Fabian'],['기디언','Gideon'],['리오단','Riordan'],['스텔란','Stellan'],['이완','Ewan']],
+    n_first:[['애스펀','Aspen'],['세이지','Sage'],['렌','Wren'],['리븐','Riven'],['룬','Lune'],['캐시아','Cassia'],['에런','Aeron'],['오닉스','Onyx'],['솔레이','Soleil'],['카스텔','Castel']],
+  }
+};
+
+function buildName(style, gender) {
+  const pool = NAMES[style];
+  const lastPair = pick(pool.last);
+  const firstList = gender==='여성' ? pool.f_first : gender==='남성' ? pool.m_first : pool.n_first;
+  const firstPair = pick(firstList);
+  const koFull = style==='en' ? firstPair[0]+' '+lastPair[0] : lastPair[0]+' '+firstPair[0];
+  const enFull = style==='en' ? firstPair[1]+' '+lastPair[1] : lastPair[1]+' '+firstPair[1];
+  return koFull+'('+enFull+')';
+}
+
+let qNameStyle = 'ko';
+function setNameStyle(s, btn) {
+  qNameStyle = s;
+  document.querySelectorAll('.nsbtn').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+}
+
+// ── EXPANDED POOLS ─────────────────────────────────────────
+const R = {
+  eye:['검정','짙은 갈색','밝은 갈색','황금빛 갈색','올리브','녹색','청록색','파랑','연한 파랑','회색','은빛','보라','붉은빛','琥珀色 (호박색)','금빛 초록','먹빛','옅은 회록','짙은 인디고','연회색','유리색'],
+  hair_color:['검정','짙은 갈색','밝은 갈색','금발','밝은 금발','적갈색','붉은색','은발','백발','회색','무채색에 가까운 갈색','흑갈색','모래빛 금발','구리색','burgundy','붉은 흑발','차가운 금발','따뜻한 금발','연한 갈색','짙은 적발'],
+  hair_style:['짧은 단발','귀밑 단발','턱선 보브','어깨 생머리','긴 생머리','웨이브 미디엄','곱슬 숏','곱슬 롱','묶은 머리','반묶음','투블럭','올림머리','울프컷','레이어드 롱','뒤로 넘긴 숏','항상 흐트러진 머리','밀착 묶음','사이드 파트','뱅 있는 미디','무심하게 내린 긴 머리'],
+  skin:['매우 창백','창백한 편','밝은 편','보통','밀색','따뜻한 밀색','차가운 밀색','어두운 편','짙음','투명감 있는 흰','주근깨 있는 밝은','붉은 기 있는 밝은'],
+  body:['작고 마른 편','작고 단단한 편','평균, 보통','평균, 마른 편','큰 편, 마른 편','큰 편, 단단한 편','눈에 띄게 키 큼','눈에 띄게 키 작음','날렵한 중키','어깨 넓은 편'],
+  impression:['날카롭고 차가운','온화하고 부드러운','무표정하고 읽기 어려운','눈에 잘 안 띄는','자신감 있고 존재감 강한','어딘가 애틋해 보이는','친근하고 밝은','피곤해 보이는','기묘하고 신비로운','단정하고 정돈된','조용히 압도적인','웃고 있지만 눈이 안 웃는','오래 기억에 남는','한번 보면 못 잊는 인상','아무 생각 없어 보이는','어딘가 슬퍼 보이는','가볍고 장난스러운','차분하고 느린','흐트러진 듯 아닌 듯','얌전해 보이지만 이상한 구석 있는'],
+  gender:['여성','남성','논바이너리'],
+  role:['주인공','조연','악역','중간자','관찰자','서포터','라이벌','멘토','히든 카드','도화선','피해자','생존자','유일한 목격자','변수','내부자'],
+  age:['1학년 (11-12세)','2학년','3학년','4학년','5학년','6학년','7학년 (17-18세)'],
+  blood:['순수혈통','혼혈','머글태생'],
+  era:['1970년대','1991–1998','2010년대~'],
+  magic:['변환술','마법약','방어마법','점술','어둠의 마법','애니마구스','오러 계열','치유마법','마법생물 돌봄','룬 문자','레질리먼시 / 오클루먼시','파셀텅그','비행술','마법역사 전문','수리점술','강령 계열','결계마법','환영마법','소환술','속박마법'],
+  wood:['호랑가시나무','물푸레나무','오리나무','사과나무','블랙손','벚나무','버드나무','주목나무','참나무','느릅나무','호두나무','편백나무','라임나무','삼나무','마가목','서어나무','백합나무','오동나무','포플러','로즈우드'],
+  core:['불사조 깃털','용의 심줄','유니콘 털'],
+  wlen:['짧음 (~10인치)','평균 (10-12인치)','길음 (12인치~)'],
+  wflex:['단단함','약간 유연','유연함','매우 유연'],
+  patronus:['은빛 수달','흰 사슴','여우','올빼미','까마귀','검은 말','고양이','늑대','비둘기','매','토끼','봉황','발현 안 됨','흰 곰','백조','은빛 돌고래','살쾡이','흰 늑대','검은 여우','반딧불이','설표','흰 부엉이','수달','황금독수리','은빛 고양이'],
+  kw_bundles:[
+    ['겨울','체념','유리','잔존 애착','침묵'],
+    ['야망','냉소','완벽주의','균열된 자존심','빛을 원함'],
+    ['다정','체념','천천히 무너짐','오래된 상처','따뜻한 거리감'],
+    ['관찰','무표정','한번 각인되면 잊지 못함','조용한 집착','빈 공간'],
+    ['불안','과잉친절','버려짐 공포','낮은 자기확신','가면'],
+    ['자유','충동','규칙에 대한 반감','터질 듯한 에너지','그래도 혼자'],
+    ['오만','취약성 숨기기','완벽한 외관','내부 붕괴','고독'],
+    ['헌신','자기희생','나를 잃어버림','타인이 기준','쉽게 지침'],
+    ['경쟁','라이벌','인정 욕구','뒤처지는 악몽','외로운 1등'],
+    ['신비','비밀 보유','과거 없음','정체성 불명','매혹적인 공백'],
+    ['온기','보호본능','자신은 돌보지 않음','남은 잘 보살핌','따뜻하지만 공허함'],
+    ['냉소','회의주의','기대하지 않음','그래도 기대함','지쳐있는 이성'],
+    ['슬픔','잔잔함','오래된 체념','눈물 없는 슬픔','그냥 괜찮은 척'],
+    ['분노','억압','때가 오면 폭발','눌린 감정','차가운 분노'],
+    ['두려움','도망','먼저 이탈','버려지기 전에 버림','뒤돌아봄'],
+    ['순수','물들지 않음','오염될까 두려움','지키고 싶은 것','잃어가는 중'],
+    ['이중성','낮과 밤','알려진 나와 진짜 나','잘 숨김','들킨 적 없음'],
+    ['집착','손을 못 놓음','기억으로 붙잡음','점점 무거워짐','스스로도 모름'],
+    ['위기','한계점 직전','무너지기 직전의 평온','곧 터질 것','마지막 균형'],
+    ['부재','공백','채워지지 않는 곳','없는 것을 이름짓지 못함','오래된 결핍'],
+  ],
+  paradox:[
+    '사람을 아끼지만 관계를 오래 붙잡지 못함',
+    '자신을 낮추지만 실제론 누구보다 자존심이 강함',
+    '냉정해 보이지만 사소한 것에 오래 집착함',
+    '자유를 원하지만 혼자 있으면 무너짐',
+    '강해 보이지만 인정받지 못하면 아무것도 아닌 것 같아짐',
+    '남을 잘 돕지만 자신이 도움받는 건 못 견딤',
+    '기억력이 좋아서 오히려 놓아주지 못함',
+    '다가가고 싶지만 다가오는 상대를 밀어냄',
+    '완벽하게 보이려 하지만 혼자일 때 완전히 무너짐',
+    '쉽게 잊히는 척하지만 아무것도 잊지 못함',
+    '아무렇지 않아 보이지만 속은 항상 긴장 상태',
+    '상대를 너무 잘 이해해서 오히려 관계가 안 됨',
+    '자신을 싫어하지만 다른 사람이 자신을 낮추면 화가 남',
+    '따뜻하게 대하면서 속으론 관계를 이미 포기함',
+    '말은 직설적이지만 진짜 말은 절대 안 함',
+    '오래 참다가 한번에 무너짐',
+    '혼자인 게 편하다고 하면서 연락을 기다림',
+    '감정이 없어 보이지만 감정이 너무 많아서 닫아버린 것',
+    '사람을 믿지 않는다고 하면서 쉽게 상처받음',
+    '떠나는 사람을 붙잡지 않으면서 떠나지 말았으면 함',
+  ],
+  painful_q:[
+    '정말 잊고 싶지 않았던 사람도 있었어?',
+    '네가 강한 척 안 해도 될 때가 있었어?',
+    '누가 먼저 떠난 거야, 너야 상대야?',
+    '아직도 그 사람 생각해?',
+    '처음에 왜 그렇게 다가갔어?',
+    '정말 괜찮은 척이 아니라 진짜 괜찮은 적이 있었어?',
+    '그때 말했으면 달라졌을 것 같아?',
+    '혼자인 게 편해, 아니면 혼자여서 편한 척하는 거야?',
+    '네 진짜 모습을 본 사람이 있어?',
+    '지금 이게 진짜 네 삶이야?',
+    '언제부터 아무렇지 않은 척 시작했어?',
+    '그 사람이 돌아온다면, 받아줄 수 있어?',
+    '처음으로 운 게 언제야?',
+    '지금 네 옆에 있는 사람 중에 진짜라고 느끼는 사람 있어?',
+    '뭔가를 정말 원했던 적이 있어?',
+    '스스로를 용서한 적 있어?',
+    '누군가가 네 편이었던 적이 있어?',
+    '기억하고 싶지 않은 게 뭐야?',
+    '지금 잘하고 있다고 생각해?',
+    '마지막으로 진심으로 웃은 게 언제야?',
+  ],
+  desire:[
+    '인정받고 싶음','사랑받고 싶음','자유로워지고 싶음','강해지고 싶음','잊혀지고 싶음',
+    '특별해지고 싶음','그냥 쉬고 싶음','이기고 싶음','기억되고 싶음','한번만 선택받고 싶음',
+    '아무 이유 없이 사랑받고 싶음','평범해지고 싶음','그냥 존재해도 되는 곳이 있었으면',
+    '한 사람만 내 편이었으면','사라지고 싶음','아무도 모르는 곳에서 새로 시작하고 싶음',
+    '한번이라도 먼저 선택하고 싶음','약해져도 괜찮다는 말을 듣고 싶음',
+  ],
+  lack:[
+    '무조건적인 애정','안정된 기반','믿을 수 있는 한 사람','자기 자신에 대한 확신',
+    '평범한 일상','정말 쉴 수 있는 공간','포기해도 된다는 허락','기대지 않아도 되는 곳',
+    '처음부터 내 편이었던 사람','무너져도 괜찮다는 확신','이유 없이 좋아해주는 사람',
+    '오래 머물러도 되는 관계','완벽하지 않아도 되는 순간','처음이라는 감각','내 이름을 불러주는 사람',
+  ],
+  fear:[
+    '대체 가능한 존재가 되는 것','버려지는 것','스스로가 나쁜 사람임을 확인하는 것',
+    '아무도 진짜 자신을 모른 채 끝나는 것','통제를 잃는 것','약한 모습을 들키는 것',
+    '기억에서 잊혀지는 것','평범하게 사라지는 것','사랑하는 사람을 잃는 것',
+    '자신이 망가졌다는 걸 인정하는 것','아무것도 바뀌지 않는 것','혼자 남는 것',
+    '내가 결국 그 사람처럼 되는 것','진짜 원하는 걸 말했다가 거절당하는 것',
+    '이미 늦었다는 걸 알게 되는 것','아무도 찾아오지 않는 것',
+  ],
+  defense:[
+    '냉소','과잉친절','무관심한 척','완벽주의','선제 이탈','유머로 덮기',
+    '침묵','분노로 전환','바쁜 척','논리로 감정 대체','역할에 집중',
+    '관계를 얕게 유지','먼저 자신을 낮춤','상대를 분석함','화제 돌리기',
+    '도움으로 감정 회피','정보를 통제함','존재감을 지움',
+  ],
+  grow:[
+    '타인에게 기대는 법을 배움','자신을 있는 그대로 인정함','처음으로 먼저 손을 내밈',
+    '과거를 용서함','진짜 쉬는 법을 배움','아프다고 말하는 법을 배움',
+    '받는 것도 관계임을 앎','나 자신이 충분하다는 걸 받아들임',
+    '도망치지 않고 남아봄','처음으로 누군가를 믿어봄',
+    '이유 없이 행복해지는 법을 배움','자기 감정에 이름을 붙임',
+  ],
+  fall:[
+    '타인을 시험하며 관계를 망침','모두를 밀어내고 완전히 고립됨',
+    '자기 자신을 지워버림','반복되는 패턴에서 벗어나지 못함',
+    '집착이 집착인지 모름','점점 더 가면이 두꺼워짐',
+    '아무도 진짜 자신을 모르게 됨','사랑받기 위해 자신을 갈아없앰',
+    '한번의 배신으로 모두를 불신함','감정이 완전히 마비됨',
+    '목표만 남고 사람이 사라짐','혼자여도 아프지 않게 스스로를 훈련함',
+  ],
+};
+
+function pick(a){return a[Math.floor(Math.random()*a.length)]}
+
+// ── HOUSE CALC ─────────────────────────────────────────────
+const HKW={
+  g:['용기','용감','정의','열정','충동','모험','반항','직설','보호','도전','희생','솔직','충성','불굴','격정','의협심','과감','투지','본능','행동파','뜨거운','직진','폭발','감정적','충직','무모'],
+  s:['야망','냉정','전략','생존','교활','자존심','목적','카리스마','오만','지략','계산','집착','지배','우아함','냉소','자기보존','비밀','이중성','철저함','가면','냉혹','엘리트','자기애','욕망','통제','야심','권력','완벽한 외관','이중성','선택적'],
+  r:['지혜','호기심','분석','완벽','창의','관찰','논리','학구','탐구','독립','이성','철학','세심','기억력','디테일','몽상','상상','독서','지식욕','날카로움','고독','통찰','비판적','수집','깊이','섬세','정확'],
+  h:['성실','공정','인내','배려','온화','충성','헌신','다정','희생','친절','겸손','끈기','안정','따뜻함','신뢰','공감','봉사','수용','평화','진심','묵묵함','조력자','포용','진심','끈질김','오래 기다림','손 내밀기'],
+};
+const HN={g:'그리핀도르',s:'슬리데린',r:'래번클로',h:'후플푸프'};
+const HCL={g:'hg2',s:'hs2',r:'hr2',h:'hh2'};
+
+function calcHouse(txt,role,core){
+  const sc={g:0,s:0,r:0,h:0};
+  for(const[h,kws]of Object.entries(HKW)) for(const kw of kws) if(txt.includes(kw)) sc[h]++;
+  const rm={'악역':[['s',2]],'주인공':[['g',1],['h',.5]],'관찰자':[['r',1],['s',.5]],'서포터':[['h',2]],'멘토':[['r',1],['h',1]],'히든 카드':[['s',1],['r',.5]],'도화선':[['g',1],['s',1]],'생존자':[['h',1],['r',.5]]};
+  if(rm[role]) rm[role].forEach(([h,v])=>sc[h]+=v);
+  if((core||'').includes('불사조')) sc.g++;
+  if((core||'').includes('용의')) sc.s++;
+  if((core||'').includes('유니콘')) sc.h++;
+  const tot=Object.values(sc).reduce((a,b)=>a+b,0)||4;
+  const pct={};for(const h of Object.keys(sc)) pct[h]=Math.round(sc[h]/tot*100);
+  const ptot=Object.values(pct).reduce((a,b)=>a+b,0);
+  if(ptot!==100){const diff=100-ptot;const top=Object.entries(pct).sort((a,b)=>b[1]-a[1])[0][0];pct[top]+=diff;}
+  return pct;
+}
+
+// ── RANDOM ─────────────────────────────────────────────────
+function runRandom(){
+  const qn=gv('q_name'),qr=gv('q_role'),qg=gv('q_gender'),qh=gv('q_house'),qe=gv('q_era'),qb=gv('q_blood');
+  const gender=qg||pick(R.gender);
+  const ns = qNameStyle==='rand' ? pick(['ko','jp','en']) : qNameStyle;
+  const name = qn || buildName(ns, gender);
+  const role=qr||pick(R.role);
+  const blood=qb||pick(R.blood);
+  const era=qe||pick(R.era);
+  const kws=pick(R.kw_bundles);
+  const paradox=pick(R.paradox);
+  const pq=pick(R.painful_q);
+  const desire=pick(R.desire);
+  const lack=pick(R.lack);
+  const fear=pick(R.fear);
+  const defense=pick(R.defense);
+  const grow=pick(R.grow);
+  const fall=pick(R.fall);
+  const core=pick(R.core);
+  const pct=calcHouse([...kws,role,defense].join(' ').toLowerCase(),role,core);
+  const house=qh||Object.entries(pct).sort((a,b)=>b[1]-a[1])[0][0];
+  lastRand={
+    name,gender,role,blood,era,house,age:pick(R.age),
+    eye:pick(R.eye),hair_color:pick(R.hair_color),hair_style:pick(R.hair_style),
+    skin:pick(R.skin),body:pick(R.body),impression:pick(R.impression),
+    magic:pick(R.magic),wood:pick(R.wood),core,
+    wlen:pick(R.wlen),wflex:pick(R.wflex),patronus:pick(R.patronus),
+    kw1:kws[0]||'',kw2:kws[1]||'',kw3:kws[2]||'',sk1:kws[3]||'',sk2:kws[4]||'',
+    paradox,painful_q:pq,desire,lack,fear,defense,grow,fall,confirmed:'no',
+  };
+  renderRR(lastRand,pct);
+}
+
+function renderRR(d,pct){
+  const HN2={g:'그리핀도르',s:'슬리데린',r:'래번클로',h:'후플푸프'};
+  document.getElementById('rrApp').innerHTML=[
+    {l:'눈 색깔',v:d.eye},{l:'머리 색깔',v:d.hair_color},{l:'머리 스타일',v:d.hair_style},
+    {l:'피부 톤',v:d.skin},{l:'체형 / 키',v:d.body},{l:'첫인상',v:d.impression},
+  ].map(x=>`<div class="rr-item"><div class="rl">${x.l}</div><div class="rv">${x.v}</div></div>`).join('');
+  document.getElementById('rrSet').innerHTML=[
+    {l:'이름',v:d.name},{l:'성별',v:d.gender},{l:'역할군',v:d.role},
+    {l:'학년',v:d.age},{l:'혈통',v:d.blood},{l:'시대',v:d.era},
+    {l:'마법 특기',v:d.magic},{l:'지팡이',v:d.wood+' / '+d.core},
+    {l:'패트로누스',v:d.patronus},{l:'기숙사',v:HN2[d.house]},
+  ].map(x=>`<div class="rr-item"><div class="rl">${x.l}</div><div class="rv">${x.v}</div></div>`).join('');
+  const allKws=[d.kw1,d.kw2,d.kw3,d.sk1,d.sk2].filter(Boolean);
+  document.getElementById('rrKw').innerHTML=allKws.slice(0,3).map(k=>`<span class="rr-kw core">${k}</span>`).join('')+allKws.slice(3).map(k=>`<span class="rr-kw">${k}</span>`).join('');
+  document.getElementById('rrSec').innerHTML=[
+    {l:'핵심 모순',v:d.paradox},{l:'가장 아픈 질문',v:d.painful_q},
+    {l:'욕망',v:d.desire},{l:'결핍',v:d.lack},
+    {l:'두려움',v:d.fear},{l:'방어기제',v:d.defense},
+    {l:'성장 방향',v:d.grow},{l:'파멸 방향',v:d.fall},
+  ].map(x=>`<div class="rr-si"><div class="rl">${x.l}</div><div class="rv">${x.v}</div></div>`).join('');
+  document.getElementById('rrPanel').classList.add('on');
+  document.getElementById('rrPanel').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+function saveRandResult(){
+  if(!lastRand) return;
+  const c={id:genId(),createdAt:Date.now(),updatedAt:Date.now(),...lastRand};
+  chars.push(c);persist();render();
+  document.getElementById('rrPanel').classList.remove('on');
+  lastRand=null;
+}
+
+function shareTwitter(){
+  if(!lastRand) return;
+  const HN2={g:'그리핀도르',s:'슬리데린',r:'래번클로',h:'후플푸프'};
+  const kws=[lastRand.kw1,lastRand.kw2,lastRand.kw3].filter(Boolean).join(' · ');
+  const text=`[재능팔이범 자캐메이커]\n이름: ${lastRand.name}\n외형: ${lastRand.eye} 눈 / ${lastRand.hair_color} ${lastRand.hair_style} / ${lastRand.impression}\n기숙사: ${HN2[lastRand.house]}\n성격 키워드: ${kws}\n\n#자캐만들기 #자캐메이커`;
+  const url='https://twitter.com/intent/tweet?text='+encodeURIComponent(text);
+  window.open(url,'_blank','noopener,noreferrer');
+}
+
+function toggleQSet(){
+  const el=document.getElementById('qSet');
+  el.style.display=el.style.display==='none'?'block':'none';
+}
+
+function runHouseRec(){
+  const txt=['f_vibe','f_avoid','f_kw1','f_kw2','f_kw3','f_sk1','f_sk2','f_personality','f_relation','f_paradox'].map(gv).join(' ').toLowerCase();
+  const pct=calcHouse(txt,gv('f_role'),gv('f_core'));
+  const sorted=Object.entries(pct).sort((a,b)=>b[1]-a[1]);
+  const[w]=sorted[0];recHouse=w;
+  document.getElementById('hHero').className='hhero '+HCL[w];
+  document.getElementById('hHN').textContent=HN[w];
+  document.getElementById('hHP').textContent=pct[w]+'%';
+  ['G','S','R','H'].forEach(k=>{
+    document.getElementById('hb'+k).style.width=pct[k.toLowerCase()]+'%';
+    document.getElementById('hp'+k).textContent=pct[k.toLowerCase()]+'%';
+  });
+  document.getElementById('hDesc').innerHTML=`<strong>${HN[w]}</strong> 기질이 두드러져요. 두 번째 성향은 <strong>${HN[sorted[1][0]]}</strong>(${sorted[1][1]}%)`;
+  document.getElementById('housePanel').style.display='block';
+}
+
+// ── CRUD ───────────────────────────────────────────────────
+function genId(){return 'OC'+Date.now().toString(36).toUpperCase()}
+function gv(id){const e=document.getElementById(id);return e?e.value.trim():''}
+function sv(id,v){const e=document.getElementById(id);if(e)e.value=v||''}
+const FLDS=['eye','hair_color','hair_style','skin','body','impression','look','name','role','gender','age','blood','era','concept','magic','quidditch','wood','core','wlen','wflex','patronus','special','vibe','avoid','kw1','kw2','kw3','sk1','sk2','personality','relation','house','house_note','paradox','painful_q','desire','lack','fear','defense','grow','fall','narrative','symbol','confirmed','summary'];
+const PROG_F=['name','role','concept','vibe','kw1','kw2','kw3','eye','hair_color','hair_style','paradox','painful_q','house'];
+function buildChar(){
+  const c={id:editId||genId(),createdAt:Date.now(),updatedAt:Date.now()};
+  if(editId){const o=chars.find(x=>x.id===editId);if(o)c.createdAt=o.createdAt;}
+  FLDS.forEach(f=>{c[f]=gv('f_'+f)});
+  if(!c.house)c.house=recHouse;
+  return c;
+}
+function fillForm(c){FLDS.forEach(f=>sv('f_'+f,c[f]));recHouse=c.house||''}
+function calcProg(c){return Math.round(PROG_F.filter(f=>c[f]&&c[f]!=='').length/PROG_F.length*100)}
+function saveChar(){
+  const c=buildChar();
+  if(!c.name){alert('이름을 입력해주세요.');return;}
+  if(editId){const i=chars.findIndex(x=>x.id===editId);if(i!==-1)chars[i]=c;else chars.push(c);}
+  else chars.push(c);
+  persist();closeModal();render();
+}
+function deleteChar(id){if(!confirm('삭제할까요?'))return;chars=chars.filter(c=>c.id!==id);persist();render()}
+function dupChar(id){
+  const o=chars.find(c=>c.id===id);if(!o)return;
+  chars.push({...o,id:genId(),name:o.name+' (복사본)',confirmed:'no',createdAt:Date.now(),updatedAt:Date.now()});
+  persist();render();
+}
+function persist(){localStorage.setItem('oc_chars3',JSON.stringify(chars))}
+
+// ── RENDER ─────────────────────────────────────────────────
+const HNAMES={g:'그리핀도르',s:'슬리데린',r:'래번클로',h:'후플푸프'};
+function render(){
+  let list=chars.filter(c=>{
+    if(filterMode==='confirmed')return c.confirmed==='yes';
+    if(filterMode!=='all')return c.house===filterMode;
+    return true;
+  });
+  if(searchQ){const q=searchQ.toLowerCase();list=list.filter(c=>[c.name,c.concept,c.kw1,c.kw2,c.kw3,c.vibe,c.personality].join(' ').toLowerCase().includes(q));}
+  document.getElementById('charCount').textContent=`총 ${chars.length}명${list.length!==chars.length?` · 필터 결과 ${list.length}명`:''}`;
+  const grid=document.getElementById('charGrid');
+  if(!list.length){
+    grid.innerHTML=`<div class="empty"><h3>${chars.length===0?'아직 캐릭터가 없어요':'조건에 맞는 캐릭터가 없어요'}</h3><p>${chars.length===0?'올랜덤 생성을 눌러 바로 만들어봐요.':'다른 필터를 시도해보세요.'}</p></div>`;
+    return;
+  }
+  grid.innerHTML=list.map(c=>{
+    const h=c.house;
+    const chip=h?`<span class="hchip hc${h}">${HNAMES[h]}</span>`:`<span class="hchip hcn">기숙사 미정</span>`;
+    const kws=[c.kw1,c.kw2,c.kw3,c.sk1,c.sk2].filter(Boolean);
+    const prog=calcProg(c);
+    return `<div class="ccard h${h||''}" onclick="openModal('${c.id}')">
+      <div class="ctop">
+        <div><div class="cname">${c.name||'이름 없음'}</div><div class="cmeta">${c.id} · ${c.role||'역할 미정'} ${c.era?'· '+c.era:''}</div></div>
+        ${chip}
+      </div>
+      ${c.concept?`<div class="cconc">"${c.concept}"</div>`:''}
+      ${kws.length?`<div class="ktags">${kws.map(k=>`<span class="ktag">${k}</span>`).join('')}</div>`:''}
+      <div class="pb-wrap">
+        <div class="pb-lbl"><span>완성도</span><span>${prog}%</span></div>
+        <div class="pb-track"><div class="pb-fill" style="width:${prog}%"></div></div>
+      </div>
+      <div class="cfoot">
+        <span class="confchip ${c.confirmed==='yes'?'cy':'cn'}">${c.confirmed==='yes'?'확정됨':'작업 중'}</span>
+        <div class="cacts" onclick="event.stopPropagation()">
+          <button class="ibtn" onclick="dupChar('${c.id}')" title="복제">⧉</button>
+          <button class="ibtn del" onclick="deleteChar('${c.id}')" title="삭제">✕</button>
+        </div>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function setFilter(mode,btn){filterMode=mode;document.querySelectorAll('.fpill').forEach(b=>b.classList.remove('on'));btn.classList.add('on');render()}
+function doSearch(q){searchQ=q;render()}
+function openModal(id){
+  editId=id;mCur=0;recHouse='';
+  document.querySelectorAll('.mtab').forEach((t,i)=>t.classList.toggle('on',i===0));
+  document.querySelectorAll('.msec').forEach((s,i)=>s.classList.toggle('on',i===0));
+  document.getElementById('housePanel').style.display='none';
+  updMNav();
+  document.getElementById('mTitle').textContent=id?'캐릭터 수정':'새 캐릭터 만들기';
+  if(id){const c=chars.find(x=>x.id===id);if(c)fillForm(c);}
+  else{FLDS.forEach(f=>sv('f_'+f,''));sv('f_confirmed','no');}
+  document.getElementById('overlay').classList.add('on');
+  document.body.style.overflow='hidden';
+}
+function closeModal(){document.getElementById('overlay').classList.remove('on');document.body.style.overflow='';editId=null}
+function overlayClose(e){if(e.target===document.getElementById('overlay'))closeModal()}
+function goMTab(i,btn){
+  mCur=i;
+  document.querySelectorAll('.mtab').forEach((t,j)=>t.classList.toggle('on',j===i));
+  document.querySelectorAll('.msec').forEach((s,j)=>s.classList.toggle('on',j===i));
+  updMNav();
+}
+function mPrev(){if(mCur>0)goMTab(mCur-1,document.querySelectorAll('.mtab')[mCur-1])}
+function mNext(){if(mCur<MTABS-1)goMTab(mCur+1,document.querySelectorAll('.mtab')[mCur+1])}
+function updMNav(){document.getElementById('mPrev').disabled=mCur===0;document.getElementById('mNext').disabled=mCur===MTABS-1}
+function switchTab(id,btn){
+  document.querySelectorAll('.tab-pane').forEach(t=>t.classList.remove('on'));
+  document.getElementById(id).classList.add('on');
+  document.querySelectorAll('.nbtn').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+}
+function exportData(){
+  const b=new Blob([JSON.stringify({chars,ver:3,exportedAt:new Date().toISOString()},null,2)],{type:'application/json'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(b);
+  a.download='oc_chars_'+new Date().toLocaleDateString('ko-KR').replace(/[\. ]/g,'')+'.json';a.click();
+}
+function importData(ev){
+  const f=ev.target.files[0];if(!f)return;
+  const r=new FileReader();
+  r.onload=e=>{try{const d=JSON.parse(e.target.result);const list=d.chars||d.characters;if(list&&confirm(`${list.length}개 캐릭터를 불러올까요?`)){chars=[...chars,...list];persist();render();}}catch{alert('올바른 JSON 파일이 아니에요.');}};
+  r.readAsText(f);ev.target.value='';
+}
+render();
+</script>
+</body>
+</html>
