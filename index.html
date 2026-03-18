@@ -170,6 +170,70 @@ main{max-width:1360px;margin:0 auto;padding:28px}
   .rand-banner{flex-direction:column;gap:12px}.hresult{flex-direction:column}
   .hhero{width:100%;padding:12px}.rr-secret{grid-template-columns:1fr}
 }
+
+/* KW CAT TABS */
+.kw-cat-tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.kw-cat-btn{padding:5px 14px;border:1px solid var(--bdr);border-radius:20px;background:var(--wh);font-family:'Noto Serif KR',serif;font-size:.73rem;color:var(--ink3);cursor:pointer;transition:all .18s}
+.kw-cat-btn:hover{border-color:var(--acc);color:var(--ink)}.kw-cat-btn.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+/* KW GRID */
+.kw-count{font-size:.71rem;color:var(--ink4);margin-bottom:13px}
+.kw-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:14px}
+.kw-card{background:var(--wh);border:1px solid var(--bdr2);border-radius:6px;padding:15px 15px 11px;cursor:pointer;transition:box-shadow .2s,transform .2s;position:relative}
+.kw-card:hover{box-shadow:0 5px 18px rgba(38,22,10,.09);transform:translateY(-2px)}
+.kw-card-head{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:7px}
+.kw-word{font-family:'Playfair Display',serif;font-size:1.1rem;font-style:italic}
+.kw-badges{display:flex;gap:5px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
+.kw-cat-chip{font-size:.62rem;padding:2px 7px;border-radius:3px;background:var(--bg2);color:var(--ink3);border:1px solid var(--bdr2)}
+.kw-sub-chip{font-size:.62rem;color:var(--ink4)}
+.kw-str{font-size:.62rem;padding:1px 6px;border-radius:3px;font-weight:600}
+.str-low{background:#F0FFF0;color:#2E7D32;border:1px solid #C8E6C9}
+.str-mid{background:#FFF8E1;color:#E65100;border:1px solid #FFE082}
+.str-high{background:#FEE2E2;color:#991B1B;border:1px solid #FECACA}
+.kw-desc{font-size:.76rem;color:var(--ink3);line-height:1.55;margin-bottom:9px}
+.kw-row{display:flex;gap:6px;align-items:baseline;margin-bottom:5px;flex-wrap:wrap}
+.kw-row-label{font-size:.62rem;color:var(--ink4);flex-shrink:0;min-width:54px}
+.kw-chips{display:flex;flex-wrap:wrap;gap:4px}
+.kw-chip{font-size:.67rem;padding:2px 6px;border-radius:3px;background:var(--bg2);border:1px solid var(--bdr2);color:var(--ink2)}
+.kw-chip.danger{background:#FFF0F0;border-color:#FECACA;color:#991B1B}
+.kw-tone-tags{display:flex;flex-wrap:wrap;gap:4px;padding-top:9px;border-top:1px solid var(--bdr2);margin-top:8px}
+.tone-tag{font-size:.62rem;padding:2px 7px;border-radius:12px;border:1px solid var(--bdr);color:var(--ink3);background:var(--bg)}
+.kw-custom-badge{position:absolute;top:10px;right:10px;font-size:.58rem;padding:1px 5px;border-radius:3px;background:var(--acc2);color:var(--ink);font-weight:600;opacity:.7}
+
+/* COMB LAYOUT */
+.comb-layout{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:start}
+@media(max-width:800px){.comb-layout{grid-template-columns:1fr}}
+.comb-left{background:var(--wh);border:1px solid var(--bdr);border-radius:6px;padding:18px}
+.comb-right{display:flex;flex-direction:column;gap:0}
+.comb-section-title{font-size:.68rem;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--ink4);margin-bottom:10px}
+.comb-cat-row{display:flex;flex-wrap:wrap;gap:5px;margin-bottom:10px}
+.comb-kw-list{display:flex;flex-direction:column;gap:5px;max-height:460px;overflow-y:auto;scrollbar-width:thin}
+.comb-kw-item{display:flex;align-items:center;justify-content:space-between;padding:7px 10px;border:1px solid var(--bdr2);border-radius:4px;cursor:pointer;transition:all .15s;background:var(--bg)}
+.comb-kw-item:hover{border-color:var(--acc);background:var(--bg2)}
+.comb-kw-item.selected{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.comb-kw-item.selected .cki-cat{color:var(--ink4)}
+.comb-kw-item.disabled{opacity:.35;pointer-events:none}
+.cki-word{font-family:'Playfair Display',serif;font-size:.9rem;font-style:italic}
+.cki-cat{font-size:.62rem;color:var(--ink4)}
+/* SELECTED */
+.comb-selected{background:var(--wh);border:1px solid var(--bdr);border-radius:6px;padding:14px;min-height:70px;display:flex;flex-wrap:wrap;gap:8px;align-items:flex-start}
+.comb-empty-sel{font-size:.76rem;color:var(--ink4);font-style:italic;margin:auto}
+.comb-sel-tag{display:flex;align-items:center;gap:6px;background:var(--ink);color:var(--bg);padding:5px 10px;border-radius:4px;font-size:.78rem}
+.comb-sel-tag button{background:none;border:none;color:var(--bg);cursor:pointer;opacity:.6;font-size:.8rem;line-height:1;padding:0}
+.comb-sel-tag button:hover{opacity:1}
+/* RESULT BLOCKS */
+.comb-result-block{background:var(--wh);border:1px solid var(--bdr2);border-radius:6px;padding:14px 16px;margin-bottom:10px}
+.crb-title{font-size:.62rem;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--ink4);margin-bottom:8px}
+.crb-body{font-size:.82rem;color:var(--ink2);line-height:1.65}
+.crb-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:8px}
+.crb-tag{padding:3px 9px;border-radius:3px;font-size:.73rem;border:1px solid var(--bdr2);background:var(--bg2);color:var(--ink2)}
+.crb-tag.good{background:#EEF7EE;color:#2E7D32;border-color:#C8E6C9}
+.crb-tag.warn{background:#FFF7ED;color:#9C5A00;border-color:#FFE082}
+.crb-tag.danger{background:#FEE2E2;color:#991B1B;border-color:#FECACA}
+/* CLICHE BAR */
+.cliche-bar-wrap{margin-top:8px}
+.cliche-bar-track{height:8px;background:var(--bg3);border-radius:4px;overflow:hidden;margin-top:4px}
+.cliche-bar-fill{height:100%;border-radius:4px;transition:width .5s}
+.cl-low{background:#4CAF50}.cl-mid{background:#FF9800}.cl-high{background:#E53935}
 </style>
 </head>
 <body>
@@ -186,8 +250,8 @@ main{max-width:1360px;margin:0 auto;padding:28px}
 </header>
 <nav>
   <button class="nbtn on" onclick="switchTab('t1',this)">① 캐릭터 입력폼</button>
-  <button class="nbtn dim">② 키워드 사전</button>
-  <button class="nbtn dim">③ 조합 규칙표</button>
+  <button class="nbtn" onclick="switchTab('t2',this)">② 키워드 사전</button>
+  <button class="nbtn" onclick="switchTab('t3',this)">③ 조합 규칙표</button>
   <button class="nbtn dim">④ 심리/서사 축</button>
   <button class="nbtn dim">⑤ 관계/운용</button>
   <button class="nbtn dim">⑥ 최종 요약 카드</button>
@@ -196,7 +260,7 @@ main{max-width:1360px;margin:0 auto;padding:28px}
 <div id="t1" class="tab-pane on">
   <div class="sec-head">
     <div><div class="sec-title">캐릭터 입력폼</div><div class="sec-sub">카드를 클릭하면 수정할 수 있어요</div></div>
-    <button class="btn-p" onclick="openModal(null)">+ 직접 입력</button>
+    <div style="display:flex;gap:8px"><button class="btn-tw" onclick="shareCharList()">X 공유</button><button class="btn-p" onclick="openModal(null)">+ 직접 입력</button></div>
   </div>
   <div class="rand-banner">
     <div>
@@ -269,8 +333,100 @@ main{max-width:1360px;margin:0 auto;padding:28px}
   <div class="ccount" id="charCount"></div>
   <div class="cgrid" id="charGrid"></div>
 </div>
-<div id="t2" class="tab-pane"><div class="cs"><h2>키워드 사전</h2><p>다음 버전에서 만나요.</p></div></div>
-<div id="t3" class="tab-pane"><div class="cs"><h2>조합 규칙표</h2><p>다음 버전에서 만나요.</p></div></div>
+<div id="t2" class="tab-pane">
+  <div class="sec-head">
+    <div><div class="sec-title">키워드 사전</div><div class="sec-sub">대분류 탭으로 필터링 · 클릭하면 상세 정보를 볼 수 있어요</div></div>
+    <div style="display:flex;gap:8px"><button class="btn-tw" id="kwShareBtn" onclick="shareKwCard()">X 공유</button><button class="btn-p" onclick="openKwModal(null)">+ 키워드 추가</button></div>
+  </div>
+
+  <div class="kw-cat-tabs" id="kwCatTabs"></div>
+
+  <div style="display:flex;gap:8px;align-items:center;margin-bottom:18px;flex-wrap:wrap">
+    <input type="text" class="sbox" style="min-width:220px" placeholder="키워드 검색..." oninput="kwSearch(this.value)">
+    <div style="display:flex;gap:6px;flex-wrap:wrap" id="toneFilters"></div>
+    <div style="display:flex;gap:6px;margin-left:auto;flex-wrap:wrap" id="strFilters"></div>
+  </div>
+
+  <div class="kw-count" id="kwCount"></div>
+  <div class="kw-grid" id="kwGrid"></div>
+</div>
+
+<!-- KW DETAIL MODAL -->
+<div class="overlay" id="kwOverlay" onclick="kwOverlayClose(event)">
+<div class="modal" style="max-width:560px">
+  <div class="mhead">
+    <h2 id="kwMTitle">키워드 상세</h2>
+    <button class="xbtn" onclick="closeKwModal()">X</button>
+  </div>
+  <div class="mbody" style="max-height:72vh">
+    <div class="fgrid g2">
+      <div class="fg"><label>키워드 *</label><input id="kw_word" type="text" placeholder="예: 체념"></div>
+      <div class="fg"><label>대분류</label>
+        <select id="kw_cat">
+          <option value="분위기">분위기</option><option value="외형">외형</option><option value="성격">성격</option>
+          <option value="심리">심리</option><option value="관계">관계</option><option value="서사">서사</option>
+          <option value="말투">말투</option><option value="상징">상징</option><option value="색감">색감</option>
+          <option value="계절감">계절감</option><option value="감각/질감">감각/질감</option>
+        </select>
+      </div>
+      <div class="fg"><label>소분류</label><input id="kw_sub" type="text" placeholder="예: 체념 / 무기력"></div>
+      <div class="fg"><label>강도</label>
+        <select id="kw_str">
+          <option value="낮음">낮음</option><option value="보통">보통</option><option value="높음">높음</option>
+        </select>
+      </div>
+      <div class="fg full"><label>설명</label><textarea id="kw_desc" placeholder="이 키워드가 나타내는 것을 설명해요"></textarea></div>
+      <div class="fg full"><label>유사 키워드</label><input id="kw_similar" type="text" placeholder="쉼표로 구분: 포기, 무기력, 諦念"></div>
+      <div class="fg full"><label>반대 키워드</label><input id="kw_opposite" type="text" placeholder="쉼표로 구분: 저항, 투지, 열망"></div>
+      <div class="fg full"><label>함께 잘 붙는 키워드</label><input id="kw_pairs" type="text" placeholder="쉼표로 구분: 침묵, 겨울, 잔존 애착"></div>
+      <div class="fg full"><label>과해지기 쉬운 조합</label><input id="kw_danger" type="text" placeholder="쉼표로 구분: 우울, 무기력, 병약계"></div>
+      <div class="fg full"><label>톤 태그</label><input id="kw_tone" type="text" placeholder="쉼표로 구분: 서정적, 차가운, 무거운"></div>
+    </div>
+  </div>
+  <div class="mfoot">
+    <button class="btn-s" id="kwDelBtn" onclick="deleteKw()" style="color:#c0392b;border-color:#c0392b;display:none">삭제</button>
+    <div style="display:flex;gap:8px;margin-left:auto">
+      <button class="btn-s" onclick="closeKwModal()">취소</button>
+      <button class="btn-p" onclick="saveKw()">저장</button>
+    </div>
+  </div>
+</div>
+</div>
+<div id="t3" class="tab-pane">
+  <div class="sec-head">
+    <div><div class="sec-title">조합 규칙표</div><div class="sec-sub">키워드 2–3개를 선택하면 조합 분석 결과를 보여줘요</div></div>
+    <button class="btn-tw" onclick="shareCombResult()">X 공유</button>
+  </div>
+
+  <div class="comb-layout">
+    <!-- LEFT: selector -->
+    <div class="comb-left">
+      <div class="comb-section-title">키워드 선택 <span id="combSelCount" style="color:var(--ink4);font-weight:400">(0 / 3)</span></div>
+      <input type="text" class="sbox" style="width:100%;margin-bottom:10px;border-radius:3px" placeholder="키워드 검색..." oninput="combSearch(this.value)" id="combSearchInput">
+      <div class="comb-cat-row" id="combCatRow"></div>
+      <div class="comb-kw-list" id="combKwList"></div>
+    </div>
+
+    <!-- RIGHT: selected + result -->
+    <div class="comb-right">
+      <div class="comb-section-title">선택된 키워드</div>
+      <div class="comb-selected" id="combSelected">
+        <div class="comb-empty-sel">키워드를 선택하면 여기에 표시돼요</div>
+      </div>
+      <button class="btn-rand" style="width:100%;margin-top:10px;padding:10px" onclick="runCombAnalysis()" id="combAnalyzeBtn">조합 분석하기</button>
+
+      <!-- RESULT -->
+      <div id="combResult" style="display:none;margin-top:18px">
+        <div class="comb-result-block" id="crImpression"></div>
+        <div class="comb-result-block" id="crSynergy"></div>
+        <div class="comb-result-block" id="crCliche"></div>
+        <div class="comb-result-block" id="crTwist"></div>
+        <div class="comb-result-block" id="crConflict"></div>
+        <div class="comb-result-block" id="crSuggest"></div>
+      </div>
+    </div>
+  </div>
+</div>
 <div id="t4" class="tab-pane"><div class="cs"><h2>심리 / 서사 축</h2><p>다음 버전에서 만나요.</p></div></div>
 <div id="t5" class="tab-pane"><div class="cs"><h2>관계 / 운용</h2><p>다음 버전에서 만나요.</p></div></div>
 <div id="t6" class="tab-pane"><div class="cs"><h2>최종 요약 카드</h2><p>다음 버전에서 만나요.</p></div></div>
@@ -767,7 +923,7 @@ function shareTwitter(){
   if(!lastRand) return;
   const HN2={g:'그리핀도르',s:'슬리데린',r:'래번클로',h:'후플푸프'};
   const kws=[lastRand.kw1,lastRand.kw2,lastRand.kw3].filter(Boolean).join(' · ');
-  const text=`[재능팔이범 자캐메이커]\n이름: ${lastRand.name}\n외형: ${lastRand.eye} 눈 / ${lastRand.hair_color} ${lastRand.hair_style} / ${lastRand.impression}\n기숙사: ${HN2[lastRand.house]}\n성격 키워드: ${kws}\n\n#자캐만들기 #자캐메이커`;
+  const text='[재능팔이범 자캐메이커]\n이름: '+lastRand.name+'\n외형: '+lastRand.eye+' 눈 / '+lastRand.hair_color+' '+lastRand.hair_style+' / '+lastRand.impression+'\n기숙사: '+HN2[lastRand.house]+'\n성격 키워드: '+kws+'\n\n#자캐만들기 #자캐메이커';
   const url='https://twitter.com/intent/tweet?text='+encodeURIComponent(text);
   window.open(url,'_blank','noopener,noreferrer');
 }
@@ -907,7 +1063,514 @@ function importData(ev){
   r.onload=e=>{try{const d=JSON.parse(e.target.result);const list=d.chars||d.characters;if(list&&confirm(`${list.length}개 캐릭터를 불러올까요?`)){chars=[...chars,...list];persist();render();}}catch{alert('올바른 JSON 파일이 아니에요.');}};
   r.readAsText(f);ev.target.value='';
 }
+
+// ══════════════════════════════════════════════════════════
+//  KEYWORD DICTIONARY
+// ══════════════════════════════════════════════════════════
+const KW_CATS = ['전체','분위기','외형','성격','심리','관계','서사','말투','상징','색감','계절감','감각/질감'];
+const TONE_LIST = ['서정적','날카로운','따뜻한','차가운','무거운','가벼운','신비로운','어두운','밝은','일상적'];
+
+const BUILTIN_KW = [
+  // 분위기
+  {id:'b001',cat:'분위기',sub:'고요함',word:'침묵',desc:'소리가 없는 것이 아니라 말하지 않기로 선택한 상태. 억제된 감정의 공간.',similar:'고요,정적,무언',opposite:'폭발,직설,소란',pairs:'체념,관찰,거리감',danger:'감정 없음,냉담',tone:'차가운,무거운',str:'보통',custom:false},
+  {id:'b002',cat:'분위기',sub:'고요함',word:'정적',desc:'아무것도 일어나지 않는 것처럼 보이지만 내부에서 무언가 축적되고 있는 분위기.',similar:'침묵,공백,멈춤',opposite:'혼돈,활기',pairs:'겨울,유리,체념',danger:'무미건조',tone:'서정적,차가운',str:'낮음',custom:false},
+  {id:'b003',cat:'분위기',sub:'위태로움',word:'균열',desc:'표면은 멀쩡하지만 내부에서 이미 금이 가고 있는 상태. 곧 무너질 것 같은 긴장감.',similar:'파열 직전,금',opposite:'안정,견고',pairs:'완벽주의,가면,오만',danger:'지나친 비극화',tone:'무거운,날카로운',str:'높음',custom:false},
+  {id:'b004',cat:'분위기',sub:'위태로움',word:'위기',desc:'결정적인 순간이 다가오는 긴장감. 선택 앞에 선 상태.',similar:'한계점,폭발 직전',opposite:'평온,안도',pairs:'선택,분기점,전환',danger:'과도한 드라마',tone:'무거운,날카로운',str:'높음',custom:false},
+  {id:'b005',cat:'분위기',sub:'우아함',word:'단아함',desc:'꾸미지 않은 것처럼 보이지만 섬세하게 조율된 품위.',similar:'우아,고요한 품위',opposite:'화려함,과잉',pairs:'절제,침묵,자존심',danger:'냉담,접근 불가',tone:'서정적,차가운',str:'보통',custom:false},
+  {id:'b006',cat:'분위기',sub:'기묘함',word:'이질감',desc:'어딘가 어울리지 않는 느낌. 공간과 맞지 않는 존재.',similar:'어긋남,낯섦',opposite:'조화,자연스러움',pairs:'신비,관찰,비밀',danger:'설명 없는 특이함',tone:'신비로운,차가운',str:'보통',custom:false},
+  {id:'b007',cat:'분위기',sub:'따뜻함',word:'온기',desc:'의도하지 않아도 전해지는 따뜻함. 존재 자체로 주변을 데우는 성질.',similar:'따뜻함,온화',opposite:'냉기,거리감',pairs:'헌신,다정,공감',danger:'무조건 희생형',tone:'따뜻한,밝은',str:'낮음',custom:false},
+  {id:'b008',cat:'분위기',sub:'어둠',word:'잔존',desc:'과거의 감정이나 상처가 완전히 사라지지 않고 남아 있는 상태.',similar:'잔향,여운,흔적',opposite:'단절,청산',pairs:'겨울,체념,잔존 애착',danger:'과거에 갇힘',tone:'서정적,무거운',str:'보통',custom:false},
+  // 외형
+  {id:'b009',cat:'외형',sub:'실루엣',word:'날렵함',desc:'과하지 않게 긴장된 선. 움직임에 쓸데없음이 없는 인상.',similar:'날카로운 선,군더더기 없음',opposite:'풍성함,부드러운 선',pairs:'냉정,효율,야망',danger:'감정 없어 보임',tone:'날카로운,차가운',str:'낮음',custom:false},
+  {id:'b010',cat:'외형',sub:'표정',word:'무표정',desc:'감정을 드러내지 않는 표정. 읽히지 않는 얼굴.',similar:'포커페이스,감정 차단',opposite:'솔직한 표정,감정 표현',pairs:'관찰,냉정,이질감',danger:'인간미 없음',tone:'차가운,날카로운',str:'보통',custom:false},
+  {id:'b011',cat:'외형',sub:'표정',word:'눈빛',desc:'표정과 다른 눈. 입은 웃고 있지만 눈이 안 웃는 상태.',similar:'눈으로 말함,깊은 눈',opposite:'밝은 눈,순수한 눈빛',pairs:'이중성,가면,냉소',danger:'진부한 미스터리',tone:'신비로운,무거운',str:'높음',custom:false},
+  {id:'b012',cat:'외형',sub:'체형',word:'가느다람',desc:'약해 보이는 인상. 하지만 실제로 부러지지 않는 유연함.',similar:'마름,여림',opposite:'단단함,다부짐',pairs:'유리,겨울,창백',danger:'병약계 클리셰',tone:'서정적,차가운',str:'낮음',custom:false},
+  {id:'b013',cat:'외형',sub:'복식',word:'절제된 차림',desc:'과하지 않은 옷차림. 드러내지 않으려는 의지.',similar:'단정함,심플',opposite:'화려함,과시',pairs:'자존심,내향,냉정',danger:'개성 없음',tone:'차가운,일상적',str:'낮음',custom:false},
+  // 성격
+  {id:'b014',cat:'성격',sub:'내향',word:'관찰자',desc:'먼저 나서지 않고 지켜보는 유형. 많은 것을 알고 있지만 말하지 않는다.',similar:'조용함,내향',opposite:'외향,행동파',pairs:'침묵,지식욕,거리감',danger:'수동적',tone:'차가운,서정적',str:'보통',custom:false},
+  {id:'b015',cat:'성격',sub:'내향',word:'선택적',desc:'모두에게 열려 있지 않음. 신뢰하는 소수에게만 진짜 자신을 보임.',similar:'선별적,기준 높음',opposite:'개방적,무조건 친절',pairs:'거리감,신뢰 트리거,비밀',danger:'냉담해 보임',tone:'차가운,날카로운',str:'보통',custom:false},
+  {id:'b016',cat:'성격',sub:'극단',word:'완벽주의',desc:'실수를 용납하지 못하는 성향. 타인보다 자신에게 더 가혹.',similar:'결벽,꼼꼼함',opposite:'대충,유연',pairs:'균열,냉소,자기혐오',danger:'지나치면 피로함',tone:'무거운,날카로운',str:'높음',custom:false},
+  {id:'b017',cat:'성격',sub:'균형',word:'다정함',desc:'자연스럽게 타인을 배려하는 성향. 하지만 이유가 중요하다.',similar:'친절,온화',opposite:'냉담,무관심',pairs:'체념,자기희생,온기',danger:'성녀/성자형',tone:'따뜻한,서정적',str:'낮음',custom:false},
+  {id:'b018',cat:'성격',sub:'극단',word:'냉소',desc:'기대하지 않기로 결정한 상태. 상처에 대한 방어.',similar:'회의주의,비관',opposite:'순수,기대',pairs:'야망,균열,과거',danger:'매력 없는 부정주의',tone:'차가운,무거운',str:'높음',custom:false},
+  {id:'b019',cat:'성격',sub:'극단',word:'충동성',desc:'생각보다 먼저 몸이 움직이는 성향. 후회가 따를 수 있음.',similar:'즉흥,직진',opposite:'계산,신중',pairs:'열정,자유,분노',danger:'무책임해 보임',tone:'밝은,날카로운',str:'높음',custom:false},
+  {id:'b020',cat:'성격',sub:'내향',word:'섬세함',desc:'작은 것을 크게 느끼는 성향. 타인의 감정을 잘 읽는다.',similar:'예민함,세심함',opposite:'둔감,대범함',pairs:'공감,관찰,상처 잘 받음',danger:'지나친 감수성',tone:'서정적,따뜻한',str:'보통',custom:false},
+  // 심리
+  {id:'b021',cat:'심리',sub:'결핍',word:'버려짐 공포',desc:'가까워질수록 떠날 것이라는 두려움. 관계를 시작하기 어려운 이유.',similar:'이탈 불안,분리 불안',opposite:'안정 애착',pairs:'과잉친절,선제 이탈,집착',danger:'집착 클리셰',tone:'무거운,서정적',str:'높음',custom:false},
+  {id:'b022',cat:'심리',sub:'결핍',word:'인정 욕구',desc:'타인에게 가치를 확인받으려는 욕구. 스스로 확신이 없을 때 강해진다.',similar:'인정받고 싶음,가치 증명',opposite:'자기확신,무관심',pairs:'경쟁,완벽주의,자존심',danger:'공허한 성과주의',tone:'무거운,날카로운',str:'높음',custom:false},
+  {id:'b023',cat:'심리',sub:'욕망',word:'자유',desc:'제약으로부터 벗어나고 싶은 강한 충동. 때로는 외로움을 감수하는 선택.',similar:'해방,탈출',opposite:'속박,의존',pairs:'충동,저항,고독',danger:'방랑자 클리셰',tone:'밝은,날카로운',str:'보통',custom:false},
+  {id:'b024',cat:'심리',sub:'방어기제',word:'과잉친절',desc:'갈등을 피하기 위해 과도하게 상대를 배려함. 낮은 자기확신에서 기인.',similar:'비위맞춤,눈치봄',opposite:'직설,냉담',pairs:'버려짐 공포,낮은 자기확신',danger:'성녀형,무조건 희생',tone:'따뜻한,무거운',str:'보통',custom:false},
+  {id:'b025',cat:'심리',sub:'방어기제',word:'선제 이탈',desc:'버려지기 전에 먼저 떠나는 패턴. 관계를 지키기 위한 역설적 방법.',similar:'먼저 떠남,이탈',opposite:'머묾,관계 유지',pairs:'버려짐 공포,냉소,거리감',danger:'반복 패턴으로 지루함',tone:'무거운,서정적',str:'높음',custom:false},
+  {id:'b026',cat:'심리',sub:'두려움',word:'평범함',desc:'어떤 기억도 남기지 못하고 사라지는 것에 대한 두려움.',similar:'잊혀짐,무의미',opposite:'특별함,각인',pairs:'인정 욕구,야망,집착',danger:'특별함 강박',tone:'무거운,서정적',str:'보통',custom:false},
+  {id:'b027',cat:'심리',sub:'결핍',word:'무조건적 애정',desc:'이유나 조건 없이 받아도 되는 사랑에 대한 갈망.',similar:'무조건 받아들여짐',opposite:'조건부 사랑',pairs:'버려짐 공포,자기희생',danger:'신파',tone:'서정적,무거운',str:'높음',custom:false},
+  {id:'b028',cat:'심리',sub:'욕망',word:'각인',desc:'누군가의 기억에 깊게 새겨지고 싶은 욕구.',similar:'기억되고 싶음,흔적',opposite:'잊혀짐',pairs:'집착,잔존,상징',danger:'과한 집착',tone:'서정적,신비로운',str:'보통',custom:false},
+  // 관계
+  {id:'b029',cat:'관계',sub:'집착',word:'집착',desc:'손을 놓지 못하는 상태. 관계가 끝난 후에도 계속되는 연결.',similar:'매달림,놓지 못함',opposite:'초연,이탈',pairs:'잔존,기억,버려짐 공포',danger:'스토커 묘사',tone:'무거운,서정적',str:'높음',custom:false},
+  {id:'b030',cat:'관계',sub:'거리감',word:'거리감',desc:'가까워지지 않으려는 의식적 혹은 무의식적 경계.',similar:'선,벽,차단',opposite:'친밀감,신뢰',pairs:'선택적,관찰,냉정',danger:'차갑고 매력 없음',tone:'차가운,서정적',str:'보통',custom:false},
+  {id:'b031',cat:'관계',sub:'신뢰',word:'신뢰 트리거',desc:'작은 약속을 오래 지켜주는 것이 신뢰의 씨앗이 되는 유형.',similar:'신뢰 형성 계기',opposite:'배신 트리거',pairs:'선택적,섬세함,거리감',danger:'단순 설정',tone:'따뜻한,서정적',str:'낮음',custom:false},
+  {id:'b032',cat:'관계',sub:'의존',word:'자기희생',desc:'자신의 것을 내어주는 것이 익숙한 유형. 때로 자신을 잃는다.',similar:'헌신,희생',opposite:'자기중심,이기심',pairs:'다정함,온기,결핍',danger:'희생=미덕 클리셰',tone:'따뜻한,무거운',str:'높음',custom:false},
+  {id:'b033',cat:'관계',sub:'경쟁',word:'라이벌',desc:'서로를 끌어올리는 긴장감. 단순 적대와 다름.',similar:'경쟁자,호적수',opposite:'협력,일방적 추종',pairs:'인정 욕구,야망,경쟁',danger:'단순 악의',tone:'날카로운,밝은',str:'보통',custom:false},
+  // 서사
+  {id:'b034',cat:'서사',sub:'성장',word:'변화',desc:'사건을 통해 이전과 달라지는 과정. 방향이 중요하다.',similar:'성장,전환',opposite:'반복,고착',pairs:'선택,균열,만남',danger:'급격한 변화',tone:'밝은,따뜻한',str:'보통',custom:false},
+  {id:'b035',cat:'서사',sub:'파멸',word:'반복',desc:'같은 실수나 패턴이 계속되는 것. 파멸의 씨앗.',similar:'루프,고착',opposite:'변화,탈출',pairs:'집착,냉소,방어기제',danger:'지루함',tone:'무거운,서정적',str:'높음',custom:false},
+  {id:'b036',cat:'서사',sub:'전환',word:'만남',desc:'특정 인물과의 만남이 서사의 방향을 바꾸는 계기.',similar:'첫 만남,계기',opposite:'이별,고립',pairs:'신뢰 트리거,변화,각인',danger:'구원자 클리셰',tone:'따뜻한,서정적',str:'낮음',custom:false},
+  {id:'b037',cat:'서사',sub:'성장',word:'용서',desc:'상대 혹은 자신에 대한 용서. 가장 어려운 서사 과제 중 하나.',similar:'화해,내려놓음',opposite:'복수,집착',pairs:'체념,성장,과거',danger:'너무 쉬운 해결',tone:'따뜻한,무거운',str:'높음',custom:false},
+  {id:'b038',cat:'서사',sub:'파멸',word:'고립',desc:'모든 관계가 차단된 상태. 자발적이거나 강요된 외로움.',similar:'단절,혼자',opposite:'연결,공동체',pairs:'냉소,선제 이탈,침묵',danger:'자기연민 과잉',tone:'차가운,무거운',str:'높음',custom:false},
+  // 말투
+  {id:'b039',cat:'말투',sub:'직설',word:'직설',desc:'돌아가지 않는 말. 불편할 수 있지만 신뢰를 주기도 한다.',similar:'솔직함,직접적',opposite:'우회,침묵',pairs:'용기,자존심,냉정',danger:'무례로 읽힘',tone:'날카로운,일상적',str:'보통',custom:false},
+  {id:'b040',cat:'말투',sub:'침묵',word:'언어 절약',desc:'필요한 말만 한다. 과하지 않은 말이 더 큰 무게를 가짐.',similar:'과묵,말 없음',opposite:'수다,과잉',pairs:'관찰,거리감,단아함',danger:'소통 불가로 보임',tone:'차가운,서정적',str:'보통',custom:false},
+  {id:'b041',cat:'말투',sub:'우회',word:'비유',desc:'직접 말하지 않고 다른 것으로 감정을 전달하는 방식.',similar:'은유,상징적 표현',opposite:'직설',pairs:'서정적,신비,상징',danger:'이해 불가',tone:'서정적,신비로운',str:'낮음',custom:false},
+  {id:'b042',cat:'말투',sub:'과장',word:'유머로 덮기',desc:'진지해질 수 없을 때 웃음으로 넘기는 방어 방식.',similar:'자기비하 유머,웃음 방어',opposite:'직접 표현',pairs:'방어기제,가면,불안',danger:'가볍게만 보임',tone:'가벼운,어두운',str:'보통',custom:false},
+  // 상징
+  {id:'b043',cat:'상징',sub:'자연',word:'겨울',desc:'차갑고 고요한 절제. 기다림과 잔존의 계절.',similar:'냉기,서리,빙하',opposite:'여름,열기',pairs:'침묵,체념,잔존',danger:'우울 상징 남용',tone:'서정적,차가운',str:'보통',custom:false},
+  {id:'b044',cat:'상징',sub:'인공물',word:'유리',desc:'투명하지만 쉽게 깨지는 것. 보이지만 닿을 수 없는 경계.',similar:'거울,수면',opposite:'철,암석',pairs:'이질감,균열,거리감',danger:'과용 시 진부',tone:'서정적,차가운',str:'보통',custom:false},
+  {id:'b045',cat:'상징',sub:'신체',word:'눈 밑 그늘',desc:'피로와 오래된 감정의 흔적. 잠을 못 자거나 너무 많이 생각하는 사람.',similar:'피로감,흔적',opposite:'생기,밝음',pairs:'체념,잔존,과거',danger:'과한 비극화',tone:'서정적,무거운',str:'낮음',custom:false},
+  {id:'b046',cat:'상징',sub:'계절',word:'새벽',desc:'아직 아무것도 시작되지 않은 시간. 결심이 서는 순간.',similar:'여명,동트기 전',opposite:'한낮,황혼',pairs:'침묵,선택,전환',danger:'감상에 그침',tone:'서정적,차가운',str:'낮음',custom:false},
+  // 색감
+  {id:'b047',cat:'색감',sub:'무채색',word:'회색',desc:'결정이 내려지지 않은 중간. 명확하지 않은 존재감.',similar:'무채색,불분명',opposite:'선명한 색,흑백',pairs:'이질감,관찰,모호함',danger:'개성 없음',tone:'서정적,차가운',str:'낮음',custom:false},
+  {id:'b048',cat:'색감',sub:'한색',word:'은빛',desc:'차갑지만 빛나는. 냉정하지만 아름다운 존재.',similar:'달빛,얼음빛',opposite:'금빛,주황',pairs:'겨울,유리,단아함',danger:'너무 완벽한 캐릭터',tone:'서정적,차가운',str:'보통',custom:false},
+  {id:'b049',cat:'색감',sub:'난색',word:'붉음',desc:'감정의 색. 분노, 열정, 사랑이 동시에 있는 색.',similar:'진홍,적',opposite:'청색,차가운 색',pairs:'열정,분노,집착',danger:'진부한 열혈',tone:'날카로운,밝은',str:'높음',custom:false},
+  {id:'b050',cat:'색감',sub:'중간색',word:'새벽빛',desc:'낮도 밤도 아닌 색. 무언가가 시작되거나 끝나는 색.',similar:'여명빛,노을 전',opposite:'정오의 밝음',pairs:'새벽,전환,침묵',danger:'감상에 머뭄',tone:'서정적,신비로운',str:'낮음',custom:false},
+  // 계절감
+  {id:'b051',cat:'계절감',sub:'봄',word:'해빙',desc:'오래 얼어있던 것이 녹기 시작하는 순간. 감정의 재개.',similar:'녹음,봄기운',opposite:'결빙,동결',pairs:'변화,만남,용서',danger:'뻔한 성장 서사',tone:'따뜻한,서정적',str:'낮음',custom:false},
+  {id:'b052',cat:'계절감',sub:'여름',word:'폭발',desc:'억누르던 것이 한번에 터지는 순간. 여름 폭풍같은 감정.',similar:'터짐,분출',opposite:'억제,체념',pairs:'분노,충동,균열',danger:'과도한 드라마',tone:'날카로운,밝은',str:'높음',custom:false},
+  {id:'b053',cat:'계절감',sub:'가을',word:'낙엽',desc:'아름답게 지는 것. 끝을 받아들이는 쪽.',similar:'낙하,지는 것',opposite:'봄꽃,시작',pairs:'체념,잔존,이별',danger:'쓸쓸함만 남음',tone:'서정적,무거운',str:'보통',custom:false},
+  {id:'b054',cat:'계절감',sub:'겨울',word:'얼음',desc:'굳어버린 감정. 단단하지만 온도가 생기면 녹는다.',similar:'결빙,냉동',opposite:'녹음,해빙',pairs:'냉정,체념,균열',danger:'감정 없는 캐릭터',tone:'차가운,서정적',str:'보통',custom:false},
+  // 감각/질감
+  {id:'b055',cat:'감각/질감',sub:'촉각',word:'날카로움',desc:'닿으면 베일 것 같은 느낌. 긴장을 요구하는 존재감.',similar:'예리함,뾰족함',opposite:'부드러움,포근함',pairs:'냉소,무표정,눈빛',danger:'피로한 캐릭터',tone:'날카로운,차가운',str:'보통',custom:false},
+  {id:'b056',cat:'감각/질감',sub:'온도',word:'냉기',desc:'물리적 차가움이 아닌 심리적 온도. 가까이 가기 어려운 분위기.',similar:'서늘함,쌀쌀함',opposite:'온기,열기',pairs:'거리감,침묵,겨울',danger:'무조건 차가운 캐릭터',tone:'차가운,서정적',str:'보통',custom:false},
+  {id:'b057',cat:'감각/질감',sub:'소리',word:'공명',desc:'한 번 들으면 오래 남는 목소리나 말. 귓가에 맴도는 감각.',similar:'울림,여운',opposite:'무음,소음',pairs:'각인,침묵,상징',danger:'설명 과다',tone:'서정적,신비로운',str:'낮음',custom:false},
+  {id:'b058',cat:'감각/질감',sub:'빛',word:'역광',desc:'빛을 등지고 서 있는 형태. 표정이 보이지 않지만 존재는 강렬하다.',similar:'역광,실루엣',opposite:'정면광,밝음',pairs:'이질감,신비,모호함',danger:'단순 미화',tone:'신비로운,서정적',str:'낮음',custom:false},
+  // 추가 심리
+  {id:'b059',cat:'심리',sub:'방어기제',word:'가면',desc:'진짜 자신과 다른 얼굴을 유지하는 것. 오래 쓰면 구분이 어려워진다.',similar:'페르소나,역할',opposite:'솔직함,있는 그대로',pairs:'이중성,눈빛,완벽주의',danger:'미스터리 남용',tone:'무거운,차가운',str:'높음',custom:false},
+  {id:'b060',cat:'심리',sub:'욕망',word:'인정',desc:'타인에게 가치 있는 존재임을 확인받고 싶은 욕구.',similar:'인정받고 싶음,존중',opposite:'무관심,고독',pairs:'인정 욕구,경쟁,야망',danger:'공허한 트로피',tone:'무거운,날카로운',str:'높음',custom:false},
+  // 추가 분위기
+  {id:'b061',cat:'분위기',sub:'기묘함',word:'공백',desc:'있어야 할 것이 없는 자리. 채워지지 않은 곳.',similar:'빈 곳,결여',opposite:'충만,꽉 찬',pairs:'결핍,부재,침묵',danger:'설명 없이 방치',tone:'서정적,차가운',str:'보통',custom:false},
+  {id:'b062',cat:'분위기',sub:'위태로움',word:'한계점',desc:'더 이상 버틸 수 없는 직전. 폭발 혹은 붕괴의 예고.',similar:'극한,마지막',opposite:'여유,안도',pairs:'균열,위기,억압',danger:'과한 극적 장치',tone:'무거운,날카로운',str:'높음',custom:false},
+  {id:'b063',cat:'분위기',sub:'고요함',word:'여운',desc:'무언가가 끝난 후 남는 감각. 말해지지 않은 것들.',similar:'잔향,울림',opposite:'단절,깔끔한 마무리',pairs:'이별,잔존,비유',danger:'감상에만 머뭄',tone:'서정적,무거운',str:'낮음',custom:false},
+  {id:'b064',cat:'관계',sub:'신뢰',word:'오래된 관계',desc:'시간이 만든 신뢰. 말하지 않아도 아는 사이.',similar:'구면,오래 함께함',opposite:'처음 만남',pairs:'침묵,신뢰 트리거,안정',danger:'현재 갈등 부재',tone:'따뜻한,서정적',str:'낮음',custom:false},
+  {id:'b065',cat:'서사',sub:'전환',word:'이별',desc:'서사의 전환점이 되는 이별. 성장의 계기 혹은 파멸의 시작.',similar:'작별,헤어짐',opposite:'만남,재회',pairs:'낙엽,체념,잔존',danger:'이별 = 사건으로만',tone:'무거운,서정적',str:'높음',custom:false},
+  {id:'b066',cat:'성격',sub:'외향',word:'주도성',desc:'상황을 끌고 가는 힘. 먼저 움직이는 유형.',similar:'리더십,적극성',opposite:'수동적,관찰자',pairs:'야망,자신감,도전',danger:'독단적으로 보임',tone:'날카로운,밝은',str:'보통',custom:false},
+  {id:'b067',cat:'성격',sub:'균형',word:'온화함',desc:'격렬하지 않은 따뜻함. 주변을 편하게 하는 성향.',similar:'부드러움,순한',opposite:'격렬함,날카로움',pairs:'온기,공감,인내',danger:'존재감 없음',tone:'따뜻한,일상적',str:'낮음',custom:false},
+  {id:'b068',cat:'심리',sub:'두려움',word:'통제 상실',desc:'상황이 내 손을 벗어나는 것에 대한 공포.',similar:'무력감,놓침',opposite:'통제,주도권',pairs:'완벽주의,가면,야망',danger:'집착과 혼동',tone:'무거운,날카로운',str:'높음',custom:false},
+  {id:'b069',cat:'상징',sub:'인공물',word:'거울',desc:'자신을 마주하는 도구이자 타인을 비추는 장치.',similar:'반영,복사',opposite:'불투명,차단',pairs:'이중성,정체성,자기혐오',danger:'나르시시즘',tone:'신비로운,차가운',str:'보통',custom:false},
+  {id:'b070',cat:'말투',sub:'침묵',word:'여백',desc:'말하지 않는 공간이 더 많은 것을 말하는 경우.',similar:'여백,공백',opposite:'설명,과잉',pairs:'서정적,비유,침묵',danger:'이해 불가',tone:'서정적,신비로운',str:'낮음',custom:false},
+  {id:'b071',cat:'감각/질감',sub:'촉각',word:'무게감',desc:'존재 자체가 주는 묵직함. 가볍지 않은 사람.',similar:'중압감,무거움',opposite:'가벼움,경쾌함',pairs:'침묵,단아함,완벽주의',danger:'답답함',tone:'무거운,차가운',str:'보통',custom:false},
+  {id:'b072',cat:'색감',sub:'무채색',word:'검정',desc:'흡수하는 색. 드러내지 않는 존재감.',similar:'먹,어둠',opposite:'흰색,빛',pairs:'야망,가면,냉정',danger:'악역 클리셰',tone:'차가운,어두운',str:'보통',custom:false},
+  {id:'b073',cat:'계절감',sub:'봄',word:'개화',desc:'오래 닫혀 있던 것이 처음으로 열리는 순간.',similar:'개방,시작',opposite:'닫힘,동면',pairs:'변화,해빙,만남',danger:'갑작스러운 변화',tone:'따뜻한,밝은',str:'낮음',custom:false},
+  {id:'b074',cat:'관계',sub:'집착',word:'각인',desc:'한 번 새겨지면 지워지지 않는 존재. 기억에 남는 방식.',similar:'흔적,새김',opposite:'잊혀짐,희미해짐',pairs:'집착,잔존,눈빛',danger:'스토커 묘사',tone:'서정적,무거운',str:'높음',custom:false},
+  {id:'b075',cat:'심리',sub:'결핍',word:'존재 증명',desc:'내가 여기 있다는 것을 확인받으려는 욕구.',similar:'존재감,인정',opposite:'무관심,사라짐',pairs:'인정 욕구,각인,공백',danger:'자기중심적',tone:'무거운,서정적',str:'높음',custom:false},
+  {id:'b076',cat:'외형',sub:'표정',word:'잔잔함',desc:'감정이 없는 것이 아닌 감정을 드러내지 않는 표정.',similar:'평온,안정된 얼굴',opposite:'풍부한 표정',pairs:'침묵,관찰,거리감',danger:'무표정과 혼동',tone:'차가운,서정적',str:'낮음',custom:false},
+  {id:'b077',cat:'서사',sub:'반복',word:'되풀이',desc:'같은 상황이 다른 방식으로 반복되는 패턴.',similar:'반복,루프',opposite:'탈출,변화',pairs:'방어기제,집착,과거',danger:'지루함',tone:'무거운,서정적',str:'보통',custom:false},
+  {id:'b078',cat:'감각/질감',sub:'빛',word:'그늘',desc:'빛이 닿지 않는 부분. 감춰진 곳.',similar:'음지,어두운 부분',opposite:'빛,양지',pairs:'눈 밑 그늘,공백,이중성',danger:'어두운 설정 남용',tone:'어두운,서정적',str:'보통',custom:false},
+  {id:'b079',cat:'말투',sub:'우회',word:'함축',desc:'많은 의미를 짧게 담는 말. 이해하는 사람만 안다.',similar:'함의,줄임',opposite:'설명,풀어씀',pairs:'서정적,각인,비유',danger:'불친절한 서술',tone:'서정적,날카로운',str:'보통',custom:false},
+  {id:'b080',cat:'분위기',sub:'따뜻함',word:'안식',desc:'긴장이 풀리는 공간이나 관계. 돌아갈 수 있는 곳.',similar:'쉼,귀환',opposite:'긴장,위기',pairs:'신뢰,온기,오래된 관계',danger:'갈등 없음',tone:'따뜻한,서정적',str:'낮음',custom:false},
+];
+
+let customKw = JSON.parse(localStorage.getItem('oc_custom_kw3') || '[]');
+let allKw = () => [...BUILTIN_KW, ...customKw];
+
+let kwCatFilter = '전체';
+let kwSearchQ = '';
+let kwToneFilter = '';
+let kwStrFilter = '';
+let editKwId = null;
+
+function renderKwCats() {
+  document.getElementById('kwCatTabs').innerHTML = KW_CATS.map(c =>
+    `<button class="kw-cat-btn${c===kwCatFilter?' on':''}" onclick="setKwCat('${c}',this)">${c}</button>`
+  ).join('');
+}
+
+function renderToneFilters() {
+  document.getElementById('toneFilters').innerHTML = TONE_LIST.map(t =>
+    `<button class="kw-cat-btn" style="font-size:.67rem;padding:3px 10px" onclick="toggleTone('${t}',this)">${t}</button>`
+  ).join('');
+}
+
+function renderStrFilters() {
+  document.getElementById('strFilters').innerHTML = ['낮음','보통','높음'].map(s =>
+    `<button class="kw-cat-btn" style="font-size:.67rem;padding:3px 10px" onclick="toggleStr('${s}',this)">${s}</button>`
+  ).join('');
+}
+
+function setKwCat(c, btn) {
+  kwCatFilter = c;
+  document.querySelectorAll('#kwCatTabs .kw-cat-btn').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  renderKwGrid();
+}
+function toggleTone(t, btn) {
+  kwToneFilter = kwToneFilter===t ? '' : t;
+  document.querySelectorAll('#toneFilters .kw-cat-btn').forEach(b=>b.classList.remove('on'));
+  if(kwToneFilter) btn.classList.add('on');
+  renderKwGrid();
+}
+function toggleStr(s, btn) {
+  kwStrFilter = kwStrFilter===s ? '' : s;
+  document.querySelectorAll('#strFilters .kw-cat-btn').forEach(b=>b.classList.remove('on'));
+  if(kwStrFilter) btn.classList.add('on');
+  renderKwGrid();
+}
+function kwSearch(q) { kwSearchQ = q; renderKwGrid(); }
+
+function renderKwGrid() {
+  let list = allKw();
+  if (kwCatFilter !== '전체') list = list.filter(k=>k.cat===kwCatFilter);
+  if (kwSearchQ) {
+    const q = kwSearchQ.toLowerCase();
+    list = list.filter(k=>(k.word+k.desc+k.similar+k.pairs+k.tone+k.sub).toLowerCase().includes(q));
+  }
+  if (kwToneFilter) list = list.filter(k=>k.tone.includes(kwToneFilter));
+  if (kwStrFilter) list = list.filter(k=>k.str===kwStrFilter);
+  document.getElementById('kwCount').textContent = `${list.length}개 키워드`;
+  const strCls = {낮음:'str-low',보통:'str-mid',높음:'str-high'};
+  document.getElementById('kwGrid').innerHTML = list.map(k => {
+    const sim = k.similar ? k.similar.split(',').map(x=>`<span class="kw-chip">${x.trim()}</span>`).join('') : '';
+    const opp = k.opposite ? k.opposite.split(',').map(x=>`<span class="kw-chip">${x.trim()}</span>`).join('') : '';
+    const pairs = k.pairs ? k.pairs.split(',').map(x=>`<span class="kw-chip">${x.trim()}</span>`).join('') : '';
+    const danger = k.danger ? k.danger.split(',').map(x=>`<span class="kw-chip danger">${x.trim()}</span>`).join('') : '';
+    const tones = k.tone ? k.tone.split(',').map(x=>`<span class="tone-tag">${x.trim()}</span>`).join('') : '';
+    return `<div class="kw-card" onclick="openKwModal('${k.id}')">
+      ${k.custom ? '<div class="kw-custom-badge">직접추가</div>' : ''}
+      <div class="kw-card-head">
+        <div>
+          <div class="kw-word">${k.word}</div>
+          <div class="kw-sub-chip">${k.cat} · ${k.sub}</div>
+        </div>
+        <span class="kw-str ${strCls[k.str]||'str-mid'}">${k.str}</span>
+      </div>
+      <div class="kw-desc">${k.desc}</div>
+      ${sim?`<div class="kw-row"><span class="kw-row-label">유사</span><div class="kw-chips">${sim}</div></div>`:''}
+      ${opp?`<div class="kw-row"><span class="kw-row-label">반대</span><div class="kw-chips">${opp}</div></div>`:''}
+      ${pairs?`<div class="kw-row"><span class="kw-row-label">잘 붙는</span><div class="kw-chips">${pairs}</div></div>`:''}
+      ${danger?`<div class="kw-row"><span class="kw-row-label">위험조합</span><div class="kw-chips">${danger}</div></div>`:''}
+      ${tones?`<div class="kw-tone-tags">${tones}</div>`:''}
+    </div>`;
+  }).join('') || '<div class="empty" style="grid-column:1/-1"><h3>조건에 맞는 키워드가 없어요</h3><p>필터를 바꿔보거나 직접 추가해보세요.</p></div>';
+}
+
+function openKwModal(id) {
+  if(id) lastViewedKwId = id;
+  editKwId = id;
+  const kw = id ? allKw().find(k=>k.id===id) : null;
+  document.getElementById('kwMTitle').textContent = kw ? '키워드 수정' : '새 키워드 추가';
+  document.getElementById('kwDelBtn').style.display = (kw && kw.custom) ? 'inline-flex' : 'none';
+  ['word','cat','sub','str','desc','similar','opposite','pairs','danger','tone'].forEach(f => {
+    const el = document.getElementById('kw_'+f);
+    if (el) el.value = kw ? (kw[f]||'') : '';
+  });
+  if (!kw) {
+    document.getElementById('kw_str').value = '보통';
+    document.getElementById('kw_cat').value = kwCatFilter !== '전체' ? kwCatFilter : '분위기';
+  }
+  document.getElementById('kwOverlay').classList.add('on');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeKwModal() {
+  document.getElementById('kwOverlay').classList.remove('on');
+  document.body.style.overflow = '';
+  editKwId = null;
+}
+
+function kwOverlayClose(e) {
+  if(e.target===document.getElementById('kwOverlay')) closeKwModal();
+}
+
+function saveKw() {
+  const word = document.getElementById('kw_word').value.trim();
+  if(!word) { alert('키워드를 입력해주세요.'); return; }
+  const entry = {
+    id: editKwId && customKw.find(k=>k.id===editKwId) ? editKwId : 'ck'+Date.now(),
+    custom: true,
+    word, cat: document.getElementById('kw_cat').value,
+    sub: document.getElementById('kw_sub').value.trim(),
+    str: document.getElementById('kw_str').value,
+    desc: document.getElementById('kw_desc').value.trim(),
+    similar: document.getElementById('kw_similar').value.trim(),
+    opposite: document.getElementById('kw_opposite').value.trim(),
+    pairs: document.getElementById('kw_pairs').value.trim(),
+    danger: document.getElementById('kw_danger').value.trim(),
+    tone: document.getElementById('kw_tone').value.trim(),
+  };
+  if (editKwId && customKw.find(k=>k.id===editKwId)) {
+    const i = customKw.findIndex(k=>k.id===editKwId);
+    customKw[i] = entry;
+  } else {
+    customKw.push(entry);
+  }
+  localStorage.setItem('oc_custom_kw3', JSON.stringify(customKw));
+  closeKwModal();
+  renderKwGrid();
+}
+
+function deleteKw() {
+  if(!editKwId || !confirm('삭제할까요?')) return;
+  customKw = customKw.filter(k=>k.id!==editKwId);
+  localStorage.setItem('oc_custom_kw3', JSON.stringify(customKw));
+  closeKwModal();
+  renderKwGrid();
+}
+
+function initKwTab() {
+  renderKwCats();
+  renderToneFilters();
+  renderStrFilters();
+  renderKwGrid();
+}
+
+
+// ══════════════════════════════════════════════════════════
+//  COMBINATION TABLE (TAB 3)
+// ══════════════════════════════════════════════════════════
+let combSelected = [];   // max 3 keyword ids
+let combCatF = '전체';
+let combSearchQ = '';
+let lastCombResult = null;
+
+const TWIST_POOL = [
+  (w) => `"${w}"이지만 그 감정의 출처가 결핍이 아닌 선택일 때`,
+  (w) => `"${w}"처럼 보이지만 실제론 반대 감정을 억압 중일 때`,
+  (w) => `"${w}"인데 그것이 자신을 지키는 유일한 방법일 때`,
+  (w) => `"${w}"의 원인이 과거 특정 사건 하나로 좁혀질 때`,
+  (w) => `"${w}"이지만 특정 한 사람 앞에서만 풀릴 때`,
+  (w) => `"${w}"을 스스로는 인지하지 못하는 경우`,
+  (w) => `"${w}"이 처음엔 의도적이었으나 지금은 습관이 된 경우`,
+];
+
+const IMPRESSION_POOL = {
+  high_synergy: [
+    '서로를 증폭시키는 조합이에요. 감정의 층위가 깊고 복잡한 캐릭터가 만들어져요.',
+    '각 키워드가 서로의 의미를 강화해요. 일관성 있는 내면이 느껴질 거예요.',
+    '이 키워드들은 같은 심리적 뿌리에서 자라나는 경향이 있어요.',
+  ],
+  mid_synergy: [
+    '어울리는 부분도 있지만 약간의 긴장감이 있는 조합이에요. 그 긴장이 오히려 입체감을 줄 수 있어요.',
+    '충분히 가능한 조합이에요. 조화보다는 대비가 캐릭터의 핵심이 될 것 같아요.',
+    '연결고리가 약한 편이에요. 이 키워드들이 공존하는 이유를 서사로 설명하면 더 강해져요.',
+  ],
+  low_synergy: [
+    '이질적인 조합이에요. 일부러 어긋나는 캐릭터를 만들고 싶다면 오히려 좋은 선택이에요.',
+    '충돌하는 키워드가 포함돼 있어요. 이 모순을 핵심 모순으로 삼으면 독창적인 캐릭터가 될 수 있어요.',
+  ],
+};
+
+const SUGGEST_BY_CAT = {
+  '심리':  ['겨울','침묵','유리','잔존','균열'],
+  '성격':  ['관찰','거리감','선택적'],
+  '분위기':['체념','냉소','가면'],
+  '관계':  ['신뢰 트리거','오래된 관계','이질감'],
+  '서사':  ['변화','이별','반복'],
+  '상징':  ['새벽','역광','공명'],
+};
+
+function initCombTab() {
+  renderCombCats();
+  renderCombKwList();
+}
+
+function renderCombCats() {
+  const el = document.getElementById('combCatRow');
+  if (!el) return;
+  el.innerHTML = ['전체',...KW_CATS.slice(1)].map(c =>
+    `<button class="kw-cat-btn${c===combCatF?' on':''}" style="font-size:.67rem;padding:3px 10px" onclick="setCombCat('${c}',this)">${c}</button>`
+  ).join('');
+}
+
+function setCombCat(c, btn) {
+  combCatF = c;
+  document.querySelectorAll('#combCatRow .kw-cat-btn').forEach(b=>b.classList.remove('on'));
+  btn.classList.add('on');
+  renderCombKwList();
+}
+
+function combSearch(q) { combSearchQ = q; renderCombKwList(); }
+
+function renderCombKwList() {
+  let list = allKw();
+  if (combCatF !== '전체') list = list.filter(k=>k.cat===combCatF);
+  if (combSearchQ) {
+    const q = combSearchQ.toLowerCase();
+    list = list.filter(k=>(k.word+k.sub+k.cat).toLowerCase().includes(q));
+  }
+  const el = document.getElementById('combKwList');
+  if (!el) return;
+  el.innerHTML = list.map(k => {
+    const isSel = combSelected.includes(k.id);
+    const isDisabled = !isSel && combSelected.length >= 3;
+    return `<div class="comb-kw-item${isSel?' selected':''}${isDisabled?' disabled':''}" onclick="toggleCombKw('${k.id}')">
+      <div><div class="cki-word">${k.word}</div><div class="cki-cat">${k.cat} · ${k.sub}</div></div>
+      <div style="font-size:.8rem;opacity:.5">${isSel?'✓':''}</div>
+    </div>`;
+  }).join('') || '<div style="font-size:.78rem;color:var(--ink4);padding:10px">결과가 없어요</div>';
+}
+
+function toggleCombKw(id) {
+  if (combSelected.includes(id)) {
+    combSelected = combSelected.filter(x=>x!==id);
+  } else {
+    if (combSelected.length >= 3) return;
+    combSelected.push(id);
+  }
+  updateCombSelected();
+  renderCombKwList();
+}
+
+function updateCombSelected() {
+  const el = document.getElementById('combSelected');
+  const countEl = document.getElementById('combSelCount');
+  if (countEl) countEl.textContent = `(${combSelected.length} / 3)`;
+  if (!combSelected.length) {
+    el.innerHTML = '<div class="comb-empty-sel">키워드를 선택하면 여기에 표시돼요</div>';
+    document.getElementById('combResult').style.display = 'none';
+    return;
+  }
+  el.innerHTML = combSelected.map(id => {
+    const kw = allKw().find(k=>k.id===id);
+    if (!kw) return '';
+    return `<div class="comb-sel-tag">${kw.word}<button onclick="toggleCombKw('${id}');event.stopPropagation()">✕</button></div>`;
+  }).join('');
+}
+
+function runCombAnalysis() {
+  if (!combSelected.length) return;
+  const selected = combSelected.map(id => allKw().find(k=>k.id===id)).filter(Boolean);
+
+  // Synergy score: check pairs
+  let synergyScore = 0;
+  const synergyPairs = [];
+  for (let i=0; i<selected.length; i++) {
+    for (let j=i+1; j<selected.length; j++) {
+      const a = selected[i], b = selected[j];
+      const aPairs = (a.pairs||'').split(',').map(x=>x.trim());
+      const bPairs = (b.pairs||'').split(',').map(x=>x.trim());
+      if (aPairs.some(p=>b.word.includes(p)||p.includes(b.word))) { synergyScore+=2; synergyPairs.push([a.word,b.word]); }
+      if (bPairs.some(p=>a.word.includes(p)||p.includes(a.word))) { synergyScore+=2; if(!synergyPairs.find(p=>p[0]===a.word)) synergyPairs.push([a.word,b.word]); }
+    }
+  }
+
+  // Conflict: check danger or opposite
+  const conflicts = [];
+  for (let i=0; i<selected.length; i++) {
+    for (let j=i+1; j<selected.length; j++) {
+      const a = selected[i], b = selected[j];
+      const aDanger = (a.danger||'').split(',').map(x=>x.trim());
+      const bDanger = (b.danger||'').split(',').map(x=>x.trim());
+      const aOpp = (a.opposite||'').split(',').map(x=>x.trim());
+      const bOpp = (b.opposite||'').split(',').map(x=>x.trim());
+      if (aDanger.some(d=>b.word.includes(d)||d.includes(b.word))) conflicts.push(`"${a.word}" 과 "${b.word}" — 위험 조합 경고`);
+      if (aOpp.some(d=>b.word.includes(d)||d.includes(b.word))) conflicts.push(`"${a.word}" 과 "${b.word}" — 반대 방향 키워드`);
+    }
+  }
+
+  // Cliche risk
+  const highCount = selected.filter(k=>k.str==='높음').length;
+  const totalStr = selected.reduce((s,k)=>s+(k.str==='높음'?2:k.str==='보통'?1:0),0);
+  const maxStr = selected.length * 2;
+  const clicheScore = Math.round((highCount/selected.length*50) + (totalStr/maxStr*50));
+
+  // Tone blend
+  const allTones = selected.flatMap(k=>(k.tone||'').split(',').map(x=>x.trim())).filter(Boolean);
+  const toneCount = {};
+  allTones.forEach(t=>toneCount[t]=(toneCount[t]||0)+1);
+  const dominant = Object.entries(toneCount).sort((a,b)=>b[1]-a[1]).slice(0,3).map(e=>e[0]);
+
+  // Impression
+  const level = synergyScore >= 4 ? 'high_synergy' : synergyScore >= 1 ? 'mid_synergy' : 'low_synergy';
+  const impression = IMPRESSION_POOL[level][Math.floor(Math.random()*IMPRESSION_POOL[level].length)];
+
+  // Twist
+  const twistBase = selected[Math.floor(Math.random()*selected.length)].word;
+  const twist = TWIST_POOL[Math.floor(Math.random()*TWIST_POOL.length)](twistBase);
+
+  // Suggest next kw
+  const cats = [...new Set(selected.map(k=>k.cat))];
+  const suggestPool = [];
+  cats.forEach(c=>{ if(SUGGEST_BY_CAT[c]) suggestPool.push(...SUGGEST_BY_CAT[c]); });
+  const usedWords = new Set(selected.map(k=>k.word));
+  const suggests = [...new Set(suggestPool)].filter(w=>!usedWords.has(w)).slice(0,5);
+
+  lastCombResult = { selected, synergyScore, clicheScore, synergyPairs, conflicts, dominant, impression, twist, suggests };
+
+  // Render
+  const synergyLabel = synergyScore>=4?'높음':synergyScore>=1?'보통':'낮음';
+  const synergyColor = synergyScore>=4?'#2E7D32':synergyScore>=1?'#E65100':'#991B1B';
+  document.getElementById('crImpression').innerHTML = `
+    <div class="crb-title">조합 인상</div>
+    <div class="crb-body">${impression}</div>
+    <div style="display:flex;gap:8px;margin-top:10px;font-size:.72rem;align-items:center">
+      <span style="color:var(--ink4)">시너지</span>
+      <span style="font-weight:600;color:${synergyColor}">${synergyLabel}</span>
+      <span style="color:var(--ink4);margin-left:8px">톤</span>
+      ${dominant.map(t=>`<span class="crb-tag">${t}</span>`).join('')}
+    </div>`;
+
+  document.getElementById('crSynergy').innerHTML = synergyPairs.length ? `
+    <div class="crb-title">시너지 연결</div>
+    <div class="crb-body">서로 연결되는 키워드 쌍이 있어요.</div>
+    <div class="crb-tags">${synergyPairs.map(p=>`<span class="crb-tag good">${p[0]} ↔ ${p[1]}</span>`).join('')}</div>` :
+    `<div class="crb-title">시너지 연결</div><div class="crb-body" style="color:var(--ink4)">직접 연결되는 쌍은 없어요. 서사로 연결점을 만들어주면 좋아요.</div>`;
+
+  const clicheCls = clicheScore>=70?'cl-high':clicheScore>=40?'cl-mid':'cl-low';
+  const clicheLabel = clicheScore>=70?'높음 — 비틀기를 고려해보세요':clicheScore>=40?'보통 — 주의가 필요해요':'낮음 — 독창적인 조합이에요';
+  document.getElementById('crCliche').innerHTML = `
+    <div class="crb-title">클리셰 위험도</div>
+    <div class="crb-body">${clicheLabel}</div>
+    <div class="cliche-bar-wrap">
+      <div class="cliche-bar-track"><div class="cliche-bar-fill ${clicheCls}" style="width:${clicheScore}%"></div></div>
+    </div>`;
+
+  document.getElementById('crTwist').innerHTML = `
+    <div class="crb-title">비틀기 제안</div>
+    <div class="crb-body">${twist}</div>`;
+
+  document.getElementById('crConflict').innerHTML = conflicts.length ? `
+    <div class="crb-title">충돌 요소</div>
+    <div class="crb-body">아래 조합은 의도 없이 쓰면 캐릭터를 흐릴 수 있어요.</div>
+    <div class="crb-tags">${conflicts.map(c=>`<span class="crb-tag danger">${c}</span>`).join('')}</div>` :
+    `<div class="crb-title">충돌 요소</div><div class="crb-body" style="color:var(--ink4)">충돌하는 조합은 없어요.</div>`;
+
+  document.getElementById('crSuggest').innerHTML = suggests.length ? `
+    <div class="crb-title">다음에 붙이면 좋은 키워드</div>
+    <div class="crb-body">이 조합과 어울리는 키워드예요.</div>
+    <div class="crb-tags">${suggests.map(s=>`<span class="crb-tag warn">${s}</span>`).join('')}</div>` : '';
+
+  document.getElementById('combResult').style.display = 'block';
+}
+
+function shareCombResult() {
+  if (!lastCombResult) { alert('먼저 조합 분석을 실행해주세요.'); return; }
+  const words = lastCombResult.selected.map(k=>k.word).join(' · ');
+  const clicheLabel = lastCombResult.clicheScore>=70?'높음':lastCombResult.clicheScore>=40?'보통':'낮음';
+  const text = '[재능팔이범 자캐메이커]\n조합 분석: '+words+'\n클리셰 위험도: '+clicheLabel+'\n비틀기: '+lastCombResult.twist+'\n\n#자캐만들기 #자캐메이커';
+  window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(text),'_blank','noopener,noreferrer');
+}
+
+// ── TAB 1 share: share char list summary ──────────────────
+function shareCharList() {
+  if (!chars.length) { alert('저장된 캐릭터가 없어요.'); return; }
+  const HN2={g:'그리핀도르',s:'슬리데린',r:'래번클로',h:'후플푸프'};
+  const rows = chars.slice(0,5).map(c=>c.name+'  /  '+(HN2[c.house]||'기숙사미정')+'  /  '+[c.kw1,c.kw2,c.kw3].filter(Boolean).join('·'));
+  const extra = chars.length > 5 ? ('\n외 '+(chars.length-5)+'명') : '';
+  const text = '[재능팔이범 자캐메이커]\n내 자캐 목록 (총 '+chars.length+'명)\n'+rows.join('\n')+extra+'\n\n#자캐만들기 #자캐메이커';
+  window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(text),'_blank','noopener,noreferrer');
+}
+
+// ── TAB 2 share: share currently viewed kw card ───────────
+let lastViewedKwId = null;
+function shareKwCard() {
+  const id = lastViewedKwId || (allKw().length ? allKw()[0].id : null);
+  if (!id) { alert('먼저 키워드를 클릭해서 확인해주세요.'); return; }
+  const kw = allKw().find(k=>k.id===id);
+  if (!kw) return;
+  const pairs = kw.pairs ? kw.pairs.split(',').slice(0,3).map(x=>x.trim()).join(' · ') : '';
+  const text = '[재능팔이범 자캐메이커]\n키워드: '+kw.word+' ('+kw.cat+')\n'+kw.desc+'\n잘 붙는: '+pairs+'\n\n#자캐만들기 #자캐메이커';
+  window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(text),'_blank','noopener,noreferrer');
+}
+
 render();
+initKwTab();
+initCombTab();
 </script>
 </body>
 </html>
