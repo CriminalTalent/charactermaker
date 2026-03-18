@@ -1192,7 +1192,7 @@ function saveChar(){
   else chars.push(c);
   persist();closeModal();render();
 }
-function deleteChar(id){if(!confirm('삭제할까요?'))return;chars=chars.filter(c=>c.id!==id);persist();render()}
+function deleteChar(id){chars=chars.filter(c=>c.id!==id);persist();render()}
 function dupChar(id){
   const o=chars.find(c=>c.id===id);if(!o)return;
   chars.push({...o,id:genId(),name:o.name+' (복사본)',confirmed:'no',createdAt:Date.now(),updatedAt:Date.now()});
@@ -1283,7 +1283,7 @@ function exportData(){
 function importData(ev){
   const f=ev.target.files[0];if(!f)return;
   const r=new FileReader();
-  r.onload=e=>{try{const d=JSON.parse(e.target.result);const list=d.chars||d.characters;if(list&&confirm(`${list.length}개 캐릭터를 불러올까요?`)){chars=[...chars,...list];persist();render();}}catch{alert('올바른 JSON 파일이 아니에요.');}};
+  r.onload=e=>{try{const d=JSON.parse(e.target.result);const list=d.chars||d.characters;if(list){chars=[...chars,...list];persist();render();}}catch{alert('올바른 JSON 파일이 아니에요.');}};
   r.readAsText(f);ev.target.value='';
 }
 
@@ -1528,7 +1528,7 @@ function saveKw() {
 }
 
 function deleteKw() {
-  if(!editKwId || !confirm('삭제할까요?')) return;
+  if(!editKwId) return;
   customKw = customKw.filter(k=>k.id!==editKwId);
   localStorage.setItem('oc_custom_kw3', JSON.stringify(customKw));
   closeKwModal();
@@ -1891,11 +1891,11 @@ function savePsych() {
   const sheet = { id:'ps'+Date.now(), charName: activePsychChar||gpv('desire').slice(0,8)||'무제', savedAt: Date.now() };
   PS_FIELDS.forEach(f => sheet[f] = gpv(f));
   const existing = psychSheets.findIndex(s => s.charName === sheet.charName);
-  if (existing !== -1 && confirm('"'+sheet.charName+'"의 기존 시트를 덮어쓸까요?')) {
+  if (existing !== -1) {
     psychSheets[existing] = sheet;
-  } else if (existing === -1) {
+  } else {
     psychSheets.push(sheet);
-  } else return;
+  }
   localStorage.setItem('oc_psych3', JSON.stringify(psychSheets));
   renderPsychSaved();
 }
@@ -1931,7 +1931,6 @@ function loadPsychSheet(id) {
 }
 
 function deletePsych(id) {
-  if (!confirm('삭제할까요?')) return;
   psychSheets = psychSheets.filter(s=>s.id!==id);
   localStorage.setItem('oc_psych3', JSON.stringify(psychSheets));
   renderPsychSaved();
