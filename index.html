@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>OC 캐릭터 키워드 시트</title>
+<title>캐릭터 키워드 시트</title>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Noto+Serif+KR:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -288,6 +288,17 @@ main{max-width:1360px;margin:0 auto;padding:28px}
 .psc-label{font-size:.62rem;color:var(--ink4);min-width:42px}
 .psc-val{font-size:.72rem;color:var(--ink2);font-style:italic}
 .psc-foot{display:flex;justify-content:flex-end;gap:5px;margin-top:8px;padding-top:8px;border-top:1px solid var(--bdr2)}
+
+.rel-layout{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
+@media(max-width:860px){.rel-layout{grid-template-columns:1fr}}
+.rel-pair-layout{display:flex;flex-direction:column}
+.rel-pair-selects{display:flex;align-items:flex-end;gap:12px}
+.rel-pair-arrow{font-size:1.2rem;color:var(--ink4);margin-bottom:8px;flex-shrink:0}
+.rel-pair-card{background:var(--bg2);border:1px solid var(--bdr);border-radius:4px;padding:10px 13px;display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:6px}
+.rel-pair-names{font-family:'Playfair Display',serif;font-size:.88rem;margin-bottom:3px}
+.rel-pair-info{font-size:.73rem;color:var(--ink3)}
+.rel-pair-del{background:none;border:none;cursor:pointer;font-size:.75rem;color:var(--ink4);padding:2px 5px;border-radius:3px;transition:all .15s}
+.rel-pair-del:hover{background:#FEE;color:#c0392b}
 </style>
 </head>
 <body>
@@ -307,7 +318,7 @@ main{max-width:1360px;margin:0 auto;padding:28px}
   <button class="nbtn" onclick="switchTab('t2',this)">② 키워드 사전</button>
   <button class="nbtn" onclick="switchTab('t3',this)">③ 조합 규칙표</button>
   <button class="nbtn" onclick="switchTab('t4',this)">④ 심리/서사 축</button>
-  <button class="nbtn dim">⑤ 관계/운용</button>
+  <button class="nbtn" onclick="switchTab('t5',this)">⑤ 관계/운용</button>
   <button class="nbtn dim">⑥ 최종 요약 카드</button>
 </nav>
 <main>
@@ -649,7 +660,210 @@ main{max-width:1360px;margin:0 auto;padding:28px}
     <div class="psych-saved-grid" id="psychSavedGrid"></div>
   </div>
 </div>
-<div id="t5" class="tab-pane"><div class="cs"><h2>관계 / 운용</h2><p>다음 버전에서 만나요.</p></div></div>
+<div id="t5" class="tab-pane">
+  <div class="sec-head">
+    <div><div class="sec-title">관계 / 운용</div><div class="sec-sub">자캐가 어떻게 굴러가는지 · 누구와 부딪히고 누구와 맞는지</div></div>
+    <div style="display:flex;gap:8px">
+      <button class="btn-tw" onclick="shareRelation()">X 공유</button>
+      <button class="btn-p" onclick="newRelSheet()">+ 새 관계 시트</button>
+    </div>
+  </div>
+
+  <!-- CHAR SELECTOR -->
+  <div class="psych-charbar">
+    <div class="psych-charbar-label">자캐 선택</div>
+    <div class="psych-charbar-list" id="relCharList"></div>
+  </div>
+
+  <div class="rel-layout">
+    <!-- LEFT -->
+    <div class="psych-col">
+
+      <div class="psych-block">
+        <div class="psych-block-head">관계 유형 & 기본 성향</div>
+        <div class="fgrid g1" style="gap:10px;margin-top:12px">
+          <div class="fg psych-fg">
+            <label>관계 유형</label>
+            <select id="rl_type">
+              <option value="">선택...</option>
+              <option>관찰자형 — 지켜보다 천천히 다가감</option>
+              <option>밀당형 — 다가왔다 멀어지기 반복</option>
+              <option>헌신형 — 먼저 주고 나중에 무너짐</option>
+              <option>거리 유지형 — 선을 절대 먼저 안 넘음</option>
+              <option>집착형 — 한번 각인되면 놓지 못함</option>
+              <option>경쟁형 — 라이벌 의식이 친밀감 기반</option>
+              <option>보호형 — 상대를 지키는 것에서 존재 의미</option>
+              <option>의존형 — 특정 인물 없이는 불안정</option>
+              <option>순환 이탈형 — 가까워지면 먼저 떠남</option>
+              <option>무관심형 — 진심으로 아무도 신경 안 씀</option>
+            </select>
+          </div>
+          <div class="fg psych-fg">
+            <label>잘 맞는 상대</label>
+            <div class="psych-input-row">
+              <input id="rl_match" type="text" placeholder="예: 먼저 다가오는 사람, 침묵을 견디는 사람">
+              <button class="psych-roll-btn" onclick="rollRel('match')">주사위</button>
+            </div>
+          </div>
+          <div class="fg psych-fg">
+            <label>안 맞는 상대</label>
+            <div class="psych-input-row">
+              <input id="rl_clash" type="text" placeholder="예: 감정 확인을 강요하는 사람">
+              <button class="psych-roll-btn" onclick="rollRel('clash')">주사위</button>
+            </div>
+          </div>
+          <div class="fg psych-fg">
+            <label>자주 발생하는 갈등</label>
+            <div class="psych-input-row">
+              <input id="rl_conflict" type="text" placeholder="예: 말 없이 사라짐 / 기대치 오해">
+              <button class="psych-roll-btn" onclick="rollRel('conflict')">주사위</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="psych-block">
+        <div class="psych-block-head">가까워짐 / 멀어짐</div>
+        <div class="fgrid g1" style="gap:10px;margin-top:12px">
+          <div class="fg psych-fg">
+            <label>가까워지는 계기</label>
+            <div class="psych-input-row">
+              <input id="rl_close" type="text" placeholder="예: 작은 약속을 오래 지켜줌">
+              <button class="psych-roll-btn" onclick="rollRel('close')">주사위</button>
+            </div>
+          </div>
+          <div class="fg psych-fg">
+            <label>멀어지는 계기</label>
+            <div class="psych-input-row">
+              <input id="rl_away" type="text" placeholder="예: 사적인 영역 침범">
+              <button class="psych-roll-btn" onclick="rollRel('away')">주사위</button>
+            </div>
+          </div>
+          <div class="fg psych-fg">
+            <label>신뢰 트리거</label>
+            <div class="psych-input-row">
+              <input id="rl_trust" type="text" placeholder="예: 비밀을 지켜줌 / 약속을 사소하게 지킴">
+              <button class="psych-roll-btn" onclick="rollRel('trust')">주사위</button>
+            </div>
+          </div>
+          <div class="fg psych-fg">
+            <label>배신 트리거</label>
+            <div class="psych-input-row">
+              <input id="rl_betray" type="text" placeholder="예: 약점을 타인에게 흘림">
+              <button class="psych-roll-btn" onclick="rollRel('betray')">주사위</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- RIGHT -->
+    <div class="psych-col">
+
+      <div class="psych-block">
+        <div class="psych-block-head">감정 트리거</div>
+        <div class="fgrid g1" style="gap:10px;margin-top:12px">
+          <div class="fg psych-fg">
+            <label>연애 트리거 <span class="psych-hint">— 이럴 때 감정이 생김</span></label>
+            <div class="psych-input-row">
+              <input id="rl_love" type="text" placeholder="예: 자신만 아는 표정을 봤을 때">
+              <button class="psych-roll-btn" onclick="rollRel('love')">주사위</button>
+            </div>
+          </div>
+          <div class="fg psych-fg">
+            <label>질투 트리거</label>
+            <div class="psych-input-row">
+              <input id="rl_jealous" type="text" placeholder="예: 자기 자리를 다른 사람이 채울 때">
+              <button class="psych-roll-btn" onclick="rollRel('jealous')">주사위</button>
+            </div>
+          </div>
+          <div class="fg psych-fg">
+            <label>보호본능 유발 요소</label>
+            <div class="psych-input-row">
+              <input id="rl_protect" type="text" placeholder="예: 혼자서 다 괜찮은 척 할 때">
+              <button class="psych-roll-btn" onclick="rollRel('protect')">주사위</button>
+            </div>
+          </div>
+          <div class="fg psych-fg">
+            <label>열등감 유발 요소</label>
+            <div class="psych-input-row">
+              <input id="rl_inferior" type="text" placeholder="예: 자신이 못 가진 자연스러운 밝음">
+              <button class="psych-roll-btn" onclick="rollRel('inferior')">주사위</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="psych-block">
+        <div class="psych-block-head">관계 번들 라이브러리</div>
+        <div class="psych-block-desc">클릭하면 자동으로 채워져요</div>
+        <div class="psych-bundle-grid" id="relBundleGrid"></div>
+      </div>
+
+      <div class="psych-block">
+        <div class="psych-block-head">관계 한줄 요약 & 메모</div>
+        <div class="fgrid g1" style="gap:10px;margin-top:12px">
+          <div class="fg psych-fg">
+            <label>관계 한줄 요약</label>
+            <input id="rl_summary" type="text" placeholder="예: 좋아하지만 선은 절대 쉽게 안 넘김">
+          </div>
+          <div class="fg psych-fg">
+            <label>자유 메모</label>
+            <textarea id="rl_memo" style="min-height:68px" placeholder="이 캐릭터의 관계 패턴에 대해 자유롭게 메모해요"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <button class="btn-p" style="width:100%;padding:11px;font-size:.86rem;margin-top:4px" onclick="saveRel()">관계 시트 저장</button>
+    </div>
+  </div>
+
+  <!-- 자캐 간 관계망 -->
+  <div class="psych-block" style="margin-top:20px">
+    <div class="psych-block-head" style="margin-bottom:6px">자캐 간 관계 메모</div>
+    <div class="psych-block-desc" style="margin-bottom:14px">저장된 자캐끼리 관계를 간단히 메모해요</div>
+    <div class="rel-pair-layout">
+      <div class="rel-pair-selects">
+        <div class="fg psych-fg" style="flex:1">
+          <label>자캐 A</label>
+          <select id="rp_a" onchange="renderRelPairMemo()"></select>
+        </div>
+        <div class="rel-pair-arrow">↔</div>
+        <div class="fg psych-fg" style="flex:1">
+          <label>자캐 B</label>
+          <select id="rp_b" onchange="renderRelPairMemo()"></select>
+        </div>
+      </div>
+      <div class="fgrid g2" style="gap:10px;margin-top:12px" id="relPairForm">
+        <div class="fg psych-fg">
+          <label>관계 유형</label>
+          <input id="rp_type" type="text" placeholder="예: 라이벌 / 구원자 / 짝사랑">
+        </div>
+        <div class="fg psych-fg">
+          <label>갈등 포인트</label>
+          <input id="rp_tension" type="text" placeholder="예: 서로 다른 가치관">
+        </div>
+        <div class="fg psych-fg full">
+          <label>한줄 관계 설명</label>
+          <input id="rp_desc" type="text" placeholder="예: A가 B를 지키려 하지만 B는 그걸 부담스러워함">
+        </div>
+      </div>
+      <div style="display:flex;justify-content:flex-end;margin-top:10px">
+        <button class="btn-p" onclick="saveRelPair()">관계 저장</button>
+      </div>
+    </div>
+
+    <!-- 저장된 관계쌍 -->
+    <div style="margin-top:18px" id="relPairList"></div>
+  </div>
+
+  <!-- 저장된 관계 시트 -->
+  <div style="margin-top:24px">
+    <div class="psych-block-head" style="margin-bottom:14px">저장된 관계 시트</div>
+    <div class="psych-saved-grid" id="relSavedGrid"></div>
+  </div>
+</div>
 <div id="t6" class="tab-pane"><div class="cs"><h2>최종 요약 카드</h2><p>다음 버전에서 만나요.</p></div></div>
 </main>
 
@@ -1274,6 +1488,7 @@ function switchTab(id,btn){
   btn.classList.add('on');
   if(id==='t4') buildPsychCharBar();
   if(id==='t3') initCombTab();
+  if(id==='t5') { buildRelCharBar(); renderRelSaved(); renderRelPairs(); }
 }
 function exportData(){
   const b=new Blob([JSON.stringify({chars,ver:3,exportedAt:new Date().toISOString()},null,2)],{type:'application/json'});
@@ -1955,10 +2170,221 @@ function initPsychTab() {
   updateAxis();
 }
 
+
+// ══════════════════════════════════════════════════════════
+//  RELATION / OPERATION (TAB 5)
+// ══════════════════════════════════════════════════════════
+let relSheets = JSON.parse(localStorage.getItem('oc_rel3') || '[]');
+let relPairs  = JSON.parse(localStorage.getItem('oc_relpairs3') || '[]');
+let activeRelChar = null;
+
+const RL_POOLS = {
+  match:['먼저 다가오는 사람, 침묵을 견디는 사람','말보다 행동으로 보여주는 사람','과하게 묻지 않는 사람','있는 그대로 받아들이는 사람','비슷한 상처가 있는 사람','기다려줄 수 있는 사람','혼자도 괜찮은 사람','솔직하고 직설적인 사람','조용히 옆에 있어주는 사람','약점을 들춰내지 않는 사람'],
+  clash:['감정 확인을 강요하는 사람','모든 것을 말로 풀어야 한다는 사람','경계를 모르는 사람','비교를 자주 하는 사람','기대치를 높게 쌓는 사람','자기 페이스를 강요하는 사람','감정을 과하게 드러내는 사람','결과보다 과정에 집착하는 사람'],
+  conflict:['말 없이 사라짐 / 기대치 오해','관계의 깊이에 대한 인식 차이','언제 연락해야 할지 모름','선을 침범했을 때 명확히 말 못 함','상대가 먼저인지 내가 먼저인지 불분명','과거 언급을 예민하게 받아들임','표현 방식이 달라서 오해','의존도 차이'],
+  close:['작은 약속을 오래 지켜줌','말하지 않아도 눈치채줌','무언가를 같이 겪은 기억','혼자였던 순간에 곁에 있어줌','비밀을 먼저 털어놓음','아무것도 바라지 않고 도와줌','같이 있어도 아무 말 안 해도 편함','자기 약점을 보여줌'],
+  away:['사적인 영역 침범','기대를 너무 크게 가짐','다른 사람에게 자신을 얘기함','약속을 무심히 어김','혼자 있고 싶을 때 놔주지 않음','감정을 강요함','한번 실망시켰을 때 태도가 변함','존재를 당연하게 여기기 시작함'],
+  trust:['비밀을 지켜줌','사소한 약속도 기억하고 지킴','나쁜 소문이 돌아도 믿어줌','힘들 때 먼저 연락함','거짓말을 안 함','싫어하는 걸 강요하지 않음','실수했을 때 다그치지 않음'],
+  betray:['약점을 타인에게 흘림','뒤에서 다르게 말함','중요한 순간에 없음','거짓말이 들킴','다른 사람 편을 너무 쉽게 들음','감정을 이용함','믿었던 것을 무기로 씀'],
+  love:['자신만 아는 표정을 봤을 때','아무에게도 안 하는 말을 자신에게 할 때','힘들 때 생각나는 사람이 됐을 때','자신을 위해 뭔가를 참아줄 때','혼자인 자신을 찾아올 때','웃는 게 달라 보일 때','작은 것을 기억해줄 때','상대가 약한 모습을 잠깐 보일 때'],
+  jealous:['자기 자리를 다른 사람이 채울 때','상대가 자신보다 누군가에게 더 솔직할 때','먼저 다가가는 걸 다른 사람에게 할 때','자신한테는 안 하는 표정을 할 때','자신을 필요로 하지 않는 것 같을 때'],
+  protect:['혼자서 다 괜찮은 척 할 때','상처받았는데 웃고 있을 때','아무도 없을 때 혼자 버티고 있을 때','도움을 요청하지 못하는 모습','약한 걸 들키지 않으려고 할 때'],
+  inferior:['자신이 못 가진 자연스러운 밝음','노력 없이 사랑받는 모습','감정을 솔직하게 표현하는 것','상처가 없어 보이는 것','먼저 다가갈 수 있는 용기'],
+};
+
+const REL_BUNDLES = [
+  {name:'관찰자형',type:'관찰자형 — 지켜보다 천천히 다가감',match:'먼저 다가오는 사람, 침묵을 견디는 사람',clash:'감정 확인을 강요하는 사람',close:'같이 있어도 아무 말 안 해도 편함',away:'사적인 영역 침범',trust:'사소한 약속도 기억하고 지킴',betray:'약점을 타인에게 흘림',love:'자신만 아는 표정을 봤을 때',jealous:'자기 자리를 다른 사람이 채울 때',summary:'좋아하지만 선은 절대 쉽게 안 넘김'},
+  {name:'헌신형',type:'헌신형 — 먼저 주고 나중에 무너짐',match:'있는 그대로 받아들이는 사람',clash:'기대치를 높게 쌓는 사람',close:'아무것도 바라지 않고 도와줌',away:'존재를 당연하게 여기기 시작함',trust:'힘들 때 먼저 연락함',betray:'감정을 이용함',love:'상대가 약한 모습을 잠깐 보일 때',protect:'혼자서 다 괜찮은 척 할 때',summary:'다 줘도 아깝지 않지만 그래서 무너짐'},
+  {name:'거리 유지형',type:'거리 유지형 — 선을 절대 먼저 안 넘음',match:'혼자도 괜찮은 사람',clash:'모든 것을 말로 풀어야 한다는 사람',close:'혼자였던 순간에 곁에 있어줌',away:'기대를 너무 크게 가짐',trust:'거짓말을 안 함',betray:'뒤에서 다르게 말함',love:'아무에게도 안 하는 말을 자신에게 할 때',jealous:'먼저 다가가는 걸 다른 사람에게 할 때',summary:'선 안에서 오래 있어주는 사람'},
+  {name:'집착형',type:'집착형 — 한번 각인되면 놓지 못함',match:'비슷한 상처가 있는 사람',clash:'경계를 모르는 사람',close:'비밀을 먼저 털어놓음',away:'다른 사람에게 자신을 얘기함',trust:'나쁜 소문이 돌아도 믿어줌',betray:'믿었던 것을 무기로 씀',love:'자신을 위해 뭔가를 참아줄 때',jealous:'상대가 자신보다 누군가에게 더 솔직할 때',summary:'놓지 못하는 게 사랑인지 집착인지 모름'},
+  {name:'경쟁형',type:'경쟁형 — 라이벌 의식이 친밀감 기반',match:'솔직하고 직설적인 사람',clash:'자기 페이스를 강요하는 사람',close:'같이 뭔가를 겪은 기억',away:'감정을 강요함',trust:'실수했을 때 다그치지 않음',betray:'다른 사람 편을 너무 쉽게 들음',love:'혼자인 자신을 찾아올 때',inferior:'자신이 못 가진 자연스러운 밝음',summary:'경쟁하면서 제일 믿는 사람'},
+  {name:'순환 이탈형',type:'순환 이탈형 — 가까워지면 먼저 떠남',match:'기다려줄 수 있는 사람',clash:'관계의 확인을 요구하는 사람',close:'말하지 않아도 눈치채줌',away:'혼자 있고 싶을 때 놔주지 않음',trust:'싫어하는 걸 강요하지 않음',betray:'중요한 순간에 없음',love:'웃는 게 달라 보일 때',jealous:'자신한테는 안 하는 표정을 할 때',summary:'가까워질수록 먼저 떠나고 싶어짐'},
+];
+
+const RL_FIELDS = ['type','match','clash','conflict','close','away','trust','betray','love','jealous','protect','inferior','summary','memo'];
+
+function grv(id) { const e=document.getElementById('rl_'+id); return e?e.value.trim():''; }
+function srv(id,v) { const e=document.getElementById('rl_'+id); if(e) e.value=v||''; }
+
+function rollRel(field) {
+  const pool = RL_POOLS[field];
+  if (!pool) return;
+  document.getElementById('rl_'+field).value = pool[Math.floor(Math.random()*pool.length)];
+}
+
+function buildRelBundles() {
+  const el = document.getElementById('relBundleGrid');
+  if (!el) return;
+  el.innerHTML = REL_BUNDLES.map((b,i) =>
+    '<div class="psych-bundle-card" onclick="applyRelBundle('+i+')">' +
+    '<div class="psych-bundle-name">'+b.name+'</div>' +
+    '<div class="psych-bundle-kws">' +
+    (b.match?'<span class="psych-bundle-kw">잘맞는: '+b.match.slice(0,10)+'…</span>':'') +
+    (b.summary?'<span class="psych-bundle-kw">'+b.summary.slice(0,12)+'…</span>':'') +
+    '</div></div>'
+  ).join('');
+}
+
+function applyRelBundle(i) {
+  const b = REL_BUNDLES[i];
+  RL_FIELDS.forEach(f => { if(b[f]) srv(f, b[f]); });
+}
+
+function buildRelCharBar() {
+  const el = document.getElementById('relCharList');
+  if (!el) return;
+  if (!chars.length) { el.innerHTML = '<span style="font-size:.75rem;color:var(--ink4)">저장된 자캐가 없어요</span>'; return; }
+  el.innerHTML = chars.map(c => {
+    const on = activeRelChar===c.name ? ' on' : '';
+    return '<button class="psych-char-chip'+on+'" onclick="loadCharToRel(\'' + c.id + '\')">' + c.name + '</button>';
+  }).join('');
+  // also populate pair selects
+  const opts = '<option value="">선택...</option>'+chars.map(c=>'<option value="'+c.id+'">'+c.name+'</option>').join('');
+  const ra = document.getElementById('rp_a');
+  const rb = document.getElementById('rp_b');
+  if(ra) ra.innerHTML = opts;
+  if(rb) rb.innerHTML = opts;
+}
+
+function loadCharToRel(id) {
+  const c = chars.find(x=>x.id===id);
+  if (!c) return;
+  activeRelChar = c.name;
+  // load from saved sheet if exists
+  const sheet = relSheets.find(s=>s.charName===c.name);
+  if (sheet) { RL_FIELDS.forEach(f => srv(f, sheet[f]||'')); }
+  else { RL_FIELDS.forEach(f => srv(f, '')); }
+  buildRelCharBar();
+}
+
+function newRelSheet() {
+  RL_FIELDS.forEach(f => srv(f, ''));
+  activeRelChar = null;
+  buildRelCharBar();
+}
+
+function saveRel() {
+  const sheet = { id:'rl'+Date.now(), charName: activeRelChar || grv('summary').slice(0,8) || '무제', savedAt: Date.now() };
+  RL_FIELDS.forEach(f => sheet[f] = grv(f));
+  const idx = relSheets.findIndex(s=>s.charName===sheet.charName);
+  if (idx !== -1) relSheets[idx] = sheet; else relSheets.push(sheet);
+  localStorage.setItem('oc_rel3', JSON.stringify(relSheets));
+  renderRelSaved();
+}
+
+function renderRelSaved() {
+  const el = document.getElementById('relSavedGrid');
+  if (!el) return;
+  if (!relSheets.length) { el.innerHTML = '<div style="font-size:.78rem;color:var(--ink4)">저장된 관계 시트가 없어요</div>'; return; }
+  el.innerHTML = relSheets.map(s => {
+    const sid = s.id;
+    return '<div class="psych-saved-card" onclick="loadRelSheet(\'' + sid + '\')">'+
+    '<div class="psc-name">'+s.charName+'</div>'+
+    (s.type?'<div class="psc-row"><span class="psc-label">유형</span><span class="psc-val">'+s.type.split('—')[0].trim()+'</span></div>':'')+
+    (s.match?'<div class="psc-row"><span class="psc-label">잘맞는</span><span class="psc-val">'+s.match+'</span></div>':'')+
+    (s.summary?'<div class="psc-row"><span class="psc-label">요약</span><span class="psc-val">'+s.summary+'</span></div>':'')+
+    '<div class="psc-foot">'+
+    '<button class="ibtn del" onclick="deleteRel(\'' + sid + '\');event.stopPropagation()" title="삭제">✕</button>'+
+    '</div></div>';
+  }).join('');
+}
+
+function loadRelSheet(id) {
+  const s = relSheets.find(x=>x.id===id);
+  if (!s) return;
+  activeRelChar = s.charName;
+  RL_FIELDS.forEach(f => srv(f, s[f]||''));
+  buildRelCharBar();
+}
+
+function deleteRel(id) {
+  relSheets = relSheets.filter(s=>s.id!==id);
+  localStorage.setItem('oc_rel3', JSON.stringify(relSheets));
+  renderRelSaved();
+}
+
+// Pair system
+function saveRelPair() {
+  const aId = document.getElementById('rp_a').value;
+  const bId = document.getElementById('rp_b').value;
+  if (!aId || !bId || aId===bId) { return; }
+  const aName = chars.find(c=>c.id===aId)?.name || aId;
+  const bName = chars.find(c=>c.id===bId)?.name || bId;
+  const pair = {
+    id: 'rp'+Date.now(), aId, bId, aName, bName,
+    type: document.getElementById('rp_type').value.trim(),
+    tension: document.getElementById('rp_tension').value.trim(),
+    desc: document.getElementById('rp_desc').value.trim(),
+  };
+  // update if same pair exists
+  const idx = relPairs.findIndex(p=>(p.aId===aId&&p.bId===bId)||(p.aId===bId&&p.bId===aId));
+  if (idx !== -1) relPairs[idx] = pair; else relPairs.push(pair);
+  localStorage.setItem('oc_relpairs3', JSON.stringify(relPairs));
+  renderRelPairs();
+}
+
+function renderRelPairMemo() {
+  const aId = document.getElementById('rp_a')?.value;
+  const bId = document.getElementById('rp_b')?.value;
+  if (!aId || !bId || aId===bId) return;
+  const existing = relPairs.find(p=>(p.aId===aId&&p.bId===bId)||(p.aId===bId&&p.bId===aId));
+  if (existing) {
+    document.getElementById('rp_type').value = existing.type||'';
+    document.getElementById('rp_tension').value = existing.tension||'';
+    document.getElementById('rp_desc').value = existing.desc||'';
+  } else {
+    document.getElementById('rp_type').value = '';
+    document.getElementById('rp_tension').value = '';
+    document.getElementById('rp_desc').value = '';
+  }
+}
+
+function renderRelPairs() {
+  const el = document.getElementById('relPairList');
+  if (!el) return;
+  if (!relPairs.length) { el.innerHTML = '<div style="font-size:.76rem;color:var(--ink4)">저장된 관계가 없어요</div>'; return; }
+  el.innerHTML = relPairs.map(p => {
+    const pid = p.id;
+    return '<div class="rel-pair-card">'+
+    '<div>'+
+    '<div class="rel-pair-names">'+p.aName+' ↔ '+p.bName+'</div>'+
+    (p.type?'<div class="rel-pair-info">'+p.type+'</div>':'')+
+    (p.desc?'<div class="rel-pair-info" style="margin-top:2px;color:var(--ink4)">'+p.desc+'</div>':'')+
+    '</div>'+
+    '<button class="rel-pair-del" onclick="deleteRelPair(\'' + pid + '\')" >✕</button>'+
+    '</div>';
+  }).join('');
+}
+
+function deleteRelPair(id) {
+  relPairs = relPairs.filter(p=>p.id!==id);
+  localStorage.setItem('oc_relpairs3', JSON.stringify(relPairs));
+  renderRelPairs();
+}
+
+function shareRelation() {
+  const name = activeRelChar || '무제';
+  const type = grv('type').split('—')[0].trim();
+  const close = grv('close');
+  const away = grv('away');
+  const summary = grv('summary');
+  if (!type && !summary) { alert('관계 시트를 먼저 작성해주세요.'); return; }
+  const text = '[재능팔이범 자캐메이커]\n캐릭터: '+name+'\n관계 유형: '+type+'\n가까워짐: '+close+'\n멀어짐: '+away+'\n한줄 요약: '+summary+'\n\n#자캐만들기 #자캐메이커';
+  window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(text),'_blank','noopener,noreferrer');
+}
+
+function initRelTab() {
+  buildRelBundles();
+  buildRelCharBar();
+  renderRelSaved();
+  renderRelPairs();
+}
+
 render();
 initKwTab();
 initCombTab();
 initPsychTab();
+initRelTab();
 </script>
 </body>
 </html>
