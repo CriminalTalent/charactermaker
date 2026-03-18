@@ -234,6 +234,60 @@ main{max-width:1360px;margin:0 auto;padding:28px}
 .cliche-bar-track{height:8px;background:var(--bg3);border-radius:4px;overflow:hidden;margin-top:4px}
 .cliche-bar-fill{height:100%;border-radius:4px;transition:width .5s}
 .cl-low{background:#4CAF50}.cl-mid{background:#FF9800}.cl-high{background:#E53935}
+
+/* PSYCH TAB */
+.psych-charbar{background:var(--wh);border:1px solid var(--bdr);border-radius:6px;padding:13px 16px;margin-bottom:18px}
+.psych-charbar-label{font-size:.67rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--ink4);margin-bottom:10px}
+.psych-charbar-list{display:flex;flex-wrap:wrap;gap:6px}
+.psych-char-chip{padding:4px 12px;border:1px solid var(--bdr);border-radius:20px;background:var(--bg);font-size:.74rem;color:var(--ink3);cursor:pointer;transition:all .15s;font-family:'Noto Serif KR',serif}
+.psych-char-chip:hover{border-color:var(--acc);color:var(--ink)}.psych-char-chip.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.psych-layout{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
+@media(max-width:860px){.psych-layout{grid-template-columns:1fr}}
+.psych-col{display:flex;flex-direction:column;gap:14px}
+.psych-block{background:var(--wh);border:1px solid var(--bdr);border-radius:6px;padding:17px 18px}
+.psych-block-head{font-family:'Playfair Display',serif;font-size:.95rem;color:var(--ink);margin-bottom:4px}
+.psych-block-desc{font-size:.7rem;color:var(--ink4);line-height:1.5;margin-bottom:2px}
+.psych-fg label{font-size:.67rem;font-weight:600;color:var(--ink4);text-transform:uppercase;letter-spacing:.05em;display:flex;align-items:center;gap:6px}
+.psych-hint{font-size:.62rem;color:var(--ink4);font-weight:400;text-transform:none;letter-spacing:0}
+.psych-input-row{display:flex;gap:6px}
+.psych-input-row input{flex:1}
+.psych-roll-btn{flex-shrink:0;padding:6px 11px;border:1px solid var(--bdr);border-radius:3px;background:var(--bg2);font-family:'Noto Serif KR',serif;font-size:.7rem;color:var(--ink3);cursor:pointer;transition:all .15s;white-space:nowrap}
+.psych-roll-btn:hover{background:var(--bg3);border-color:var(--acc);color:var(--ink)}
+.psych-fg{display:flex;flex-direction:column;gap:4px}
+.psych-fg input,.psych-fg textarea{background:var(--bg);border:1px solid var(--bdr);border-radius:3px;padding:6px 10px;font-family:'Noto Serif KR',serif;font-size:.8rem;color:var(--ink);transition:border-color .18s;width:100%}
+.psych-fg input:focus,.psych-fg textarea:focus{outline:none;border-color:var(--acc)}
+.psych-fg textarea{resize:vertical}
+/* BUNDLE GRID */
+.psych-bundle-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:12px}
+.psych-bundle-card{background:var(--bg);border:1px solid var(--bdr2);border-radius:4px;padding:10px 11px;cursor:pointer;transition:all .18s}
+.psych-bundle-card:hover{border-color:var(--acc);background:var(--bg2)}
+.psych-bundle-name{font-family:'Playfair Display',serif;font-size:.82rem;font-style:italic;margin-bottom:5px;color:var(--ink)}
+.psych-bundle-kws{display:flex;flex-wrap:wrap;gap:3px}
+.psych-bundle-kw{font-size:.62rem;padding:1px 5px;border-radius:2px;background:var(--bg2);border:1px solid var(--bdr2);color:var(--ink3)}
+/* AXIS */
+.psych-axis{display:flex;gap:0;align-items:stretch;border:1px solid var(--bdr);border-radius:6px;overflow:hidden;margin-top:12px;min-height:100px}
+.axis-side{flex:1;padding:14px 12px;display:flex;flex-direction:column;gap:6px}
+.axis-grow{background:#F0FFF4}
+.axis-fall{background:#FFF5F5}
+.axis-label{font-size:.67rem;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--ink4);margin-bottom:4px}
+.axis-grow .axis-label{color:#2E7D32}
+.axis-fall .axis-label{color:#991B1B}
+.axis-kws{display:flex;flex-wrap:wrap;gap:4px}
+.axis-kw{font-size:.72rem;padding:2px 7px;border-radius:3px}
+.axis-kw.grow{background:#C8E6C9;color:#1B5E20}
+.axis-kw.fall{background:#FFCDD2;color:#B71C1C}
+.axis-center{width:60px;background:var(--bg2);border-left:1px solid var(--bdr);border-right:1px solid var(--bdr);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;flex-shrink:0}
+.axis-char-name{font-family:'Playfair Display',serif;font-size:.72rem;color:var(--ink3);text-align:center;word-break:break-all;padding:4px}
+.axis-divider{width:1px;flex:1;background:var(--bdr);max-height:40px}
+/* SAVED PSYCH */
+.psych-saved-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.psych-saved-card{background:var(--wh);border:1px solid var(--bdr2);border-radius:6px;padding:14px 15px;cursor:pointer;transition:box-shadow .2s,transform .2s}
+.psych-saved-card:hover{box-shadow:0 4px 16px rgba(38,22,10,.09);transform:translateY(-2px)}
+.psc-name{font-family:'Playfair Display',serif;font-size:1rem;margin-bottom:6px}
+.psc-row{display:flex;gap:5px;flex-wrap:wrap;margin-bottom:4px}
+.psc-label{font-size:.62rem;color:var(--ink4);min-width:42px}
+.psc-val{font-size:.72rem;color:var(--ink2);font-style:italic}
+.psc-foot{display:flex;justify-content:flex-end;gap:5px;margin-top:8px;padding-top:8px;border-top:1px solid var(--bdr2)}
 </style>
 </head>
 <body>
@@ -252,7 +306,7 @@ main{max-width:1360px;margin:0 auto;padding:28px}
   <button class="nbtn on" onclick="switchTab('t1',this)">① 캐릭터 입력폼</button>
   <button class="nbtn" onclick="switchTab('t2',this)">② 키워드 사전</button>
   <button class="nbtn" onclick="switchTab('t3',this)">③ 조합 규칙표</button>
-  <button class="nbtn dim">④ 심리/서사 축</button>
+  <button class="nbtn" onclick="switchTab('t4',this)">④ 심리/서사 축</button>
   <button class="nbtn dim">⑤ 관계/운용</button>
   <button class="nbtn dim">⑥ 최종 요약 카드</button>
 </nav>
@@ -427,7 +481,174 @@ main{max-width:1360px;margin:0 auto;padding:28px}
     </div>
   </div>
 </div>
-<div id="t4" class="tab-pane"><div class="cs"><h2>심리 / 서사 축</h2><p>다음 버전에서 만나요.</p></div></div>
+<div id="t4" class="tab-pane">
+  <div class="sec-head">
+    <div><div class="sec-title">심리 / 서사 축</div><div class="sec-sub">캐릭터의 내면 구조를 설계해요 · 캐릭터를 선택하거나 새로 입력할 수 있어요</div></div>
+    <div style="display:flex;gap:8px">
+      <button class="btn-tw" onclick="sharePsych()">X 공유</button>
+      <button class="btn-p" onclick="newPsychSheet()">+ 새 심리 시트</button>
+    </div>
+  </div>
+
+  <!-- CHAR SELECTOR -->
+  <div class="psych-charbar" id="psychCharBar">
+    <div class="psych-charbar-label">저장된 자캐에서 불러오기</div>
+    <div class="psych-charbar-list" id="psychCharList"></div>
+  </div>
+
+  <div class="psych-layout">
+    <!-- LEFT: 심리 구조 -->
+    <div class="psych-col">
+      <div class="psych-block">
+        <div class="psych-block-head">욕망 · 결핍 · 두려움</div>
+        <div class="psych-block-desc">캐릭터가 가장 원하는 것, 가지지 못한 것, 가장 무서워하는 것</div>
+        <div class="fgrid g1" style="gap:10px;margin-top:12px">
+          <div class="fg psych-fg">
+            <label>욕망 <span class="psych-hint">— 가장 원하는 것</span></label>
+            <div class="psych-input-row">
+              <input id="ps_desire" type="text" placeholder="예: 인정받고 싶음">
+              <button class="psych-roll-btn" onclick="rollPsych('desire')">주사위</button>
+            </div>
+          </div>
+          <div class="fg psych-fg">
+            <label>결핍 <span class="psych-hint">— 채워지지 않은 것</span></label>
+            <div class="psych-input-row">
+              <input id="ps_lack" type="text" placeholder="예: 무조건적인 애정">
+              <button class="psych-roll-btn" onclick="rollPsych('lack')">주사위</button>
+            </div>
+          </div>
+          <div class="fg psych-fg">
+            <label>두려움 <span class="psych-hint">— 가장 피하고 싶은 것</span></label>
+            <div class="psych-input-row">
+              <input id="ps_fear" type="text" placeholder="예: 대체 가능한 존재가 되는 것">
+              <button class="psych-roll-btn" onclick="rollPsych('fear')">주사위</button>
+            </div>
+          </div>
+          <div class="fg psych-fg">
+            <label>수치심 포인트 <span class="psych-hint">— 들키면 가장 부끄러운 것</span></label>
+            <div class="psych-input-row">
+              <input id="ps_shame" type="text" placeholder="예: 사실은 외로움을 참지 못함">
+              <button class="psych-roll-btn" onclick="rollPsych('shame')">주사위</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="psych-block">
+        <div class="psych-block-head">방어기제 · 트리거</div>
+        <div class="psych-block-desc">감정이 위협받을 때 어떻게 반응하는지</div>
+        <div class="fgrid g1" style="gap:10px;margin-top:12px">
+          <div class="fg psych-fg">
+            <label>방어기제</label>
+            <div class="psych-input-row">
+              <input id="ps_defense" type="text" placeholder="예: 냉소">
+              <button class="psych-roll-btn" onclick="rollPsych('defense')">주사위</button>
+            </div>
+          </div>
+          <div class="fg psych-fg">
+            <label>분노 트리거 <span class="psych-hint">— 어떨 때 화가 나는가</span></label>
+            <input id="ps_anger" type="text" placeholder="예: 자신의 노력이 무시당할 때">
+          </div>
+          <div class="fg psych-fg">
+            <label>무너지는 상황 <span class="psych-hint">— 한계에 이르는 순간</span></label>
+            <input id="ps_break" type="text" placeholder="예: 믿었던 사람에게 배신당할 때">
+          </div>
+          <div class="fg psych-fg">
+            <label>애정 표현 방식</label>
+            <div class="psych-input-row">
+              <input id="ps_love_style" type="text" placeholder="예: 말보다 행동 / 작은 것을 오래 기억함">
+              <button class="psych-roll-btn" onclick="rollPsych('love_style')">주사위</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="psych-block">
+        <div class="psych-block-head">자기서사 vs 실제 본질</div>
+        <div class="psych-block-desc">스스로 믿는 이야기와 실제 모습의 간극</div>
+        <div class="fgrid g1" style="gap:10px;margin-top:12px">
+          <div class="fg psych-fg">
+            <label>스스로 믿는 자기서사</label>
+            <textarea id="ps_self_story" placeholder="예: 나는 감정에 흔들리지 않는 사람이다" style="min-height:58px"></textarea>
+          </div>
+          <div class="fg psych-fg">
+            <label>실제 핵심 본질</label>
+            <textarea id="ps_truth" placeholder="예: 사실 누구보다 감정적이지만 표현 방법을 모름" style="min-height:58px"></textarea>
+          </div>
+          <div class="fg psych-fg">
+            <label>가장 숨기고 싶은 사실</label>
+            <input id="ps_secret" type="text" placeholder="예: 자신이 약하다는 것">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- RIGHT: 서사 구조 -->
+    <div class="psych-col">
+      <div class="psych-block">
+        <div class="psych-block-head">서사 방향</div>
+        <div class="psych-block-desc">이 캐릭터가 나아가는 방향, 혹은 무너지는 방향</div>
+        <div class="fgrid g1" style="gap:10px;margin-top:12px">
+          <div class="fg psych-fg">
+            <label>성장 방향 <span class="psych-hint">— 어떻게 달라질 수 있는가</span></label>
+            <div class="psych-input-row">
+              <input id="ps_grow" type="text" placeholder="예: 타인에게 기대는 법을 배움">
+              <button class="psych-roll-btn" onclick="rollPsych('grow')">주사위</button>
+            </div>
+          </div>
+          <div class="fg psych-fg">
+            <label>파멸 방향 <span class="psych-hint">— 최악의 결말</span></label>
+            <div class="psych-input-row">
+              <input id="ps_fall" type="text" placeholder="예: 타인을 시험하며 관계를 망침">
+              <button class="psych-roll-btn" onclick="rollPsych('fall')">주사위</button>
+            </div>
+          </div>
+          <div class="fg psych-fg">
+            <label>서사 메모</label>
+            <textarea id="ps_narrative" placeholder="예: 누군가를 처음으로 잃고 싶지 않다고 느끼는 과정을 그리고 싶음" style="min-height:72px"></textarea>
+          </div>
+        </div>
+      </div>
+
+      <!-- ARCH BUNDLES -->
+      <div class="psych-block">
+        <div class="psych-block-head">심리 번들 라이브러리</div>
+        <div class="psych-block-desc">클릭하면 왼쪽 항목들에 자동으로 채워져요</div>
+        <div class="psych-bundle-grid" id="psychBundleGrid"></div>
+      </div>
+
+      <!-- VISUAL AXIS -->
+      <div class="psych-block">
+        <div class="psych-block-head">성장 / 파멸 분기</div>
+        <div class="psych-block-desc">두 방향의 핵심 키워드를 입력하면 시각화해줘요</div>
+        <div class="psych-axis" id="psychAxis">
+          <div class="axis-side axis-grow">
+            <div class="axis-label">성장</div>
+            <div class="axis-kws" id="axisGrowKws"></div>
+          </div>
+          <div class="axis-center">
+            <div class="axis-char-name" id="axisCharName">—</div>
+            <div class="axis-divider"></div>
+          </div>
+          <div class="axis-side axis-fall">
+            <div class="axis-label">파멸</div>
+            <div class="axis-kws" id="axisFallKws"></div>
+          </div>
+        </div>
+        <button class="btn-s" style="width:100%;margin-top:10px;font-size:.76rem" onclick="updateAxis()">분기 업데이트</button>
+      </div>
+
+      <!-- SAVE -->
+      <button class="btn-p" style="width:100%;padding:11px;font-size:.86rem;margin-top:4px" onclick="savePsych()">이 심리 시트 저장</button>
+    </div>
+  </div>
+
+  <!-- SAVED PSYCH LIST -->
+  <div style="margin-top:28px">
+    <div class="psych-block-head" style="margin-bottom:14px">저장된 심리 시트</div>
+    <div class="psych-saved-grid" id="psychSavedGrid"></div>
+  </div>
+</div>
 <div id="t5" class="tab-pane"><div class="cs"><h2>관계 / 운용</h2><p>다음 버전에서 만나요.</p></div></div>
 <div id="t6" class="tab-pane"><div class="cs"><h2>최종 요약 카드</h2><p>다음 버전에서 만나요.</p></div></div>
 </main>
@@ -700,7 +921,7 @@ function setNameStyle(s, btn) {
 
 // ── EXPANDED POOLS ─────────────────────────────────────────
 const R = {
-  eye:['검정','짙은 갈색','밝은 갈색','황금빛 갈색','올리브','녹색','청록색','파랑','연한 파랑','회색','은빛','보라','붉은빛','琥珀色 (호박색)','금빛 초록','먹빛','옅은 회록','짙은 인디고','연회색','유리색'],
+  eye:['검정','짙은 갈색','밝은 갈색','황금빛 갈색','올리브','녹색','청록색','파랑','연한 파랑','회색','은빛','보라','붉은빛','호박색','금빛 초록','먹빛','옅은 회록','짙은 인디고','연회색','유리색'],
   hair_color:['검정','짙은 갈색','밝은 갈색','금발','밝은 금발','적갈색','붉은색','은발','백발','회색','무채색에 가까운 갈색','흑갈색','모래빛 금발','구리색','burgundy','붉은 흑발','차가운 금발','따뜻한 금발','연한 갈색','짙은 적발'],
   hair_style:['짧은 단발','귀밑 단발','턱선 보브','어깨 생머리','긴 생머리','웨이브 미디엄','곱슬 숏','곱슬 롱','묶은 머리','반묶음','투블럭','올림머리','울프컷','레이어드 롱','뒤로 넘긴 숏','항상 흐트러진 머리','밀착 묶음','사이드 파트','뱅 있는 미디','무심하게 내린 긴 머리'],
   skin:['매우 창백','창백한 편','밝은 편','보통','밀색','따뜻한 밀색','차가운 밀색','어두운 편','짙음','투명감 있는 흰','주근깨 있는 밝은','붉은 기 있는 밝은'],
@@ -1051,6 +1272,8 @@ function switchTab(id,btn){
   document.getElementById(id).classList.add('on');
   document.querySelectorAll('.nbtn').forEach(b=>b.classList.remove('on'));
   btn.classList.add('on');
+  if(id==='t4') buildPsychCharBar();
+  if(id==='t3') initCombTab();
 }
 function exportData(){
   const b=new Blob([JSON.stringify({chars,ver:3,exportedAt:new Date().toISOString()},null,2)],{type:'application/json'});
@@ -1568,9 +1791,175 @@ function shareKwCard() {
   window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(text),'_blank','noopener,noreferrer');
 }
 
+
+// ══════════════════════════════════════════════════════════
+//  PSYCH / NARRATIVE AXIS (TAB 4)
+// ══════════════════════════════════════════════════════════
+let psychSheets = JSON.parse(localStorage.getItem('oc_psych3') || '[]');
+let activePsychChar = null;
+let lastPsychResult = null;
+
+const PS_POOLS = {
+  desire:['인정받고 싶음','사랑받고 싶음','자유로워지고 싶음','강해지고 싶음','잊혀지고 싶음','특별해지고 싶음','그냥 쉬고 싶음','이기고 싶음','기억되고 싶음','한번만 선택받고 싶음','아무 이유 없이 사랑받고 싶음','평범해지고 싶음','한 사람만 내 편이었으면','사라지고 싶음','약해져도 괜찮다는 말을 듣고 싶음'],
+  lack:['무조건적인 애정','안정된 기반','믿을 수 있는 한 사람','자기 자신에 대한 확신','평범한 일상','정말 쉴 수 있는 공간','포기해도 된다는 허락','이유 없이 좋아해주는 사람','처음부터 내 편이었던 사람','무너져도 괜찮다는 확신','오래 머물러도 되는 관계','내 이름을 불러주는 사람'],
+  fear:['대체 가능한 존재가 되는 것','버려지는 것','스스로가 나쁜 사람임을 확인하는 것','아무도 진짜 자신을 모른 채 끝나는 것','통제를 잃는 것','약한 모습을 들키는 것','기억에서 잊혀지는 것','사랑하는 사람을 잃는 것','자신이 망가졌다는 걸 인정하는 것','아무것도 바뀌지 않는 것','혼자 남는 것','진짜 원하는 걸 말했다가 거절당하는 것','이미 늦었다는 걸 알게 되는 것'],
+  shame:['사실은 외로움을 참지 못함','실제론 누구보다 인정받고 싶음','남들 시선을 너무 신경 씀','한번이라도 포기하고 싶었음','혼자일 때 무너진 적 있음','어떤 사람이 너무 그리움','진심으로 부탁해본 적이 없음','스스로도 이해 못 하는 감정이 있음'],
+  defense:['냉소','과잉친절','무관심한 척','완벽주의','선제 이탈','유머로 덮기','침묵','분노로 전환','바쁜 척','논리로 감정 대체','역할에 집중','관계를 얕게 유지','먼저 자신을 낮춤','존재감을 지움'],
+  love_style:['말보다 행동으로 표현','작은 것을 오래 기억함','먼저 연락하지 않지만 항상 기다림','자신의 것을 나눔','상대가 좋아하는 걸 몰래 기억해둠','곁에 있는 것으로 표현','가끔 너무 솔직해짐','상대가 힘들 때 말없이 옆에 있음','필요한 것을 미리 챙겨줌','자주 연락함'],
+  grow:['타인에게 기대는 법을 배움','자신을 있는 그대로 인정함','처음으로 먼저 손을 내밈','과거를 용서함','진짜 쉬는 법을 배움','아프다고 말하는 법을 배움','받는 것도 관계임을 앎','도망치지 않고 남아봄','처음으로 누군가를 믿어봄','자기 감정에 이름을 붙임'],
+  fall:['타인을 시험하며 관계를 망침','모두를 밀어내고 완전히 고립됨','자기 자신을 지워버림','반복되는 패턴에서 벗어나지 못함','점점 더 가면이 두꺼워짐','아무도 진짜 자신을 모르게 됨','사랑받기 위해 자신을 갈아없앰','한번의 배신으로 모두를 불신함','감정이 완전히 마비됨','목표만 남고 사람이 사라짐'],
+};
+
+const PSYCH_BUNDLES = [
+  {name:'겨울 아이',kws:['인정 욕구','무조건 애착','잊혀짐 공포','냉소','고립'],desire:'인정받고 싶음',lack:'무조건적인 애정',fear:'기억에서 잊혀지는 것',shame:'사실은 외로움을 참지 못함',defense:'냉소',grow:'처음으로 누군가를 믿어봄',fall:'모두를 밀어내고 완전히 고립됨'},
+  {name:'완벽주의자',kws:['완벽 욕구','통제 공포','자기혐오','완벽주의','고립'],desire:'특별해지고 싶음',lack:'자기 자신에 대한 확신',fear:'통제를 잃는 것',shame:'한번이라도 포기하고 싶었음',defense:'완벽주의',grow:'자신을 있는 그대로 인정함',fall:'점점 더 가면이 두꺼워짐'},
+  {name:'헌신하는 자',kws:['사랑 욕구','자기 부재','버려짐 공포','과잉친절','자기희생'],desire:'아무 이유 없이 사랑받고 싶음',lack:'이유 없이 좋아해주는 사람',fear:'버려지는 것',shame:'실제론 누구보다 인정받고 싶음',defense:'과잉친절',grow:'받는 것도 관계임을 앎',fall:'사랑받기 위해 자신을 갈아없앰'},
+  {name:'야심가',kws:['승리 욕구','인정 결핍','패배 공포','바쁜 척','목표 집착'],desire:'이기고 싶음',lack:'믿을 수 있는 한 사람',fear:'대체 가능한 존재가 되는 것',shame:'남들 시선을 너무 신경 씀',defense:'바쁜 척',grow:'자기 감정에 이름을 붙임',fall:'목표만 남고 사람이 사라짐'},
+  {name:'관찰자',kws:['이해 욕구','안전 결핍','노출 공포','침묵','거리감'],desire:'기억되고 싶음',lack:'안정된 기반',fear:'약한 모습을 들키는 것',shame:'진심으로 부탁해본 적이 없음',defense:'침묵',grow:'도망치지 않고 남아봄',fall:'아무도 진짜 자신을 모르게 됨'},
+  {name:'생존자',kws:['자유 욕구','평화 결핍','반복 공포','선제 이탈','단절'],desire:'자유로워지고 싶음',lack:'정말 쉴 수 있는 공간',fear:'아무것도 바뀌지 않는 것',shame:'혼자일 때 무너진 적 있음',defense:'선제 이탈',grow:'진짜 쉬는 법을 배움',fall:'반복되는 패턴에서 벗어나지 못함'},
+  {name:'방랑자',kws:['탈출 욕구','귀속 결핍','구속 공포','무관심한 척','이탈'],desire:'사라지고 싶음',lack:'오래 머물러도 되는 관계',fear:'혼자 남는 것',shame:'어떤 사람이 너무 그리움',defense:'무관심한 척',grow:'과거를 용서함',fall:'감정이 완전히 마비됨'},
+  {name:'분노한 자',kws:['정의 욕구','안전 결핍','무력감 공포','분노 전환','벽'],desire:'강해지고 싶음',lack:'처음부터 내 편이었던 사람',fear:'아무것도 바뀌지 않는 것',shame:'스스로도 이해 못 하는 감정이 있음',defense:'분노로 전환',grow:'아프다고 말하는 법을 배움',fall:'한번의 배신으로 모두를 불신함'},
+];
+
+const PS_FIELDS = ['desire','lack','fear','shame','defense','anger','break','love_style','self_story','truth','secret','grow','fall','narrative'];
+
+function gpv(id) { const e=document.getElementById('ps_'+id); return e?e.value.trim():''; }
+function spv(id,v) { const e=document.getElementById('ps_'+id); if(e) e.value=v||''; }
+
+function rollPsych(field) {
+  const pool = PS_POOLS[field];
+  if (!pool) return;
+  document.getElementById('ps_'+field).value = pool[Math.floor(Math.random()*pool.length)];
+  updateAxis();
+}
+
+function buildPsychBundles() {
+  const el = document.getElementById('psychBundleGrid');
+  if (!el) return;
+  el.innerHTML = PSYCH_BUNDLES.map((b,i) =>
+    '<div class="psych-bundle-card" onclick="applyBundle('+i+')">' +
+    '<div class="psych-bundle-name">'+b.name+'</div>' +
+    '<div class="psych-bundle-kws">'+b.kws.map(k=>'<span class="psych-bundle-kw">'+k+'</span>').join('')+'</div>' +
+    '</div>'
+  ).join('');
+}
+
+function applyBundle(i) {
+  const b = PSYCH_BUNDLES[i];
+  ['desire','lack','fear','shame','defense','grow','fall'].forEach(f => { if(b[f]) spv(f, b[f]); });
+  updateAxis();
+}
+
+function updateAxis() {
+  const growVal = gpv('grow');
+  const fallVal = gpv('fall');
+  const nameEl = document.getElementById('axisCharName');
+  if (nameEl) nameEl.textContent = activePsychChar ? (activePsychChar.split('(')[0].trim()) : '—';
+  const growEl = document.getElementById('axisGrowKws');
+  const fallEl = document.getElementById('axisFallKws');
+  if (growEl) growEl.innerHTML = growVal ? growVal.split(/[,·]/).map(k=>'<span class="axis-kw grow">'+k.trim()+'</span>').join('') : '<span style="font-size:.7rem;color:#4CAF50;opacity:.5">입력 후 업데이트</span>';
+  if (fallEl) fallEl.innerHTML = fallVal ? fallVal.split(/[,·]/).map(k=>'<span class="axis-kw fall">'+k.trim()+'</span>').join('') : '<span style="font-size:.7rem;color:#E53935;opacity:.5">입력 후 업데이트</span>';
+}
+
+function buildPsychCharBar() {
+  const el = document.getElementById('psychCharList');
+  if (!el) return;
+  if (!chars.length) { el.innerHTML = '<span style="font-size:.75rem;color:var(--ink4)">저장된 자캐가 없어요</span>'; return; }
+  el.innerHTML = chars.map(c => {
+    const on = activePsychChar===c.name ? ' on' : '';
+    return '<button class="psych-char-chip'+on+'" onclick="loadCharToPsych(\'' + c.id + '\')">'+c.name+'</button>';
+  }).join('');
+}
+
+function loadCharToPsych(id) {
+  const c = chars.find(x=>x.id===id);
+  if (!c) return;
+  activePsychChar = c.name;
+  ['desire','lack','fear','defense','grow','fall','narrative'].forEach(f => { if(c[f]) spv(f, c[f]); });
+  buildPsychCharBar();
+  updateAxis();
+}
+
+function newPsychSheet() {
+  PS_FIELDS.forEach(f => spv(f, ''));
+  activePsychChar = null;
+  buildPsychCharBar();
+  updateAxis();
+}
+
+function savePsych() {
+  const sheet = { id:'ps'+Date.now(), charName: activePsychChar||gpv('desire').slice(0,8)||'무제', savedAt: Date.now() };
+  PS_FIELDS.forEach(f => sheet[f] = gpv(f));
+  const existing = psychSheets.findIndex(s => s.charName === sheet.charName);
+  if (existing !== -1 && confirm('"'+sheet.charName+'"의 기존 시트를 덮어쓸까요?')) {
+    psychSheets[existing] = sheet;
+  } else if (existing === -1) {
+    psychSheets.push(sheet);
+  } else return;
+  localStorage.setItem('oc_psych3', JSON.stringify(psychSheets));
+  renderPsychSaved();
+}
+
+function renderPsychSaved() {
+  const el = document.getElementById('psychSavedGrid');
+  if (!el) return;
+  if (!psychSheets.length) {
+    el.innerHTML = '<div style="font-size:.78rem;color:var(--ink4)">저장된 심리 시트가 없어요</div>';
+    return;
+  }
+  el.innerHTML = psychSheets.map(s => {
+    const sid = s.id;
+    return '<div class="psych-saved-card" onclick="loadPsychSheet(\'' + sid + '\')">'+
+    '<div class="psc-name">'+s.charName+'</div>'+
+    (s.desire?'<div class="psc-row"><span class="psc-label">욕망</span><span class="psc-val">'+s.desire+'</span></div>':'')+
+    (s.fear?'<div class="psc-row"><span class="psc-label">두려움</span><span class="psc-val">'+s.fear+'</span></div>':'')+
+    (s.defense?'<div class="psc-row"><span class="psc-label">방어기제</span><span class="psc-val">'+s.defense+'</span></div>':'')+
+    (s.grow?'<div class="psc-row"><span class="psc-label">성장</span><span class="psc-val">'+s.grow+'</span></div>':'')+
+    '<div class="psc-foot">'+
+    '<button class="ibtn del" onclick="deletePsych(\'' + sid + '\');event.stopPropagation()" title="삭제">✕</button>'+
+    '</div></div>';
+  }).join('');
+}
+
+function loadPsychSheet(id) {
+  const s = psychSheets.find(x=>x.id===id);
+  if (!s) return;
+  activePsychChar = s.charName;
+  PS_FIELDS.forEach(f => spv(f, s[f]||''));
+  buildPsychCharBar();
+  updateAxis();
+}
+
+function deletePsych(id) {
+  if (!confirm('삭제할까요?')) return;
+  psychSheets = psychSheets.filter(s=>s.id!==id);
+  localStorage.setItem('oc_psych3', JSON.stringify(psychSheets));
+  renderPsychSaved();
+}
+
+function sharePsych() {
+  const name = activePsychChar || '무제';
+  const desire = gpv('desire');
+  const fear   = gpv('fear');
+  const defense = gpv('defense');
+  const grow   = gpv('grow');
+  const fall   = gpv('fall');
+  if (!desire && !fear) { alert('심리 시트를 먼저 작성해주세요.'); return; }
+  const text = '[재능팔이범 자캐메이커]\n캐릭터: '+name+'\n욕망: '+desire+'\n두려움: '+fear+'\n방어기제: '+defense+'\n성장: '+grow+'\n파멸: '+fall+'\n\n#자캐만들기 #자캐메이커';
+  window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(text),'_blank','noopener,noreferrer');
+}
+
+function initPsychTab() {
+  buildPsychBundles();
+  buildPsychCharBar();
+  renderPsychSaved();
+  updateAxis();
+}
+
 render();
 initKwTab();
 initCombTab();
+initPsychTab();
 </script>
 </body>
 </html>
