@@ -1595,7 +1595,7 @@ function shareTwitter(){
   if(!lastRand) return;
   const HN2={g:'그리핀도르',s:'슬리데린',r:'래번클로',h:'후플푸프'};
   const kws=[lastRand.kw1,lastRand.kw2,lastRand.kw3].filter(Boolean).join(' · ');
-  const text='[재능팔이범 자캐메이커]\n이름: '+lastRand.name+'\n외형: '+lastRand.eye+' 눈 / '+lastRand.hair_color+' '+lastRand.hair_style+' / '+lastRand.impression+'\n기숙사: '+HN2[lastRand.house]+'\n성격 키워드: '+kws+'\n\n#자캐만들기 #자캐메이커';
+  const text='[재능팔이범 자캐메이커]\n이름: '+lastRand.name+'\n외형: '+lastRand.eye+' 눈 / '+lastRand.hair_color+' '+lastRand.hair_style+' / '+lastRand.impression+'\n기숙사: '+HN2[lastRand.house]+'\n성격 키워드: '+kws+'\n\n#자캐만들기 #자캐메이커 #재능팔이범';
   const url='https://twitter.com/intent/tweet?text='+encodeURIComponent(text);
   window.open(url,'_blank','noopener,noreferrer');
 }
@@ -2218,7 +2218,7 @@ function shareCombResult() {
   if (!lastCombResult) { alert('먼저 조합 분석을 실행해주세요.'); return; }
   const words = lastCombResult.selected.map(k=>k.word).join(' · ');
   const clicheLabel = lastCombResult.clicheScore>=70?'높음':lastCombResult.clicheScore>=40?'보통':'낮음';
-  const text = '[재능팔이범 자캐메이커]\n조합 분석: '+words+'\n클리셰 위험도: '+clicheLabel+'\n비틀기: '+lastCombResult.twist+'\n\n#자캐만들기 #자캐메이커';
+  const text = '[재능팔이범 자캐메이커]\n조합 분석: '+words+'\n클리셰 위험도: '+clicheLabel+'\n비틀기: '+lastCombResult.twist+'\n\n#자캐만들기 #자캐메이커 #재능팔이범';
   window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(text),'_blank','noopener,noreferrer');
 }
 
@@ -2228,7 +2228,7 @@ function shareCharList() {
   const HN2={g:'그리핀도르',s:'슬리데린',r:'래번클로',h:'후플푸프'};
   const rows = chars.slice(0,5).map(c=>c.name+'  /  '+(HN2[c.house]||'기숙사미정')+'  /  '+[c.kw1,c.kw2,c.kw3].filter(Boolean).join('·'));
   const extra = chars.length > 5 ? ('\n외 '+(chars.length-5)+'명') : '';
-  const text = '[재능팔이범 자캐메이커]\n내 자캐 목록 (총 '+chars.length+'명)\n'+rows.join('\n')+extra+'\n\n#자캐만들기 #자캐메이커';
+  const text = '[재능팔이범 자캐메이커]\n내 자캐 목록 (총 '+chars.length+'명)\n'+rows.join('\n')+extra+'\n\n#자캐만들기 #자캐메이커 #재능팔이범';
   window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(text),'_blank','noopener,noreferrer');
 }
 
@@ -2240,7 +2240,7 @@ function shareKwCard() {
   const kw = allKw().find(k=>k.id===id);
   if (!kw) return;
   const pairs = kw.pairs ? kw.pairs.split(',').slice(0,3).map(x=>x.trim()).join(' · ') : '';
-  const text = '[재능팔이범 자캐메이커]\n키워드: '+kw.word+' ('+kw.cat+')\n'+kw.desc+'\n잘 붙는: '+pairs+'\n\n#자캐만들기 #자캐메이커';
+  const text = '[재능팔이범 자캐메이커]\n키워드: '+kw.word+' ('+kw.cat+')\n'+kw.desc+'\n잘 붙는: '+pairs+'\n\n#자캐만들기 #자캐메이커 #재능팔이범';
   window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(text),'_blank','noopener,noreferrer');
 }
 
@@ -2398,7 +2398,7 @@ function sharePsych() {
   const grow   = gpv('grow');
   const fall   = gpv('fall');
   if (!desire && !fear) { alert('심리 시트를 먼저 작성해주세요.'); return; }
-  const text = '[재능팔이범 자캐메이커]\n캐릭터: '+name+'\n욕망: '+desire+'\n두려움: '+fear+'\n방어기제: '+defense+'\n성장: '+grow+'\n파멸: '+fall+'\n\n#자캐만들기 #자캐메이커';
+  const text = '[재능팔이범 자캐메이커]\n캐릭터: '+name+'\n욕망: '+desire+'\n두려움: '+fear+'\n방어기제: '+defense+'\n성장: '+grow+'\n파멸: '+fall+'\n\n#자캐만들기 #자캐메이커 #재능팔이범';
   window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(text),'_blank','noopener,noreferrer');
 }
 
@@ -2610,7 +2610,7 @@ function shareRelation() {
   const away = grv('away');
   const summary = grv('summary');
   if (!type && !summary) { alert('관계 시트를 먼저 작성해주세요.'); return; }
-  const text = '[재능팔이범 자캐메이커]\n캐릭터: '+name+'\n관계 유형: '+type+'\n가까워짐: '+close+'\n멀어짐: '+away+'\n한줄 요약: '+summary+'\n\n#자캐만들기 #자캐메이커';
+  const text = '[재능팔이범 자캐메이커]\n캐릭터: '+name+'\n관계 유형: '+type+'\n가까워짐: '+close+'\n멀어짐: '+away+'\n한줄 요약: '+summary+'\n\n#자캐만들기 #자캐메이커 #재능팔이범';
   window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(text),'_blank','noopener,noreferrer');
 }
 
@@ -2805,7 +2805,7 @@ function shareSummaryCard() {
     + (kws ? '키워드: '+kws+'\n' : '')
     + (paradox && paradox!=='—' ? '모순: '+paradox+'\n' : '')
     + (grow && grow!=='—' ? '성장: '+grow+'\n' : '')
-    + '\n#자캐만들기 #자캐메이커';
+    + '\n#자캐만들기 #자캐메이커 #재능팔이범';
   window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(text),'_blank','noopener,noreferrer');
 }
 
